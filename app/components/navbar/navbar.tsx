@@ -39,7 +39,12 @@ const Navbar = () => {
         </div>
 
         <div className = {`absolute w-[60%] h-full bg-gray-200 gap-4 transition-all duration-200 justify-center ${menuOpen ? 'right-0' : 'right-[-60%]'}`}>
-        
+          <ul className = "hidden lg:flex gap-x-12">
+            <li><Link href = "#home" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Home</Link></li>
+            <li><Link href = "#about" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">About</Link></li>
+            <li><Link href = "#portfolio" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Portfolio</Link></li>
+            <li><Link href = "#contact" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Contact</Link></li>
+          </ul>
         </div>
 
       </nav>
