@@ -10,9 +10,9 @@ import { FaBasketball } from "react-icons/fa6";
 
 const About = () => {
   return (
-    <section id = "about" className = "bg-white w-full h-auto lg:py-[8rem] sm:py-[5rem] py-[5rem]">
+    <section id = "about" className = "bg-[var(--secondary-color)] w-full h-auto lg:py-[8rem] sm:py-[5rem] py-[5rem]">
       <div className = "xl:max-w-[75rem] mx-auto">
-        <div className = "flex flex-col lg:gap-y-16 gap-y-12 p-6">    
+        <div className = "flex flex-col lg:gap-y-16 gap-y-12 xl:px-6 lg:px-10 px-6">    
           <h2 className = "flex flex-col items-center">
             ABOUT ME
           </h2>

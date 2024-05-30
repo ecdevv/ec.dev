@@ -1,9 +1,8 @@
-import { Inter, Raleway, Open_Sans, Poppins } from "next/font/google";
+import { Raleway, Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { ContextProvider } from "./components/Context/Context";
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -47,9 +46,11 @@ export default function RootLayout({
       <meta name="msapplication-config" content="/favicon/browserconfig.xml"/>
       <meta name="theme-color" content="#ffffff"/>
       <body className={`${raleway.variable} ${openSans.variable} ${poppins.variable}`}>
-        <Navbar/>
-        {children}
-        <Footer/>
+        <ContextProvider>
+          <Navbar/>
+          {children}
+          <Footer/>
+        </ContextProvider>
       </body>
     </html>
   );

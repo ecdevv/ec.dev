@@ -5,16 +5,20 @@
 :root {
   --primary-color: rgb(249, 250, 251);
   --secondary-color: rgb(255, 255, 255);
+  --footer-color: rgb(51, 51, 51);
+  --footer-secondary-color: rgb(190, 190, 190);
   --base-text-color: rgb(38, 38, 38);
   --base-text-color2: rgb(55, 65, 81);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: rgb(249, 250, 251);
-    --secondary-color: rgb(255, 255, 255);
-    --base-text-color: rgb(38, 38, 38);
-    --base-text-color2: rgb(55, 65, 81);
+    --primary-color: rgb(38, 38, 38);
+    --secondary-color: rgb(55, 65, 81);
+    --footer-color: rgb(204, 204, 204);
+    --footer-secondary-color: rgb(64, 64, 64);
+    --base-text-color: rgb(249, 250, 251);
+    --base-text-color2: rgb(255, 255, 255);
   }
 }
 

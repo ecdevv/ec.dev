@@ -8,7 +8,7 @@ import { VscClose } from "react-icons/vsc";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const handleMenu = () => {
+  const handleMobileMenu = () => {
     setMenuOpen(!menuOpen)
   }
 
@@ -61,7 +61,7 @@ const Navbar = () => {
 
           {/* <Navmenu/> */}
 
-          <button onClick = {handleMenu} className = "xl:hidden">
+          <button onClick = {handleMobileMenu} className = "xl:hidden">
             <HiMenu className = "sm:w-[40px] w-[36px] h-auto"/>
           </button>
         </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
           unmountOnExit
         >
           <div className = "absolute flex flex-col top-0 right-0 portrait:w-[66%] landscape:w-screen h-screen bg-gray-200 gap-[2vh]">
-            <button onClick = {handleMenu} className = "absolute top-0 right-0 p-[3vh] py-[3vh]">
+            <button onClick = {handleMobileMenu} className = "absolute top-0 right-0 p-[3vh] py-[3vh]">
               <VscClose className = "sm:w-[36px] w-[32px] h-auto"/>
             </button>
             <ul className = "flex flex-col portrait:gap-y-[6vh] landscape:gap-y-[10vh] landscape:m-auto portrait:p-[4vh] portrait:py-[8vh] landscape:p-[6vh] landscape:py-[8vh] ">

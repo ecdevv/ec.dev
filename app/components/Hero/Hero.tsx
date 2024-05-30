@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section id = "home" className = "overflow-hidden bg-gray-50 w-full lg:h-screen h-auto lg:max-h-[120rem] lg:min-h-[60rem] lg:py-[15rem] lg:pt-[20rem] py-[10rem]">
+    <section id = "home" className = "overflow-hidden bg-[var(--primary-color)] w-full lg:h-screen h-auto lg:max-h-[120rem] lg:min-h-[60rem] lg:py-[15rem] lg:pt-[20rem] py-[10rem]">
       <div className = "relative flex lg:flex-row flex-col-reverse xl:max-w-[65rem] mx-auto lg:justify-between justify-center items-center gap-y-8 xl:px-6 lg:px-10 px-6"> 
 
         <div className = "flex flex-col lg:max-w-[60%] lg:mr-[6rem] gap-y-6 lg:items-start items-center">
