@@ -3,31 +3,74 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: rgb(249, 250, 251);
+  --secondary-color: rgb(255, 255, 255);
+  --base-text-color: rgb(38, 38, 38);
+  --base-text-color2: rgb(55, 65, 81);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --primary-color: rgb(249, 250, 251);
+    --secondary-color: rgb(255, 255, 255);
+    --base-text-color: rgb(38, 38, 38);
+    --base-text-color2: rgb(55, 65, 81);
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--base-text-color);
+  font-family: var(--font-poppins);
+  font-size: 1.0rem;
+  line-height: 1.5rem;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1 {
+  font-family: var(--font-raleway);
+}
+
+h2 {
+  font-family: var(--font-raleway);
+  font-weight: 800;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+h3 {
+  font-family: var(--font-raleway);
+  font-weight: 800;
+  font-size: 1.175rem;
+  line-height: 1.75rem;
+}
+
+h4 {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--base-text-color2);
+}
+
+p {
+  font-family: var(--font-poppins);
+  font-size: 1.0rem;
+  line-height: 1.5rem;
+  color: var(--base-text-color2);
+}
+
+span {
+  font-family: var(--font-poppins);
+  font-size: 1.0rem;
+  line-height: 1.5rem;
+  color: var(--base-text-color2);
 }
