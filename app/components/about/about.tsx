@@ -30,15 +30,15 @@ const About = () => {
             
             <div className = "flex flex-col lg:gap-y-6 gap-y-6 lg:items-start items-center lg:text-start text-center">
               <div className = "flex lg:flex-nowrap flex-wrap w-full gap-2">
-                {/* <div className = "flex flex-col justify-center items-center text-center w-full h-[8rem] p-6 py-4 rounded-[2rem] bg-gray-50 border border-gray-300 shadow">
+                {/* <div className = "flex flex-col justify-center items-center text-center w-full h-[8rem] p-4 rounded-[2rem] bg-gray-50 border border-gray-300 shadow">
                   <FaGraduationCap className = "w-[40px] h-auto shrink-0"/>
                   <h3 className = "text-lg">
                     6 Years in Software Development
                   </h3>
                 </div> */}
 
-                <div className = "flex flex-col justify-center items-center text-center w-full h-[8rem] p-6 rounded-[2rem] bg-gray-50 border border-gray-300 shadow">
-                  <FaGraduationCap className = "w-[40px] h-auto shrink-0"/>
+                <div className = "flex flex-col justify-center items-center text-center w-full h-[8rem] p-4 rounded-[2rem] bg-gray-50 border border-gray-300 shadow">
+                  <FaGraduationCap className = "w-[35px] h-auto shrink-0"/>
                   <h3 className = "text-lg flex-1">
                     B.Sc. in Computer Science <br/>
                     Minor in Mathematics
