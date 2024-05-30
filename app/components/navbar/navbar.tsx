@@ -1,8 +1,15 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { HiMenu } from "react-icons/hi";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
   return (
     <header>
       <nav className = "fixed top-0 left-0 bg-white w-full h-[5rem] shadow-md z-[1]">
@@ -24,10 +31,17 @@ const Navbar = () => {
             <li><Link href = "#contact" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Contact</Link></li>
           </ul>
 
-          <div className = "lg:hidden">
+          {/* <Navmenu/> */}
+
+          <button onClick = {handleMenu} className = "lg:hidden">
             <HiMenu className = "w-[36px] h-auto"/>
-          </div>
+          </button>
         </div>
+
+        <div className = {`absolute w-[60%] h-full bg-gray-200 gap-4 transition-all duration-200 justify-center ${menuOpen ? 'right-0' : 'right-[-60%]'}`}>
+        
+        </div>
+
       </nav>
     </header>
   )
