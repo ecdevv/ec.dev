@@ -8,7 +8,7 @@ const Hero = () => {
 
         <div className = "flex flex-col lg:max-w-[60%] lg:mr-[6rem] gap-y-6 lg:items-start items-center">
           <div className = "flex flex-col lg:text-left text-center gap-y-[1rem] lg:items-start items-center">
-            <h1 className = "font-raleway font-extrabold lg:text-6xl text-2.5rem">
+            <h1 className = "font-raleway font-extrabold lg:text-6xl text-4xl">
               Hello, I&apos;m Eric Chour
             </h1>
   

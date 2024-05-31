@@ -19,7 +19,7 @@ const Contact = () => {
               </svg>
               
               <div className = "flex flex-col items-center">
-                <h2>Location</h2>
+                <h3>Location</h3>
                 <span>Houston, Texas</span>
               </div>
             </div>
@@ -36,7 +36,7 @@ const Contact = () => {
               </Link>
 
               <div className = "flex flex-col items-center">
-                <h2>Email</h2>
+                <h3>Email</h3>
                 <Link href = "mailto:ech2447@gmail.com" aria-label = "Contact Email" target = "_blank">
                   <span className = "hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-200">ech2447@gmail.com</span>
                 </Link>

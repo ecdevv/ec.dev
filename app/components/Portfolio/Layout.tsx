@@ -8,7 +8,9 @@ const Layout = () => {
   useEffect(() => {
     const screenSize = window.innerWidth < 1024 ? 'small' : 'large';
     screenSize === 'small' ? setLayoutState('full') : setLayoutState('grid')
-  }, []);
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Intentionally empty dependency array to run effect only once
 
   const handleLayoutGrid = () => {
     setLayoutState('grid')

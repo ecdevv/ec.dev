@@ -36,12 +36,15 @@ const PopupMenu = () => {
     if (!popupMenuState) {
       setSlideDirection('')
     }
-  }, [popupMenuState])
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [popupMenuState])  // This is only meant to run as soon as this menu is popped in order to set the initial index.
 
   useEffect(() => {
     setMenuContent(menuContentData[currentIndex])
-    console.log(currentIndex)
-  }, [currentIndex])
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex])  // This only meant to update the current contents of the menu open by updating when the index changes.
 
   const handleClose = () => {
     toggleDimmer()
@@ -79,7 +82,6 @@ const PopupMenu = () => {
         <div className = "fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-30 z-[11]"></div>
       </CSSTransition>
       
-
       <CSSTransition
         in = {popupMenuState}
         timeout = {200}

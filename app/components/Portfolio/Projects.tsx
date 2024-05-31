@@ -32,17 +32,21 @@ const Projects = () => {
 
   useEffect(() => {
     if (layoutState === 'grid') {
-      if (showSecond) {
-        setShowSecond(false);
-      } else {
+      setShowSecond((prevShowSecond) => {
+        if (prevShowSecond) {
+          return false;
+        }
         setShowFirst(true);
-      }
+        return prevShowSecond;
+      });
     } else if (layoutState === 'full') {
-      if (showFirst) {
-        setShowFirst(false);
-      } else {
+      setShowFirst((prevShowFirst) => {
+        if (prevShowFirst) {
+          return false;
+        }
         setShowSecond(true);
-      }
+        return prevShowFirst;
+      });
     }
   }, [layoutState]);
 
