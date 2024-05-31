@@ -23,8 +23,12 @@ type ContextProviderProps = {
 }
 
 type Context = {
+  dimmerState: Dimmer
   toggleDimmer: () => void;
+  popupMenuState: PopupMenu;
   togglePopupMenu: () => void;
+  menuContent: MenuContent | null;
+  setMenuContent: React.Dispatch<React.SetStateAction<MenuContent | null>>
   menuContentData: MenuContent[];
   setMenuContentData: React.Dispatch<React.SetStateAction<MenuContent[]>>;
   layoutState: Layout;
@@ -38,19 +42,19 @@ export const ContextProvider = ({children}:ContextProviderProps) => {
   const [dimmerState, setDimmerState] = useState<Dimmer>(false);
   const [popupMenuState, setPopupMenuState] = useState<PopupMenu>(false);
   const [menuContentData, setMenuContentData] = useState<MenuContent[]>([])
-
+  const [menuContent, setMenuContent] = useState<MenuContent | null>(null)
   const [layoutState, setLayoutState] = useState<Layout>('grid');
   
   const toggleDimmer = () => {
-    setDimmerState(!dimmerState)
+    setDimmerState(prevState => !prevState);
   }
 
   const togglePopupMenu = () => {
-    setPopupMenuState(!popupMenuState)
+    setPopupMenuState(prevState => !prevState)
   }
 
   return (
-    <ContextAPI.Provider value={{ toggleDimmer, togglePopupMenu, menuContentData, setMenuContentData, layoutState, setLayoutState }}>
+    <ContextAPI.Provider value={{ dimmerState, toggleDimmer, popupMenuState, togglePopupMenu, menuContent, setMenuContent, menuContentData, setMenuContentData, layoutState, setLayoutState }}>
       {children}
     </ContextAPI.Provider>
   );
@@ -59,7 +63,7 @@ export const ContextProvider = ({children}:ContextProviderProps) => {
 export const useContextAPI = () => {
   const context = useContext(ContextAPI);
   if (!context) {
-    throw new Error('useContextAPIState must be used within a ContextAPIProvider');
+    throw new Error('useContextAPI must be used within a ContextAPIProvider');
   }
   return context;
 };

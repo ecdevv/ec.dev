@@ -1,9 +1,14 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useContextAPI } from '../Context/Context';
 
 const Layout = () => {
   const {setLayoutState} = useContextAPI();
+
+  useEffect(() => {
+    const screenSize = window.innerWidth < 1024 ? 'small' : 'large';
+    screenSize === 'small' ? setLayoutState('full') : setLayoutState('grid')
+  }, []);
 
   const handleLayoutGrid = () => {
     setLayoutState('grid')

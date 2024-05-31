@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import projectsData from '../../data/projects.json';
 import { CSSTransition } from 'react-transition-group';
 import { useContextAPI } from '../Context/Context';
+import PopupMenu from '../PopupMenu/PopupMenu';
 
 
 interface Project {
@@ -24,7 +25,7 @@ interface ProjectProps {
 }
 
 const Projects = () => {
-  const {toggleDimmer, togglePopupMenu, setMenuContentData, layoutState, setLayoutState} = useContextAPI();
+  const {toggleDimmer, popupMenuState, togglePopupMenu, setMenuContent, setMenuContentData, layoutState, setLayoutState} = useContextAPI();
   const [menuOpen, setMenuOpen] = useState(false);
   const [showFirst, setShowFirst] = useState(layoutState === 'grid');
   const [showSecond, setShowSecond] = useState(layoutState === 'full');
@@ -66,7 +67,7 @@ const Projects = () => {
     toggleDimmer()
     togglePopupMenu()
     setMenuContentData(projectsData)
-    // setMenuContent(project)
+    setMenuContent(project)
   }
 
   /* project.image should try to be 320x256 */
@@ -82,21 +83,16 @@ const Projects = () => {
         </h2>
       </div>
 
-      {/* <div className = {layoutState === 'grid'
-        ? "w-full flex flex-wrap gap-4 opacity-100 transition-all duration-200 delay-200 justify-center"
-        : "w-full flex flex-wrap gap-4 opacity-0 transition-all duration-200 justify-center collapse" 
-      }> */}
-
       <CSSTransition
-        in={showFirst}
-        timeout={200}
-        classNames="fade"
+        in = {showFirst}
+        timeout = {200}
+        classNames = "fade"
         unmountOnExit
-        onExited={handleFirstExited}
+        onExited = {handleFirstExited}
       >
         <div className = "w-full flex flex-wrap gap-4 justify-center">
           {projectsData.map((project:Project) => (
-            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "group relative cursor-pointer flex flex-wrap lg:w-[20rem] lg:h-[16rem] sm:w-[15rem] sm:h-[12rem] w-[10rem] h-[8rem] border-[1px] border-gray-300 bg-gray-200 rounded-[2rem]">
+            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "group relative cursor-pointer lg:w-[20rem] lg:h-[16rem] sm:w-[15rem] sm:h-[12rem] w-[10rem] h-[8rem] border-[1px] border-gray-300 bg-gray-200 rounded-[2rem]">
               <img
                 src = {project.image}
                 alt = {project.title}
@@ -136,32 +132,26 @@ const Projects = () => {
         </div>
       </CSSTransition>
       
-      {/* <div className = {layoutState === 'fullGrid'
-        ? "w-full flex flex-wrap gap-4 opacity-100 transition-all duration-200 delay-200 justify-center items-start"
-        : "w-full flex flex-wrap gap-4 opacity-0 transition-all duration-200 justify-center items-start collapse" 
-      }> */}
       <CSSTransition
-        in={showSecond}
-        timeout={200}
-        classNames="fade"
+        in = {showSecond}
+        timeout = {200}
+        classNames = "fade"
         unmountOnExit
-        onExited={handleSecondExited}
+        onExited = {handleSecondExited}
       >
         <div className = "w-full flex flex-wrap gap-4 justify-center items-start">
           {projectsData.map((project:Project) => (
-            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "cursor-pointer flex flex-wrap items-center w-[20rem] h-[30rem] border-[1px] border-gray-300 bg-gray-200 hover:bg-gray-50 rounded-[2rem] transition-all duration-200">
-              <span className = "w-full">
-                <img
-                  src = {project.image}
-                  alt = {project.title}
-                  className = "w-full object-contain rounded-[2rem] p-4"
-                  fetchPriority = "low"
-                  loading = "lazy"
-                  decoding = "async"
-                />
-              </span>
+            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "cursor-pointer flex flex-wrap w-[20rem] h-[30rem] border-[1px] border-gray-300 bg-gray-200 hover:bg-gray-50 rounded-[2rem] transition-all duration-200">
+              <img
+                src = {project.image}
+                alt = {project.title}
+                className = "w-full self-start object-contain rounded-[2rem] p-4 py-8"
+                fetchPriority = "low"
+                loading = "lazy"
+                decoding = "async"
+              />
 
-              <div className = "flex flex-col w-full justify-center items-center text-center gap-y-3 p-4">
+              <div className = "flex flex-col w-full self-end justify-center items-center text-center gap-y-3 p-4 py-8">
                 {(project.title || project.description)
                 ? <>
                     <span className = "flex flex-col gap-1">
@@ -178,7 +168,7 @@ const Projects = () => {
                         key = {index}
                         src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
                         alt = {tech}
-                        className = "sm:w-[32px] w-[28px] h-auto"
+                        className = "sm:w-[36px] w-[32px] h-auto"
                         fetchPriority = "low"
                         loading = "lazy"
                         decoding = "async"
@@ -193,6 +183,7 @@ const Projects = () => {
         </div>
       </CSSTransition>
 
+      <PopupMenu/>
     </>
     
   )

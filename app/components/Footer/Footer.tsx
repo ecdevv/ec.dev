@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer id = "footer" className = "bg-[var(--footer-color)] w-full h-auto lg:py-[3rem] sm:py-[2rem] py-[2rem]">
+    <footer id = "footer" className = "bg-[var(--footer-color)] w-full h-auto lg:py-[3rem] sm:py-[2rem] py-[2rem] z-[10]">
       <div className = "xl:max-w-[75rem] mx-auto">
         <div className = "flex justify-between items-center gap-x-12 xl:px-6 lg:px-10 px-6">
           <p className = "text-[var(--footer-secondary-color)]">

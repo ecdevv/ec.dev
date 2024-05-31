@@ -71,14 +71,16 @@ const Navbar = () => {
         <CSSTransition
           in = {menuOpen}
           timeout = {300}
-          classNames = "slide"
+          classNames = "slideNav"
           unmountOnExit
         >
           <div className = "absolute flex flex-col top-0 right-0 portrait:w-[66%] landscape:w-screen h-screen bg-gray-200 gap-[2vh]">
-            <button onClick = {handleMobileMenu} className = "absolute top-0 right-0 p-[3vh] py-[3vh]">
-              <VscClose className = "sm:w-[36px] w-[32px] h-auto"/>
-            </button>
-            <ul className = "flex flex-col portrait:gap-y-[6vh] landscape:gap-y-[10vh] landscape:m-auto portrait:p-[4vh] portrait:py-[8vh] landscape:p-[6vh] landscape:py-[8vh] ">
+            <div className = "absolute top-0 right-0 p-[3vh] landscape:p-[6vh]">
+              <button onClick = {handleMobileMenu}>
+                <VscClose className = "sm:w-[36px] w-[32px] h-auto"/>
+              </button>
+            </div>
+            <ul className = "flex flex-col items-start portrait:gap-y-[6vh] landscape:gap-y-[10vh] landscape:m-auto portrait:p-[4vh] portrait:py-[8vh] landscape:p-[6vh] landscape:py-[8vh] ">
               <li>
                 <Link href = "#home" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
                   <svg
@@ -154,7 +156,6 @@ const Navbar = () => {
             </div>
           </div>
         </CSSTransition>
-
       </nav>
     </header>
   )
