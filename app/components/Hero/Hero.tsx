@@ -16,13 +16,13 @@ const Hero = () => {
               I&apos;m a CS graduate with a keen interest in web development based in Houston, Texas! 📍
             </p>
 
-            <Link href = "/resume" target = "_blank" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
+            <Link href = "/resume" target = "_blank" aria-label = "Résumé" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
               <span className = "group-hover:text-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]">
                 Download CV
               </span>
               <svg
-                  fill="currentColor"
-                  viewBox="0 0 512 512"
+                  fill = "currentColor"
+                  viewBox = "0 0 512 512"
                   className = "w-[2rem] h-full group-hover:fill-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]"
               >
                   <path d ="M276.239,252.183c-6.37,2.127-13.165,3.308-20.239,3.308c-7.074,0-13.87-1.181-20.24-3.308
@@ -36,25 +36,25 @@ const Hero = () => {
               </svg>
             </Link>
 
-            <Link href = "#about" className = "group flex italic lg:justify-start justify-center gap-x-2 transition-all ease-in-out duration-[200ms]" >
+            <Link href = "#about" aria-label = "About Me" className = "group flex italic lg:justify-start justify-center gap-x-2 transition-all ease-in-out duration-[200ms]" >
               <span className = "text-lg group-hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
                 Click to learn more!
               </span>
               <svg
-                fill="var(--base-text-color)"
-                viewBox="0 0 16 16"
+                fill = "var(--base-text-color)"
+                viewBox = "0 0 16 16"
                 className = "animate-translateX w-[1.5rem] h-full group-hover:fill-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M1 8a.5.5 0 01.5-.5h11.793l-3.147-3.146a.5.5 0 01.708-.708l4 4a.5.5 0 010 .708l-4 4a.5.5 0 01-.708-.708L13.293 8.5H1.5A.5.5 0 011 8z"
+                  fillRule = "evenodd"
+                  d = "M1 8a.5.5 0 01.5-.5h11.793l-3.147-3.146a.5.5 0 01.708-.708l4 4a.5.5 0 010 .708l-4 4a.5.5 0 01-.708-.708L13.293 8.5H1.5A.5.5 0 011 8z"
                 />
               </svg>
             </Link>
           </div>
   
           {/* <span className = "lg:absolute bottom-0 flex lg:justify-start justify-center gap-x-4">
-            <Link href = "https://www.linkedin.com/" aria-label = "github" target = "_blank" rel = "noreferrer">
+            <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank" rel = "noreferrer">
               <svg 
                 xmlns = "http://www.w3.org/2000/svg" 
                 viewBox = "0 0 24 24"
@@ -67,7 +67,7 @@ const Hero = () => {
                 <path fillRule="evenodd" clipRule="evenodd" d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z"/>
               </svg>
             </Link>
-            <Link href = "https://github.com/ech2k20/" aria-label = "github" target = "_blank" rel = "noreferrer">
+            <Link href = "https://github.com/ech2k20/" aria-label = "GitHub" target = "_blank" rel = "noreferrer">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox = "0 0 98 96"

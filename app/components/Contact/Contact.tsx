@@ -25,7 +25,7 @@ const Contact = () => {
             </div>
   
             <div className = "group flex flex-col items-center justify-center gap-y-2">
-              <Link href = "mailto:ech2447@gmail.com" aria-label = "Contact Email" target = "_blank">
+              <Link href = "mailto:ech2447@gmail.com" aria-label = "Email" target = "_blank">
                 <svg
                   viewBox = "0 0 1024 1024"
                   fill = "currentColor"
@@ -37,7 +37,7 @@ const Contact = () => {
 
               <div className = "flex flex-col items-center">
                 <h3>Email</h3>
-                <Link href = "mailto:ech2447@gmail.com" aria-label = "Contact Email" target = "_blank">
+                <Link href = "mailto:ech2447@gmail.com" aria-label = "Email" target = "_blank">
                   <span className = "hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-200">ech2447@gmail.com</span>
                 </Link>
               </div>

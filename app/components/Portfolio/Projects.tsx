@@ -143,7 +143,7 @@ const Projects = () => {
         unmountOnExit
         onExited = {handleSecondExited}
       >
-        <div className = "w-full flex flex-wrap gap-4 justify-center items-start">
+        <div className = "w-full flex flex-wrap gap-4 justify-center items-center">
           {projectsData.map((project:Project) => (
             <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "cursor-pointer flex flex-wrap w-[20rem] h-[30rem] border-[1px] border-gray-300 bg-gray-200 hover:bg-gray-50 rounded-[2rem] transition-all duration-200">
               <img
