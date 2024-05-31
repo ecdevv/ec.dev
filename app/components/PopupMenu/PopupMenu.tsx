@@ -88,7 +88,7 @@ const PopupMenu = () => {
         classNames = "fade"
         unmountOnExit
       >
-       <div {...swipeHandlers} className = "fixed lg:top-[10%] top-0 m-auto lg:w-[55rem] lg:h-[40rem] w-screen h-screen flex items-start justify-center bg-gray-200 rounded-[2rem] z-[12]">
+       <div {...swipeHandlers} className = "fixed lg:top-[10%] top-0 m-auto lg:w-[55rem] lg:h-[40rem] w-screen h-screen flex items-start justify-center bg-gray-200 portrait:sm:rounded-[2rem] landscape:h-sm:rounded-[2rem] z-[12]">
          <button onClick = {handlePrevClick} className = "group flex absolute top-1/2 left-0 w-[5rem] h-[5rem] mt-[-2.5rem] lg:ml-[-5rem] justify-center items-center transition-all ease-in-out duration-200 z-[12]">
             <span className = "flex w-[3rem] h-[3rem] justify-center opacity-60 bg-[#333333] rounded-[50%] shadow-[0_0px_10px_5px_rgba(0,0,0,0.1)] group-hover:bg-[#555555] group-active:translate-y-[0.15rem]">
               <svg

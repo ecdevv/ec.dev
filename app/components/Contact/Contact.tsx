@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section id = "contact" className = "bg-[var(--secondary-color)] lg:py-[8rem] sm:py-[5rem] py-[5rem]">
       <div className = "xl:max-w-[75rem] mx-auto">
-        <div className = "flex flex-col items-center lg:gap-y-12 gap-y-6 xl:px-6 lg:px-10 px-6">
+        <div className = "flex flex-col items-center lg:gap-y-10 gap-y-6 xl:px-6 lg:px-10 px-6">
           <h2>CONTACT</h2>
 
           <div className = "flex flex-col items-center gap-y-10">
