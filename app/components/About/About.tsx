@@ -100,7 +100,7 @@ const About = () => {
             </div>
           </div>
 
-          <Link href = "#portfolio" aria-label = "Portfolio" className = "group flex italic lg:self-end self-center gap-x-2 lg:mt-0 mt-[-2rem] transition-all ease-in-out duration-[200ms]">
+          <Link href = "/#portfolio" aria-label = "Portfolio" className = "group flex italic lg:self-end self-center gap-x-2 lg:mt-0 mt-[-2rem] transition-all ease-in-out duration-[200ms]">
             <span className = "text-lg group-hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
               Click to see my projects!
             </span>

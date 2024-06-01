@@ -37,23 +37,6 @@ export default function RootLayout({
   
   return (
     <html lang="en">
-      <script dangerouslySetInnerHTML = {{ 
-        __html: 
-          `
-            (function() {
-              const theme = localStorage.getItem('theme');
-              if (theme) {
-                document.documentElement.classList.add(theme);
-              } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.classList.add('dark');
-              } else {
-                document.documentElement.classList.add('light');
-              }
-            })();
-          `, 
-        }} 
-      />
-
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
@@ -65,6 +48,23 @@ export default function RootLayout({
       <meta name="theme-color" content="#ffffff"/>
 
       <body className={`${raleway.variable} ${openSans.variable} ${poppins.variable}`}>
+        <script dangerouslySetInnerHTML = {{ 
+          __html: 
+            `
+              (function() {
+                const theme = localStorage.getItem('theme');
+                if (theme) {
+                  document.documentElement.classList.add(theme);
+                } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.add('light');
+                }
+              })();
+            `, 
+          }} 
+        />
+        
         <ContextProvider>
           <Navbar/>
           {children}

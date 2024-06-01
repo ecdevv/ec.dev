@@ -15,10 +15,12 @@ const Navbar = () => {
 
     if (selectedTheme) {
       setTheme(selectedTheme);
-      // document.body.classList.add(selectedTheme); // Likely unnecessary since the theme is being set in the Layout.tsx
+      // document.body.classList.remove('light', 'dark');
+      // document.body.classList.add(selectedTheme);
     } else {
       setTheme('light');
-      // document.body.classList.add("light")        // Likely unnecessary since the theme is being set in the Layout.tsx
+      // document.body.classList.remove('light', 'dark');
+      // document.body.classList.add("light");
     }
 
     const updateTimeout = () => {
@@ -50,7 +52,7 @@ const Navbar = () => {
       <nav className = "fixed top-0 left-0 bg-main w-full h-[5rem] shadow-md z-[10]">
         {/* Desktop Menu */}
         <div className = "flex w-full h-full max-w-[82.5%] justify-between items-center p-2 mx-auto">
-          <Link href = "#home" aria-label = "Home" className = "flex gap-x-1 items-end">
+          <Link href = "/#home" aria-label = "Home" className = "flex gap-x-1 items-end">
             <img
               src = "/favicon/android-chrome-256x256.png"
               width = "0"
@@ -62,10 +64,10 @@ const Navbar = () => {
 
           <div className = "hidden xl:flex gap-x-20 justify-center items-center">
             <ul className = "flex gap-x-12">
-              <li><Link href = "#home" aria-label = "Home" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Home</Link></li>
-              <li><Link href = "#about" aria-label = "About Me" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">About</Link></li>
-              <li><Link href = "#portfolio" aria-label = "Portfolio" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Portfolio</Link></li>
-              <li><Link href = "#contact" aria-label = "Contact" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Contact</Link></li>
+              <li><Link href = "/#home" aria-label = "Home" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Home</Link></li>
+              <li><Link href = "/#about" aria-label = "About Me" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">About</Link></li>
+              <li><Link href = "/#portfolio" aria-label = "Portfolio" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Portfolio</Link></li>
+              <li><Link href = "/#contact" aria-label = "Contact" className = "font-openSans font-bold text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">Contact</Link></li>
             </ul>
   
             {/* <div className = "flex lg:justify-start justify-center gap-x-4">
@@ -124,7 +126,7 @@ const Navbar = () => {
             </div>
             <ul className = "flex flex-col items-start portrait:gap-y-[6vh] landscape:gap-y-[10vh] landscape:m-auto portrait:p-[4vh] portrait:py-[8vh] landscape:p-[6vh] landscape:py-[8vh] ">
               <li>
-                <Link onClick = {handleMobileMenu} href = "#home" aria-label = "Home" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
+                <Link onClick = {handleMobileMenu} href = "/#home" aria-label = "Home" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
                   <svg
                     viewBox = "0 0 1024 1024"
                     fill = "currentColor"
@@ -136,7 +138,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link onClick = {handleMobileMenu} href = "#about" aria-label = "About Me" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
+                <Link onClick = {handleMobileMenu} href = "/#about" aria-label = "About Me" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
                   <svg
                     viewBox = "0 0 16 16"
                     fill = "currentColor"
@@ -148,7 +150,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link onClick = {handleMobileMenu} href = "#portfolio" aria-label = "Portfolio" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
+                <Link onClick = {handleMobileMenu} href = "/#portfolio" aria-label = "Portfolio" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
                   <svg
                     viewBox = "0 0 24 24"
                     fill = "currentColor"
@@ -160,7 +162,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link onClick = {handleMobileMenu} href = "#contact" aria-label = "Contact" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
+                <Link onClick = {handleMobileMenu} href = "/#contact" aria-label = "Contact" className = "flex gap-x-4 font-openSans font-bold sm:text-xl text-lg hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
                   <svg
                     viewBox = "0 0 24 24"
                     fill = "currentColor"

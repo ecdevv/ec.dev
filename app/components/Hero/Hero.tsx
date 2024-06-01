@@ -35,7 +35,7 @@ const Hero = () => {
               </svg>
             </Link>
 
-            <Link href = "#about" aria-label = "About Me" className = "group flex italic lg:justify-start justify-center gap-x-2 transition-all ease-in-out duration-[200ms]" >
+            <Link href = "/#about" aria-label = "About Me" className = "group flex italic lg:justify-start justify-center gap-x-2 transition-all ease-in-out duration-[200ms]" >
               <span className = "text-lg group-hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]">
                 Click to learn more!
               </span>
