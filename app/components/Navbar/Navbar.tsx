@@ -190,7 +190,7 @@ const Navbar = () => {
                 </Link>
               </div>
   
-              <button onClick = {toggleTheme} className = "landscape:absolute top-[10%] right-0 landscape:p-[6vh] flex justify-center items-center">
+              <button onClick = {toggleTheme} className = "landscape:absolute h-sm:top-[10vh] top-[15vh] right-0 landscape:p-[6vh] flex justify-center items-center">
                 <svg
                   viewBox = "0 0 24 24"
                   fill = "currentColor"
