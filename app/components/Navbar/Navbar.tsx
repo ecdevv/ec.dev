@@ -15,10 +15,10 @@ const Navbar = () => {
 
     if (selectedTheme) {
       setTheme(selectedTheme);
-      document.body.classList.add(selectedTheme); // Likely unnecessary since the theme is being set in the Layout.tsx
+      // document.body.classList.add(selectedTheme); // Likely unnecessary since the theme is being set in the Layout.tsx
     } else {
       setTheme('light');
-      document.body.classList.add("light")        // Likely unnecessary since the theme is being set in the Layout.tsx
+      // document.body.classList.add("light")        // Likely unnecessary since the theme is being set in the Layout.tsx
     }
 
     const updateTimeout = () => {
@@ -116,7 +116,6 @@ const Navbar = () => {
           classNames = "menu"
           unmountOnExit
         >
-          {/* <div className = {`absolute flex flex-col top-0 portrait:w-[66%] landscape:w-screen h-screen bg-navbarMobileColor gap-[2vh] transition-all ease-in-out duration-300 ${menuOpen ? 'right-0' : 'portrait:right-[-66%] landscape:right-[-100%]'}`}>*/}
           <div className = "xl:hidden absolute flex flex-col top-0 right-0 portrait:w-[66%] landscape:w-screen h-screen bg-navbarMobileColor gap-[2vh]">
             <div className = "absolute top-0 right-0 p-[3vh] landscape:p-[6vh]">
               <button onClick = {handleMobileMenu}>

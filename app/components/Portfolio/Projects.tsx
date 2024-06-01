@@ -20,12 +20,8 @@ interface Project {
   link2: string;
 }
 
-interface ProjectProps {
-  projectsData: Project[]
-}
-
 const Projects = () => {
-  const {toggleDimmer, popupMenuState, togglePopupMenu, setMenuContent, setMenuContentData, layoutState, setLayoutState} = useContextAPI();
+  const {toggleDimmer, togglePopupMenu, setMenuContent, setMenuContentData, layoutState, setLayoutState} = useContextAPI();
   const [menuOpen, setMenuOpen] = useState(false);
   const [showFirst, setShowFirst] = useState(layoutState === 'grid');
   const [showSecond, setShowSecond] = useState(layoutState === 'full');
