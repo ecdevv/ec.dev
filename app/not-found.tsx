@@ -7,7 +7,7 @@ const Custom404 = () => {
       <div className = "w-[25rem] m-auto">
         <div className = "flex flex-col items-center text-center gap-y-4">
           <Image
-            src = "/images/404.png"
+            src = "/images/404.webp"
             alt = "404"
             width = {198}
             height = {162}

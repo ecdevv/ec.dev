@@ -57,7 +57,7 @@ const Navbar = () => {
               src = "/favicon/android-chrome-256x256.png"
               width = "0"
               alt = "ec"
-              className = "w-[3rem]"
+              className = "w-[3rem] h-auto"
             />
             <h1 className = "text-3xl font-extrabold">.dev</h1>
           </Link>
@@ -93,7 +93,7 @@ const Navbar = () => {
               </Link>
             </div> */}
 
-            <button onClick = {toggleTheme} className = "hidden absolute right-[3%] xl:flex justify-center items-center">
+            <button id = "Theme" onClick = {toggleTheme} className = "hidden absolute right-[3%] xl:flex justify-center items-center">
               <svg
                 viewBox = "0 0 24 24"
                 fill = "currentColor"
@@ -105,8 +105,7 @@ const Navbar = () => {
           </div>
 
           {/* <Navmenu/> */}
-
-          <button onClick = {handleMobileMenu} className = "xl:hidden">
+          <button id = "Mobile Menu" onClick = {handleMobileMenu} className = "xl:hidden">
             <HiMenu className = "sm:w-[40px] w-[36px] h-auto"/>
           </button>
         </div>
@@ -120,7 +119,7 @@ const Navbar = () => {
         >
           <div className = "xl:hidden absolute flex flex-col top-0 right-0 portrait:w-[66%] landscape:w-screen h-screen bg-navbarMobileColor gap-[2vh]">
             <div className = "absolute top-0 right-0 p-[3vh] landscape:p-[6vh]">
-              <button onClick = {handleMobileMenu}>
+              <button id = "Close" onClick = {handleMobileMenu}>
                 <VscClose className = "sm:w-[36px] w-[32px] h-auto"/>
               </button>
             </div>
@@ -200,7 +199,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <button onClick = {toggleTheme} className = "landscape:absolute h-sm:top-[10vh] top-[15vh] right-0 landscape:p-[6vh] flex justify-center items-center">
+            <button id = "Theme" onClick = {toggleTheme} className = "landscape:absolute h-sm:top-[10vh] top-[15vh] right-0 landscape:p-[6vh] flex justify-center items-center">
               <svg
                 viewBox = "0 0 24 24"
                 fill = "currentColor"

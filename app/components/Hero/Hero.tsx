@@ -75,7 +75,17 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className = "bg-hero lg:w-[19rem] lg:h-[21.5rem] lg:min-w-[19rem] w-[15rem] h-[17rem] min-w-[15rem] bg-cover bg-no-repeat bg-center border-[3px] border-primaryBorderColor rounded-[50%]"></div>
+        <img
+          src = "/images/me.webp"
+          width = "full"
+          alt = "Hero Profile Pic"
+          className = "lg:w-[19rem] lg:h-[21.5rem] lg:min-w-[19rem] w-[15rem] h-[17rem] min-w-[15rem] object-cover border-[3px] border-primaryBorderColor rounded-[50%]"
+          fetchPriority = "low"
+          loading = "lazy"
+          decoding = "async"
+        />
+
+        {/* <div className = "bg-hero lg:w-[19rem] lg:h-[21.5rem] lg:min-w-[19rem] w-[15rem] h-[17rem] min-w-[15rem] bg-cover bg-no-repeat bg-center border-[3px] border-primaryBorderColor rounded-[50%]"></div> */}
 
         {/* <div className = "lg:absolute static order-first flex flex-col lg:max-w-[100%] sm:max-w-[60%] left-0 bottom-[10rem] lg:mt-0 mt-10 gap-y-4">
           <span className = "lg:w-[64rem] h-[2px] bg-gradient-to-r from-gray-400 to-transparent"></span>

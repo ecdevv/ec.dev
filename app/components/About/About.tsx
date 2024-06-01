@@ -19,7 +19,7 @@ const About = () => {
 
           <div className = "flex lg:flex-row flex-col items-center lg:gap-x-12 gap-y-6 lg:px-0 sm:px-12">
             <img
-                src = '/images/lelouch.jpg'
+                src = '/images/lelouch.webp'
                 width = "0"
                 alt = "Picture"
                 className = "lg:w-[500px] lg:h-[500px] w-[20rem] h-[20rem] object-cover rounded-[2rem]"
@@ -86,7 +86,7 @@ const About = () => {
               <div className = "flex lg:flex-nowrap flex-wrap lg:max-w-full sm:max-w-[60%] max-w-[80%] lg:mt-[-1rem] mt-[-0.75rem] lg:justify-start justify-center gap-x-2 gap-y-[2vw]">
                 <img
                     src = "https://skillicons.dev/icons?i=unreal"
-                    width = "40"
+                    width = "0"
                     alt = "Unreal Engine Logo"
                     className = "w-[35px] h-auto"
                     fetchPriority = "low"

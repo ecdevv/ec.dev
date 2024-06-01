@@ -22,7 +22,7 @@ const Layout = () => {
   
   return (
     <div className = "flex gap-x-2">
-      <button onClick = {handleLayoutGrid}>
+      <button id = "Grid" onClick = {handleLayoutGrid}>
         <svg
           viewBox = "0 0 512 512"
           fill = "currentColor"
@@ -32,7 +32,7 @@ const Layout = () => {
         </svg>
       </button>
 
-      <button onClick = {handleLayoutFull}>
+      <button id = "Full Grid" onClick = {handleLayoutFull}>
         <svg
           viewBox = "0 0 56 56"
           fill = "currentColor"
