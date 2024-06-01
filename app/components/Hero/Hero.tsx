@@ -81,7 +81,6 @@ const Hero = () => {
           alt = "Hero Profile Pic"
           className = "lg:w-[19rem] lg:h-[21.5rem] lg:min-w-[19rem] w-[15rem] h-[17rem] min-w-[15rem] object-cover border-[3px] border-primaryBorderColor rounded-[50%]"
           fetchPriority = "low"
-          loading = "lazy"
           decoding = "async"
         />
 
