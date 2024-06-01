@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-color: 249, 250, 251;
-  --secondary-color: 255, 255, 255;
-  --footer-color: 51, 51, 51;
-  --footer-secondary-color: 190, 190, 190;
-  --base-text-color: 38, 38, 38;
-  --base-text-color2: 55, 65, 81;
-
-  --primary-border-color: 31, 41, 55;
-  --secondary-border-color: 209, 213, 219;
-
-  --button-color: 243, 244, 246;
-  --button-color2: 229, 231, 235;
-}
-
 .light {
   --main: 255, 255, 255;
   --primary-color: 249, 250, 251;
@@ -57,14 +42,14 @@
   --base-text-color: 249, 250, 251;
   --base-text-color2: 255, 255, 255;
 
-  --primary-border-color: 224, 214, 200;
+  --primary-border-color: 234, 224, 210;
   --secondary-border-color: 66, 62, 56;
 
   --button-color: 60, 60, 60;
   --button-hover-color: 70, 70, 70;
   --button-active-color: 45, 45, 45;
 
-  --project-bg: 53, 52, 51;
+  --project-bg: 56, 55, 54;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -139,19 +124,42 @@ span {
   color: rgba(var(--base-text-color2));
 }
 
-.slideNav-enter {
-  right: -100%;
+.menu-enter {
+  right: -66%;
 }
-.slideNav-enter-active {
-  right: 0%;
-  transition: all ease-in-out 300ms;
+
+.menu-enter-active {
+  right: 0;
+  transition: all 200ms ease-in-out;
 }
-.slideNav-exit {
-  right: 0%;
+
+.menu-exit {
+  right: 0;
 }
-.slideNav-exit-active {
-  right: -100%;
-  transition: all ease-in-out 300ms;
+
+.menu-exit-active {
+  right: -66%;
+  transition: all 200ms ease-in-out;
+}
+
+@media (orientation: landscape) {
+  .menu-enter {
+    right: -100%;
+  }
+
+  .menu-enter-active {
+    right: 0;
+    transition: all 300ms ease-in-out;
+  }
+
+  .menu-exit {
+    right: 0;
+  }
+
+  .menu-exit-active {
+    right: -100%;
+    transition: all 300ms ease-in-out;
+  }
 }
 
 .fade-enter {
@@ -203,21 +211,4 @@ span {
 .slide-right-exit-active {
   transform: translateX(100%);
   transition: transform 0.2s ease-in-out;
-}
-
-@media (min-width: 1024px) {
-  .slideNav-enter {
-    right: -66%;
-  }
-  .slideNav-enter-active {
-    right: 0%;
-    transition: all ease-in-out 300ms;
-  }
-  .slideNav-exit {
-    right: 0%;
-  }
-  .slideNav-exit-active {
-    right: -66%;
-    transition: all ease-in-out 300ms;
-  }
 }

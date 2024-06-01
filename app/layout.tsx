@@ -34,8 +34,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en">
+      <script dangerouslySetInnerHTML = {{ 
+        __html: 
+          `
+            (function() {
+              const theme = localStorage.getItem('theme');
+              if (theme) {
+                document.documentElement.classList.add(theme);
+              } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.add('light');
+              }
+            })();
+          `, 
+        }} 
+      />
+
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
@@ -45,6 +63,7 @@ export default function RootLayout({
       <meta name="msapplication-TileColor" content="#da532c"/>
       <meta name="msapplication-config" content="/favicon/browserconfig.xml"/>
       <meta name="theme-color" content="#ffffff"/>
+
       <body className={`${raleway.variable} ${openSans.variable} ${poppins.variable}`}>
         <ContextProvider>
           <Navbar/>
