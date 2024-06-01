@@ -75,7 +75,7 @@ const PopupMenu = () => {
         classNames = "fade"
         unmountOnExit
       >
-        <div {...swipeHandlers} className = "fixed m-auto flex justify-center items-center inset-0 xl:w-[65rem] xl:h-[35rem] lg:w-[58rem] lg:h-[35rem] sm:w-[38rem] sm:h-[48rem] landscape:mh-sm:w-screen landscape:mh-sm:h-screen w-screen h-screen bg-gray-200 portrait:sm:rounded-[2rem] landscape:h-sm:rounded-[2rem] z-[12]">
+        <div {...swipeHandlers} className = "fixed m-auto flex justify-center items-center inset-0 xl:w-[65rem] xl:h-[35rem] lg:w-[58rem] lg:h-[35rem] sm:w-[38rem] sm:h-[48rem] landscape:mh-sm:w-screen landscape:mh-sm:h-screen w-screen h-screen bg-projectBG portrait:sm:rounded-[2rem] landscape:h-sm:rounded-[2rem] z-[12]">
           <div className = "fixed xl:w-[65rem] xl:h-[35rem] lg:w-[58rem] lg:h-[35rem] sm:w-[38rem] sm:h-[48rem] landscape:mh-sm:w-screen landscape:mh-sm:h-screen w-screen h-screen landscape:h-sm:rounded-[2rem] overflow-x-hidden">
             {menuContent 
             ? <TransitionGroup component = {null}>
@@ -158,7 +158,7 @@ const PopupMenu = () => {
                         }
 
                         <div className = "flex gap-x-2">
-                          <Link href = "https://github.com/ech2k20" target = "_blank" aria-label = "GitHub" rel = "noreferrer" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
+                          <Link href = "https://github.com/ech2k20" target = "_blank" aria-label = "GitHub" rel = "noreferrer" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">
                             <svg 
                               xmlns="http://www.w3.org/2000/svg" 
                               viewBox = "0 0 98 96"
@@ -183,7 +183,7 @@ const PopupMenu = () => {
                             </svg>
                           </Link>
       
-                          <Link href = "/" target = "_blank" aria-label = "Demo" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
+                          <Link href = "/" target = "_blank" aria-label = "Demo" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">
                             <span className = "text-[var(--base-text-color)] sm:text-base landscape:mh-sm:text-sm landscape:mw-md:text-xs text-base group-hover:text-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]">
                               Live Demo
                             </span>

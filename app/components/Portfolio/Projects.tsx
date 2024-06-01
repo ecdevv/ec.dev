@@ -96,7 +96,7 @@ const Projects = () => {
       >
         <div className = "w-full flex flex-wrap gap-4 justify-center">
           {projectsData.map((project:Project) => (
-            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "group relative cursor-pointer lg:w-[20rem] lg:h-[16rem] sm:w-[15rem] sm:h-[12rem] w-[10rem] h-[8rem] border-[1px] border-gray-300 bg-gray-200 rounded-[2rem]">
+            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "group relative cursor-pointer lg:w-[20rem] lg:h-[16rem] sm:w-[15rem] sm:h-[12rem] w-[10rem] h-[8rem] border-[1px] border-secondaryBorderColor bg-projectBG rounded-[2rem]">
               <img
                 src = {project.image}
                 alt = {project.title}
@@ -145,7 +145,7 @@ const Projects = () => {
       >
         <div className = "w-full flex flex-wrap gap-4 justify-center items-center">
           {projectsData.map((project:Project) => (
-            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "cursor-pointer flex flex-wrap w-[20rem] h-[30rem] border-[1px] border-gray-300 bg-gray-200 hover:bg-gray-50 rounded-[2rem] transition-all duration-200">
+            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "cursor-pointer flex flex-wrap w-[20rem] h-[30rem] border-[1px] border-secondaryBorderColor bg-projectBG hover:bg-primaryColor rounded-[2rem] transition-all duration-200">
               <img
                 src = {project.image}
                 alt = {project.title}

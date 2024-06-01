@@ -14,6 +14,30 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero": "url('/images/me.png')",
       },
+      colors: {
+        main: "rgba(var(--main))",
+        primaryColor: "rgba(var(--primary-color))",
+        secondaryColor: "rgba(var(--secondary-color))",
+
+        navbarMobileColor: "rgba(var(--navbar-mobile-color))",
+        aboutHistoryColor: "rgba(var(--about-history-color))",
+        contactIconBGColor: "rgba(var(--contact-iconbg-color))",
+
+        footerColor: "rgba(var(--footer-color))",
+        footerSecondaryColor: "rgba(var(--footer-secondary-color))",
+
+        baseTextColor: "rgba(var(--base-text-color))",
+        baseTextColor2: "rgba(var(--base-text-color2))",
+
+        primaryBorderColor: "rgba(var(--primary-border-color))",
+        secondaryBorderColor: "rgba(var(--secondary-border-color))",
+
+        buttonColor: "rgba(var(--button-color))",
+        buttonHoverColor: "rgba(var(--button-hover-color))",
+        buttonActiveColor: "rgba(var(--button-active-color))",
+
+        projectBG: "rgba(var(--project-bg))",
+      },
       fontFamily: {
         raleway: "var(--font-raleway)",
         openSans: "var(--font-opensans)",

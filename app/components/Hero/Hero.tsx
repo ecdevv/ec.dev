@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section id = "home" className = "overflow-hidden bg-[var(--primary-color)] w-full lg:h-screen h-auto lg:max-h-[120rem] lg:min-h-[60rem] lg:py-[15rem] lg:pt-[20rem] py-[10rem]">
+    <section id = "home" className = "overflow-hidden bg-primaryColor w-full lg:h-screen h-auto lg:max-h-[120rem] lg:min-h-[60rem] lg:py-[15rem] lg:pt-[20rem] py-[10rem]">
       <div className = "relative flex lg:flex-row flex-col-reverse xl:max-w-[65rem] mx-auto lg:justify-between justify-center items-center gap-y-8 xl:px-6 lg:px-10 px-6"> 
 
         <div className = "flex flex-col lg:max-w-[60%] lg:mr-[6rem] gap-y-6 lg:items-start items-center">
@@ -16,7 +16,7 @@ const Hero = () => {
               I&apos;m a CS graduate with a keen interest in web development based in Houston, Texas! 📍
             </p>
 
-            <Link href = "/resume" target = "_blank" aria-label = "Résumé" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
+            <Link href = "/resume" target = "_blank" aria-label = "Résumé" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">
               <span className = "group-hover:text-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]">
                 Download CV
               </span>
@@ -41,9 +41,8 @@ const Hero = () => {
                 Click to learn more!
               </span>
               <svg
-                fill = "var(--base-text-color)"
                 viewBox = "0 0 16 16"
-                className = "animate-translateX w-[1.5rem] h-full group-hover:fill-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]"
+                className = "animate-translateX fill-baseTextColor2 w-[1.5rem] h-full group-hover:fill-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]"
               >
                 <path
                   fillRule = "evenodd"
@@ -80,7 +79,7 @@ const Hero = () => {
           </span> */}
         </div>
 
-        <div className = "bg-hero lg:w-[19rem] lg:h-[21.5rem] lg:min-w-[19rem] w-[15rem] h-[17rem] min-w-[15rem] bg-cover bg-no-repeat bg-center border-[3px] border-gray-800 rounded-[50%]"></div>
+        <div className = "bg-hero lg:w-[19rem] lg:h-[21.5rem] lg:min-w-[19rem] w-[15rem] h-[17rem] min-w-[15rem] bg-cover bg-no-repeat bg-center border-[3px] border-primaryBorderColor rounded-[50%]"></div>
 
         {/* <div className = "lg:absolute static order-first flex flex-col lg:max-w-[100%] sm:max-w-[60%] left-0 bottom-[10rem] lg:mt-0 mt-10 gap-y-4">
           <span className = "lg:w-[64rem] h-[2px] bg-gradient-to-r from-gray-400 to-transparent"></span>

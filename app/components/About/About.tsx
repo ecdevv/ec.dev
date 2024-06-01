@@ -10,7 +10,7 @@ import { FaBasketball } from "react-icons/fa6";
 
 const About = () => {
   return (
-    <section id = "about" className = "bg-[var(--secondary-color)] w-full h-auto lg:py-[8rem] sm:py-[5rem] py-[5rem]">
+    <section id = "about" className = "bg-secondaryColor w-full h-auto lg:py-[8rem] sm:py-[5rem] py-[5rem]">
       <div className = "xl:max-w-[75rem] mx-auto">
         <div className = "flex flex-col lg:gap-y-16 gap-y-12 xl:px-6 lg:px-10 px-6">    
           <h2 className = "flex flex-col items-center">
@@ -37,7 +37,7 @@ const About = () => {
                   </h3>
                 </div> */}
 
-                <div className = "flex flex-col justify-center items-center text-center w-full h-[8rem] p-4 rounded-[2rem] bg-gray-50 border border-gray-300 shadow">
+                <div className = "flex flex-col justify-center items-center text-center w-full h-[8rem] p-4 rounded-[2rem] bg-aboutHistoryColor border border-secondaryBorderColor shadow">
                   <FaGraduationCap className = "w-[35px] h-auto shrink-0"/>
                   <h3 className = "text-lg flex-1">
                     B.Sc. in Computer Science <br/>
@@ -105,9 +105,8 @@ const About = () => {
               Click to see my projects!
             </span>
             <svg
-              fill="var(--base-text-color2)"
               viewBox="0 0 16 16"
-              className = "animate-translateX w-[1.5rem] h-full group-hover:fill-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]"
+              className = "animate-translateX fill-baseTextColor2 w-[1.5rem] h-full group-hover:fill-[hsl(212,100%,53%)] transition-all ease-in-out duration-[200ms]"
             >
               <path
                 fillRule="evenodd"

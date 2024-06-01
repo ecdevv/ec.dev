@@ -3,31 +3,89 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: rgb(249, 250, 251);
-  --secondary-color: rgb(255, 255, 255);
-  --footer-color: rgb(51, 51, 51);
-  --footer-secondary-color: rgb(190, 190, 190);
-  --base-text-color: rgb(38, 38, 38);
-  --base-text-color2: rgb(55, 65, 81);
+  --primary-color: 249, 250, 251;
+  --secondary-color: 255, 255, 255;
+  --footer-color: 51, 51, 51;
+  --footer-secondary-color: 190, 190, 190;
+  --base-text-color: 38, 38, 38;
+  --base-text-color2: 55, 65, 81;
+
+  --primary-border-color: 31, 41, 55;
+  --secondary-border-color: 209, 213, 219;
+
+  --button-color: 243, 244, 246;
+  --button-color2: 229, 231, 235;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: rgb(38, 38, 38);
-    --secondary-color: rgb(55, 65, 81);
-    --footer-color: rgb(204, 204, 204);
-    --footer-secondary-color: rgb(64, 64, 64);
-    --base-text-color: rgb(249, 250, 251);
-    --base-text-color2: rgb(255, 255, 255);
-  }
+.light {
+  --main: 255, 255, 255;
+  --primary-color: 249, 250, 251;
+  --secondary-color: 255, 255, 255;
+
+  --navbar-mobile-color: 229, 231, 235;
+  --about-history-color: 249, 250, 251;
+  --contact-iconbg-color: 255, 255, 255;
+
+  --footer-color: 51, 51, 51;
+  --footer-secondary-color: 190, 190, 190;
+
+  --base-text-color: 38, 38, 38;
+  --base-text-color2: 55, 65, 81;
+
+  --primary-border-color: 31, 41, 55;
+  --secondary-border-color: 209, 213, 219;
+
+  --button-color: 243, 244, 246; 
+  --button-hover-color: 255, 255, 255;
+  --button-active-color: 229, 231, 235;
+
+  --project-bg: 229, 231, 235;
 }
+
+.dark {
+  --main: 30, 30, 30;
+  --primary-color: 45, 45, 45;
+  --secondary-color: 50, 49, 48;
+
+  --navbar-mobile-color: 35, 34, 34;
+  --about-history-color: 55, 54, 54;
+  --contact-iconbg-color: 100, 100, 100;
+
+  --footer-color: 38, 38, 38;
+  --footer-secondary-color: 190, 190, 190;
+
+  --base-text-color: 249, 250, 251;
+  --base-text-color2: 255, 255, 255;
+
+  --primary-border-color: 224, 214, 200;
+  --secondary-border-color: 66, 62, 56;
+
+  --button-color: 60, 60, 60;
+  --button-hover-color: 70, 70, 70;
+  --button-active-color: 45, 45, 45;
+
+  --project-bg: 53, 52, 51;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: 38, 38, 38;
+    --secondary-color: 55, 65, 81;
+    --footer-color: 204, 204, 204;
+    --footer-secondary-color: 64, 64, 64;
+    --base-text-color: 249, 250, 251;
+    --base-text-color2: 255, 255, 255;
+  }
+} */
+
+
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  color: var(--base-text-color);
+  color: rgba(var(--base-text-color));
   font-family: var(--font-poppins);
   font-size: 1.0rem;
   line-height: 1.5rem;
@@ -48,7 +106,7 @@ h2 {
   font-weight: 800;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  color: var(--base-text-color);
+  color: rgba(var(--base-text-color));
 }
 
 h3 {
@@ -56,7 +114,7 @@ h3 {
   font-weight: 700;
   font-size: 1.175rem;
   line-height: 1.75rem;
-  color: var(--base-text-color);
+  color: rgba(var(--base-text-color));
 }
 
 h4 {
@@ -64,21 +122,21 @@ h4 {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;
-  color: var(--base-text-color2);
+  color: rgba(var(--base-text-color2));
 }
 
 p {
   font-family: var(--font-poppins);
   font-size: 1.0rem;
   line-height: 1.5rem;
-  color: var(--base-text-color2);
+  color: rgba(var(--base-text-color2));
 }
 
 span {
   font-family: var(--font-poppins);
   font-size: 1.0rem;
   line-height: 1.5rem;
-  color: var(--base-text-color2);
+  color: rgba(var(--base-text-color2));
 }
 
 .slideNav-enter {

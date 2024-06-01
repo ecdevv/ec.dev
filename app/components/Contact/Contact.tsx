@@ -3,20 +3,20 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <section id = "contact" className = "bg-[var(--secondary-color)] lg:py-[8rem] sm:py-[5rem] py-[5rem]">
+    <section id = "contact" className = "bg-secondaryColor lg:py-[8rem] sm:py-[5rem] py-[5rem]">
       <div className = "xl:max-w-[75rem] mx-auto">
         <div className = "flex flex-col items-center lg:gap-y-10 gap-y-6 xl:px-6 lg:px-10 px-6">
           <h2>CONTACT</h2>
 
           <div className = "flex flex-col items-center gap-y-10">
             <div className = "group flex flex-col items-center justify-center gap-y-2">
-              <div className = "group flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)]">
+              <div className = "flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor">
                 <svg
                   viewBox = "0 0 24 24"
                   fill = "currentColor"
                   className = "w-[2.25rem]"
                 >
-                  <path d="M12 2c3.31 0 6 2.66 6 5.95C18 12.41 12 19 12 19S6 12.41 6 7.95C6 4.66 8.69 2 12 2m0 4a2 2 0 00-2 2 2 2 0 002 2 2 2 0 002-2 2 2 0 00-2-2m8 13c0 2.21-3.58 4-8 4s-8-1.79-8-4c0-1.29 1.22-2.44 3.11-3.17l.64.91C6.67 17.19 6 17.81 6 18.5c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5c0-.69-.67-1.31-1.75-1.76l.64-.91C18.78 16.56 20 17.71 20 19z" />
+                  <path d = "M12 2c3.31 0 6 2.66 6 5.95C18 12.41 12 19 12 19S6 12.41 6 7.95C6 4.66 8.69 2 12 2m0 4a2 2 0 00-2 2 2 2 0 002 2 2 2 0 002-2 2 2 0 00-2-2m8 13c0 2.21-3.58 4-8 4s-8-1.79-8-4c0-1.29 1.22-2.44 3.11-3.17l.64.91C6.67 17.19 6 17.81 6 18.5c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5c0-.69-.67-1.31-1.75-1.76l.64-.91C18.78 16.56 20 17.71 20 19z" />
                 </svg>
               </div>
               
@@ -27,7 +27,7 @@ const Contact = () => {
             </div>
   
             <div className = "flex flex-col items-center justify-center gap-y-2">
-              <Link href = "mailto:ech2447@gmail.com" aria-label = "Email" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)]">
+              <Link href = "mailto:ech2447@gmail.com" aria-label = "Email" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white">
                 <svg
                   viewBox = "0 0 1024 1024"
                   fill = "currentColor"
