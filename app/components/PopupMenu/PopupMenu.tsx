@@ -123,7 +123,7 @@ const PopupMenu = () => {
                               <div className = "flex flex-col">
                                 <h2 className = "sm:text-2xl landscape:mh-sm:text-lg text-lg">{menuContent.title}</h2>
                                 {(menuContent.start_date || menuContent.end_date)
-                                ? <div className = "flex lg:justify-start landscape:mh-sm:justify-start justify-center lg:gap-6 gap-3">
+                                ? <div className = "flex lg:justify-start landscape:mh-sm:justify-start justify-center lg:gap-4 gap-3">
                                     <h4 className = "text-[var(--base-text-color)] font-[600] sm:text-lg landscape:mh-sm:text-base landscape:mw-md:text-sm text-base">{menuContent.start_date}</h4>
                                     {(menuContent.start_date && menuContent.end_date)
                                     ? <h4 className = "text-[var(--base-text-color)] font-[600] sm:text-lg landscape:mh-sm:text-base landscape:mw-md:text-sm text-base">to</h4>
