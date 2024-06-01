@@ -19,26 +19,31 @@ const config: Config = {
         openSans: "var(--font-opensans)",
         poppins: "var(--font-poppins)",
       },
-      screens: {
-        'mw-xl': { 'raw': '(max-width: 1280px)' },
-        'mw-lg': { 'raw': '(max-width: 1024px)' },
-        'mw-md': { 'raw': '(max-width: 768px)' },
-        'mw-sm': { 'raw': '(max-width: 640px)' },
-        'mw-xs': { 'raw': '(max-width: 400px)' },
-        
+      screens: {        
         'mh-xl': { 'raw': '(max-height: 1280px)' },
         'mh-lg': { 'raw': '(max-height: 1024px)' },
         'mh-md': { 'raw': '(max-height: 768px)' },
         'mh-sm': { 'raw': '(max-height: 640px)' },
         'mh-xs': { 'raw': '(max-height: 400px)' },
+        'mh-xxs': { 'raw': '(max-height: 256px)' },
         
+        'mw-xl': { 'raw': '(max-width: 1280px)' },
+        'mw-lg': { 'raw': '(max-width: 1024px)' },
+        'mw-md': { 'raw': '(max-width: 768px)' },
+        'mw-sm': { 'raw': '(max-width: 640px)' },
+        'mw-xs': { 'raw': '(max-width: 400px)' },
+        'mw-xxs': { 'raw': '(max-width: 256px)' },
+        
+        'xxs': { 'raw': '(min-width: 256px)' },
         'xs': { 'raw': '(min-width: 400px)' },
         'sm': { 'raw': '(min-width: 640px)' },
         'md': { 'raw': '(min-width: 768px)' },
         'lg': { 'raw': '(min-width: 1024px)' },
         'xl': { 'raw': '(min-width: 1280px)' },
         
+        'h-xxs': { 'raw': '(min-height: 256px)' },
         'h-xs': { 'raw': '(min-height: 400px)' },
+        'h-600': { 'raw': '(min-height: 600px)' },
         'h-sm': { 'raw': '(min-height: 640px)' },
         'h-md': { 'raw': '(min-height: 768px)' },
         'h-lg': { 'raw': '(min-height: 1024px)' },

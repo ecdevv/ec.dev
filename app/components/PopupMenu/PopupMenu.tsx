@@ -75,8 +75,8 @@ const PopupMenu = () => {
         classNames = "fade"
         unmountOnExit
       >
-        <div {...swipeHandlers} className = "fixed sm:top-[10%] top-0 m-auto lg:w-[55rem] lg:h-[40rem] sm:w-[45rem] sm:h-[45rem] w-screen h-screen flex justify-center bg-gray-200 portrait:sm:rounded-[2rem] landscape:h-sm:rounded-[2rem] z-[12]">
-          <div className = "fixed lg:w-[55rem] lg:h-[40rem] sm:w-[45rem] sm:h-[40rem] w-screen h-screen rounded-[2rem] overflow-hidden">          
+        <div {...swipeHandlers} className = "fixed m-auto flex justify-center items-center inset-0 xl:w-[65rem] xl:h-[40rem] lg:w-[58rem] lg:h-[40rem] sm:w-[40rem] sm:h-[48rem] landscape:mh-md:w-screen landscape:mh-md:h-screen w-screen h-screen bg-gray-200 portrait:sm:rounded-[2rem] landscape:h-sm:rounded-[2rem] z-[12]">
+          <div className = "fixed xl:w-[65rem] xl:h-[40rem] lg:w-[58rem] lg:h-[40rem] sm:w-[40rem] sm:h-[48rem] landscape:mh-md:w-screen landscape:mh-md:h-screen w-screen h-screen landscape:h-sm:rounded-[2rem] overflow-x-hidden">
             {menuContent 
             ? <TransitionGroup component = {null}>
                 <CSSTransition
@@ -84,13 +84,13 @@ const PopupMenu = () => {
                   timeout = {200}
                   classNames = {slideDirection}
                 >   
-                  <div className = "absolute inset-0 flex flex-wrap w-full justify-center items-center p-4 py-8">
-                    <div className = "flex flex-wrap justify-center items-center gap-y-4">
-                      <Link href = "/" aria-label = "Demo" target = "_blank" className = "group cursor-pointer relative w-[50%]">
+                  <div className = "absolute inset-0 flex justify-center items-center p-8">
+                    <div className = "lg:grid grid-cols-2 justify-items-center flex flex-col landscape:mh-sm:flex-row w-full justify-center items-center gap-6 portrait:mh-md:gap-3">
+                      <Link href = "/" aria-label = "Demo" target = "_blank" className = "group cursor-pointer relative lg:w-full lg:h-full w-[75%]">
                         <img
                           src = {menuContent.image}
                           alt = {menuContent.title}
-                          className = "w-full object-contain rounded-[2rem] "
+                          className = "w-full h-full object-contain"
                           fetchPriority = "low"
                           loading = "lazy"
                           decoding = "async"
@@ -105,20 +105,37 @@ const PopupMenu = () => {
                             >
                               <path
                                 fillRule = "evenodd"
-                                d = "M14 2.5a.5.5 0 00-.5-.5h-6a.5.5 0 000 1h4.793L2.146 13.146a.5.5 0 00.708.708L13 3.707V8.5a.5.5 0 001 0v-6z"
+                                d = "M8.636 3.5a.5.5 0 00-.5-.5H1.5A1.5 1.5 0 000 4.5v10A1.5 1.5 0 001.5 16h10a1.5 1.5 0 001.5-1.5V7.864a.5.5 0 00-1 0V14.5a.5.5 0 01-.5.5h-10a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5h6.636a.5.5 0 00.5-.5z"
+                              />
+                              <path
+                                fillRule = "evenodd"
+                                d = "M16 .5a.5.5 0 00-.5-.5h-5a.5.5 0 000 1h3.793L6.146 9.146a.5.5 0 10.708.708L15 1.707V5.5a.5.5 0 001 0v-5z"
                               />
                             </svg>
                           </span>
                         </span>
                       </Link>
   
-                      <div className = "flex flex-col justify-center items-center text-center gap-y-3 max-w-[88%]">
+                      <div className = "flex flex-col justify-center lg:items-start landscape:mh-sm:items-start items-center lg:text-start landscape:mh-sm:text-start text-center gap-y-3 lg:max-w-full sm:max-w-[80%] max-w-[88%] landscape:h-600:max-w-full landscape:mh-xs:max-w-[66%] landscape:max-w-[50%]">
                         {(menuContent.title || menuContent.description)
                         ? <>
-                            <span className = "flex flex-col gap-1">
-                              <h2 className = "sm:text-lg text-base">{menuContent.title}</h2>
-                              <p className = "sm:text-base text-sm">{menuContent.l_description}</p>
-                            </span>
+                            <div className = "flex flex-col gap-1">
+                              <div className = "flex flex-col">
+                                <h2 className = "sm:text-2xl landscape:mh-sm:text-lg text-lg">{menuContent.title}</h2>
+                                {(menuContent.start_date || menuContent.end_date)
+                                ? <div className = "flex lg:justify-start landscape:mh-sm:justify-start justify-center lg:gap-6 gap-3">
+                                    <h4 className = "text-[var(--base-text-color)] font-[600] sm:text-lg landscape:mh-sm:text-base landscape:mw-md:text-sm text-base">{menuContent.start_date}</h4>
+                                    {(menuContent.start_date && menuContent.end_date)
+                                    ? <h4 className = "text-[var(--base-text-color)] font-[600] sm:text-lg landscape:mh-sm:text-base landscape:mw-md:text-sm text-base">to</h4>
+                                    : null
+                                    }
+                                    <h4 className = "text-[var(--base-text-color)] font-[600] sm:text-lg landscape:mh-sm:text-base landscape:mw-md:text-sm text-base">{menuContent.end_date}</h4>
+                                 </div>
+                                : null
+                                }  
+                              </div>
+                              <p className = "sm:text-base landscape:mh-sm:text-sm text-sm">{menuContent.l_description}</p>
+                            </div>
                           </>
                         : <></>
                         }
@@ -130,7 +147,7 @@ const PopupMenu = () => {
                                 key = {index}
                                 src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
                                 alt = {tech}
-                                className = "sm:w-[40px] w-[36px] h-auto"
+                                className = "sm:w-[40px] landscape:mh-sm:w-[36px] landscape:mw-md:w-[32px] w-[36px] h-auto"
                                 fetchPriority = "low"
                                 loading = "lazy"
                                 decoding = "async"
@@ -139,48 +156,53 @@ const PopupMenu = () => {
                           </span>
                         : <></>
                         }
-                      </div>
-  
-                      <div className = "flex gap-x-2">
-                        <Link href = "https://github.com/ech2k20" target = "_blank" aria-label = "GitHub" rel = "noreferrer" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
-                          <svg
+
+                        <div className = "flex gap-x-2">
+                          <Link href = "https://github.com/ech2k20" target = "_blank" aria-label = "GitHub" rel = "noreferrer" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
+                            <svg 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              viewBox = "0 0 98 96"
                               fill = "currentColor"
-                              viewBox = "0 0 512 512"
-                              className = "w-[2rem] h-full group-hover:fill-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]"
-                          >
-                              <path d ="M276.239,252.183c-6.37,2.127-13.165,3.308-20.239,3.308c-7.074,0-13.87-1.181-20.24-3.308
-                              c-46.272,7.599-70.489,41.608-70.489,82.877H256h90.728C346.728,293.791,322.515,259.782,276.239,252.183z"/>
-                              <path d ="M256,240.788c27.43,0,49.658-22.24,49.658-49.666v-14.087c0-27.426-22.228-49.659-49.658-49.659
-                              c-27.43,0-49.658,22.233-49.658,49.659v14.087C206.342,218.548,228.57,240.788,256,240.788z"/>
-                              <path d ="M378.4,0H133.582C86.234,0,47.7,38.542,47.7,85.899v340.22C47.7,473.476,86.234,512,133.582,512h205.695
-                              h13.175l9.318-9.301l93.229-93.229l9.301-9.31v-13.174V85.899C464.3,38.542,425.766,0,378.4,0z M432.497,386.985H384.35
-                              c-24.882,0-45.074,20.183-45.074,45.073v48.139H133.582c-29.866,0-54.078-24.221-54.078-54.078V85.899
-                              c0-29.874,24.212-54.096,54.078-54.096H378.4c29.876,0,54.096,24.222,54.096,54.096V386.985z"/>
-                          </svg>
-                          <span className = "group-hover:text-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]">
-                            GH
-                          </span>
-                        </Link>
-    
-                        <Link href = "/" target = "_blank" aria-label = "Demo" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
-                          <span className = "group-hover:text-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]">
-                            Live Demo
-                          </span>
-                          <svg
+                              className = "sm:w-6 landscape:mh-sm:w-5 landscape:mw-md:w-4 w-5 h-auto group-hover:fill-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]"
+                            >
+                              <path fillRule = "evenodd" clipRule = "evenodd" d = "M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
+                            </svg>
+                            <svg
                               fill = "currentColor"
-                              viewBox = "0 0 512 512"
-                              className = "w-[2rem] h-full group-hover:fill-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]"
+                              viewBox = "0 0 16 16"
+                              className = "sm:w-4 landscape:mh-sm:w-3 w-3 h-full group-hover:fill-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M8.636 3.5a.5.5 0 00-.5-.5H1.5A1.5 1.5 0 000 4.5v10A1.5 1.5 0 001.5 16h10a1.5 1.5 0 001.5-1.5V7.864a.5.5 0 00-1 0V14.5a.5.5 0 01-.5.5h-10a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5h6.636a.5.5 0 00.5-.5z"
+                              />
+                              <path
+                                fillRule="evenodd"
+                                d="M16 .5a.5.5 0 00-.5-.5h-5a.5.5 0 000 1h3.793L6.146 9.146a.5.5 0 10.708.708L15 1.707V5.5a.5.5 0 001 0v-5z"
+                              />
+                            </svg>
+                          </Link>
+      
+                          <Link href = "/" target = "_blank" aria-label = "Demo" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-gray-300 shadow bg-gray-100 hover:bg-white active:bg-gray-200 transition-all ease-in-out duration-[200ms]">
+                            <span className = "text-[var(--base-text-color)] sm:text-base landscape:mh-sm:text-sm landscape:mw-md:text-xs text-sm group-hover:text-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]">
+                              Live Demo
+                            </span>
+                            <svg
+                              fill = "currentColor"
+                              viewBox = "0 0 16 16"
+                              className = "sm:w-4 landscape:mh-sm:w-3 w-3 h-full group-hover:fill-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]"
                           >
-                              <path d ="M276.239,252.183c-6.37,2.127-13.165,3.308-20.239,3.308c-7.074,0-13.87-1.181-20.24-3.308
-                              c-46.272,7.599-70.489,41.608-70.489,82.877H256h90.728C346.728,293.791,322.515,259.782,276.239,252.183z"/>
-                              <path d ="M256,240.788c27.43,0,49.658-22.24,49.658-49.666v-14.087c0-27.426-22.228-49.659-49.658-49.659
-                              c-27.43,0-49.658,22.233-49.658,49.659v14.087C206.342,218.548,228.57,240.788,256,240.788z"/>
-                              <path d ="M378.4,0H133.582C86.234,0,47.7,38.542,47.7,85.899v340.22C47.7,473.476,86.234,512,133.582,512h205.695
-                              h13.175l9.318-9.301l93.229-93.229l9.301-9.31v-13.174V85.899C464.3,38.542,425.766,0,378.4,0z M432.497,386.985H384.35
-                              c-24.882,0-45.074,20.183-45.074,45.073v48.139H133.582c-29.866,0-54.078-24.221-54.078-54.078V85.899
-                              c0-29.874,24.212-54.096,54.078-54.096H378.4c29.876,0,54.096,24.222,54.096,54.096V386.985z"/>
-                          </svg>
-                        </Link>
+                              <path
+                                fillRule="evenodd"
+                                d="M8.636 3.5a.5.5 0 00-.5-.5H1.5A1.5 1.5 0 000 4.5v10A1.5 1.5 0 001.5 16h10a1.5 1.5 0 001.5-1.5V7.864a.5.5 0 00-1 0V14.5a.5.5 0 01-.5.5h-10a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5h6.636a.5.5 0 00.5-.5z"
+                              />
+                              <path
+                                fillRule="evenodd"
+                                d="M16 .5a.5.5 0 00-.5-.5h-5a.5.5 0 000 1h3.793L6.146 9.146a.5.5 0 10.708.708L15 1.707V5.5a.5.5 0 001 0v-5z"
+                              />
+                            </svg>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -194,12 +216,12 @@ const PopupMenu = () => {
             <VscClose className = "sm:w-[36px] w-[32px] h-auto"/>
           </button>
 
-          <button onClick = {handlePrevClick} className = "group flex absolute top-1/2 left-0 w-[5rem] h-[5rem] mt-[-2.5rem] lg:ml-[-5rem] justify-center items-center transition-all ease-in-out duration-200">
-            <span className = "flex w-[3rem] h-[3rem] justify-center opacity-60 bg-[#333333] rounded-[50%] shadow-[0_0px_10px_5px_rgba(0,0,0,0.1)] group-hover:bg-[#555555] group-active:translate-y-[0.15rem]">
+          <button onClick = {handlePrevClick} className = "group flex absolute top-1/2 left-0 w-[5rem] h-[5rem] mt-[-2.5rem] xl:ml-[-5rem] landscape:mh-md:ml-0 justify-center items-center transition-all ease-in-out duration-200">
+            <span className = "flex lg:w-[3rem] lg:h-[3rem] sm:w-[2.5rem] sm:h-[2.5rem] landscape:mh-sm:w-[2rem] landscape:mh-sm:h-[2rem] w-[2rem] h-[2rem] justify-center opacity-60 bg-[#333333] rounded-[50%] shadow-[0_0px_10px_5px_rgba(0,0,0,0.1)] group-hover:bg-[#555555] group-active:translate-y-[0.15rem]">
               <svg
                 viewBox = "0 0 16 16"
                 fill = "white"
-                className = "lg:w-[1rem] w-[0.75rem] h-auto group-hover:fill-[#eeeeee]"
+                className = "lg:w-[1rem] sm:w-[0.875rem] w-[0.75rem] h-auto group-hover:fill-[#eeeeee]"
               >
                 <path
                   fillRule = "evenodd"
@@ -209,12 +231,12 @@ const PopupMenu = () => {
             </span>
           </button>
   
-          <button onClick = {handleNextClick} className = "group flex absolute top-1/2 right-0 w-[5rem] h-[5rem] mt-[-2.5rem] lg:mr-[-5rem] justify-center items-center transition-all ease-in-out duration-200">
-            <span className = "flex w-[3rem] h-[3rem] justify-center opacity-60 bg-[#333333] rounded-[50%] shadow-[0_0px_10px_5px_rgba(0,0,0,0.1)] group-hover:bg-[#555555] group-active:translate-y-[0.15rem]">
+          <button onClick = {handleNextClick} className = "group flex absolute top-1/2 right-0 w-[5rem] h-[5rem] mt-[-2.5rem] xl:mr-[-5rem] landscape:mh-md:mr-0 justify-center items-center transition-all ease-in-out duration-200">
+            <span className = "flex lg:w-[3rem] lg:h-[3rem] sm:w-[2.5rem] sm:h-[2.5rem] landscape:mh-sm:w-[2rem] landscape:mh-sm:h-[2rem] w-[2rem] h-[2rem] justify-center opacity-60 bg-[#333333] rounded-[50%] shadow-[0_0px_10px_5px_rgba(0,0,0,0.1)] group-hover:bg-[#555555] group-active:translate-y-[0.15rem]">
               <svg
                 viewBox = "0 0 16 16"
                 fill = "white"
-                className = "lg:w-[1rem] w-[0.75rem] h-auto group-hover:fill-[#eeeeee]"
+                className = "lg:w-[1rem] sm:w-[0.875rem] w-[0.75rem] h-auto group-hover:fill-[#eeeeee]"
               >
                 <path
                   fillRule = "evenodd"
