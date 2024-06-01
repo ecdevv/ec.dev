@@ -93,7 +93,7 @@ const Navbar = () => {
               </Link>
             </div> */}
 
-            <button id = "Theme" onClick = {toggleTheme} className = "hidden absolute right-[3%] xl:flex justify-center items-center">
+            <button id = "Theme" onClick = {toggleTheme} aria-label = "Theme" className = "hidden absolute right-[3%] xl:flex justify-center items-center">
               <svg
                 viewBox = "0 0 24 24"
                 fill = "currentColor"
@@ -105,7 +105,7 @@ const Navbar = () => {
           </div>
 
           {/* <Navmenu/> */}
-          <button id = "Mobile Menu" onClick = {handleMobileMenu} className = "xl:hidden">
+          <button id = "Mobile Menu" onClick = {handleMobileMenu} aria-label = "Mobile Menu" className = "xl:hidden">
             <HiMenu className = "sm:w-[40px] w-[36px] h-auto"/>
           </button>
         </div>
@@ -119,7 +119,7 @@ const Navbar = () => {
         >
           <div className = "xl:hidden absolute flex flex-col top-0 right-0 portrait:w-[66%] landscape:w-screen h-screen bg-navbarMobileColor gap-[2vh]">
             <div className = "absolute top-0 right-0 p-[3vh] landscape:p-[6vh]">
-              <button id = "Close" onClick = {handleMobileMenu}>
+              <button id = "Close" onClick = {handleMobileMenu} aria-label = "Close">
                 <VscClose className = "sm:w-[36px] w-[32px] h-auto"/>
               </button>
             </div>
@@ -199,7 +199,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            <button id = "Theme" onClick = {toggleTheme} className = "landscape:absolute h-sm:top-[10vh] top-[15vh] right-0 landscape:p-[6vh] flex justify-center items-center">
+            <button id = "Theme" onClick = {toggleTheme} aria-label = "Theme" className = "landscape:absolute h-sm:top-[10vh] top-[15vh] right-0 landscape:p-[6vh] flex justify-center items-center">
               <svg
                 viewBox = "0 0 24 24"
                 fill = "currentColor"

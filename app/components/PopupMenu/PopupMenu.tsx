@@ -212,11 +212,11 @@ const PopupMenu = () => {
             }
           </div>
 
-          <button id = "Close" onClick = {handleClose} className = "absolute top-0 right-0 p-[3vh] py-[3vh]">
+          <button id = "Close" onClick = {handleClose} aria-label = "Close" className = "absolute top-0 right-0 p-[3vh] py-[3vh]">
             <VscClose className = "sm:w-[36px] w-[32px] h-auto"/>
           </button>
 
-          <button id = "Prev" onClick = {handlePrevClick} className = "group flex absolute top-1/2 left-0 w-[5rem] h-[5rem] mt-[-2.5rem] xl:ml-[-5rem] landscape:mh-md:ml-0 justify-center items-center transition-all ease-in-out duration-200">
+          <button id = "Prev" onClick = {handlePrevClick} aria-label = "Previous" className = "group flex absolute top-1/2 left-0 w-[5rem] h-[5rem] mt-[-2.5rem] xl:ml-[-5rem] landscape:mh-md:ml-0 justify-center items-center transition-all ease-in-out duration-200">
             <span className = "flex lg:w-[3rem] lg:h-[3rem] sm:w-[2.5rem] sm:h-[2.5rem] landscape:mh-sm:w-[2rem] landscape:mh-sm:h-[2rem] w-[2rem] h-[2rem] justify-center opacity-60 bg-[#333333] rounded-[50%] shadow-[0_0px_10px_5px_rgba(0,0,0,0.1)] group-hover:bg-[#555555] group-active:translate-y-[0.15rem]">
               <svg
                 viewBox = "0 0 16 16"
@@ -231,7 +231,7 @@ const PopupMenu = () => {
             </span>
           </button>
   
-          <button id = "Next" onClick = {handleNextClick} className = "group flex absolute top-1/2 right-0 w-[5rem] h-[5rem] mt-[-2.5rem] xl:mr-[-5rem] landscape:mh-md:mr-0 justify-center items-center transition-all ease-in-out duration-200">
+          <button id = "Next" onClick = {handleNextClick} aria-label = "Next" className = "group flex absolute top-1/2 right-0 w-[5rem] h-[5rem] mt-[-2.5rem] xl:mr-[-5rem] landscape:mh-md:mr-0 justify-center items-center transition-all ease-in-out duration-200">
             <span className = "flex lg:w-[3rem] lg:h-[3rem] sm:w-[2.5rem] sm:h-[2.5rem] landscape:mh-sm:w-[2rem] landscape:mh-sm:h-[2rem] w-[2rem] h-[2rem] justify-center opacity-60 bg-[#333333] rounded-[50%] shadow-[0_0px_10px_5px_rgba(0,0,0,0.1)] group-hover:bg-[#555555] group-active:translate-y-[0.15rem]">
               <svg
                 viewBox = "0 0 16 16"
