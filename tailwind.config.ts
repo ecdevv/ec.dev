@@ -46,6 +46,7 @@ const config: Config = {
         'h-600': { 'raw': '(min-height: 600px)' },
         'h-sm': { 'raw': '(min-height: 640px)' },
         'h-md': { 'raw': '(min-height: 768px)' },
+        'h-825': { 'raw': '(min-height: 825px)' },
         'h-lg': { 'raw': '(min-height: 1024px)' },
         'h-xl': { 'raw': '(min-height: 1280px)' },
       },

@@ -75,8 +75,8 @@ const PopupMenu = () => {
         classNames = "fade"
         unmountOnExit
       >
-        <div {...swipeHandlers} className = "fixed m-auto flex justify-center items-center inset-0 xl:w-[65rem] xl:h-[40rem] lg:w-[58rem] lg:h-[40rem] sm:w-[38rem] sm:h-[48rem] landscape:mh-sm:w-screen landscape:mh-sm:h-screen w-screen h-screen bg-gray-200 portrait:sm:rounded-[2rem] landscape:h-sm:rounded-[2rem] z-[12]">
-          <div className = "fixed xl:w-[65rem] xl:h-[40rem] lg:w-[58rem] lg:h-[40rem] sm:w-[38rem] sm:h-[48rem] landscape:mh-sm:w-screen landscape:mh-sm:h-screen w-screen h-screen landscape:h-sm:rounded-[2rem] overflow-x-hidden">
+        <div {...swipeHandlers} className = "fixed m-auto flex justify-center items-center inset-0 xl:w-[65rem] xl:h-[35rem] lg:w-[58rem] lg:h-[35rem] sm:w-[38rem] sm:h-[48rem] landscape:mh-sm:w-screen landscape:mh-sm:h-screen w-screen h-screen bg-gray-200 portrait:sm:rounded-[2rem] landscape:h-sm:rounded-[2rem] z-[12]">
+          <div className = "fixed xl:w-[65rem] xl:h-[35rem] lg:w-[58rem] lg:h-[35rem] sm:w-[38rem] sm:h-[48rem] landscape:mh-sm:w-screen landscape:mh-sm:h-screen w-screen h-screen landscape:h-sm:rounded-[2rem] overflow-x-hidden">
             {menuContent 
             ? <TransitionGroup component = {null}>
                 <CSSTransition
@@ -85,7 +85,7 @@ const PopupMenu = () => {
                   classNames = {slideDirection}
                 >   
                   <div className = "absolute inset-0 flex justify-center items-center p-8">
-                    <div className = "lg:grid grid-cols-2 justify-items-center flex flex-col landscape:mh-sm:flex-row w-full justify-center items-center gap-6 portrait:mh-md:gap-3">
+                    <div className = "lg:grid grid-cols-2 justify-items-center flex flex-col landscape:mh-sm:flex-row w-full justify-center items-center gap-8 portrait:mh-md:gap-3">
                       <Link href = "/" aria-label = "Demo" target = "_blank" className = "group cursor-pointer relative lg:w-full lg:h-full w-[75%]">
                         <img
                           src = {menuContent.image}
@@ -134,7 +134,7 @@ const PopupMenu = () => {
                                 : null
                                 }  
                               </div>
-                              <p className = "sm:text-base landscape:mh-sm:text-sm portrait:h-md:text-base text-sm">{menuContent.l_description}</p>
+                              <p className = "sm:text-base landscape:mh-sm:text-sm portrait:h-825:text-base text-sm">{menuContent.l_description}</p>
                             </div>
                           </>
                         : <></>
