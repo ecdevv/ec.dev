@@ -157,7 +157,7 @@ const PopupMenu = () => {
                         }
 
                         <div className = "flex gap-x-2">
-                          <Link href = "https://github.com/ech2k20" target = "_blank" aria-label = "GitHub" rel = "noreferrer" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">
+                          <Link href = "https://github.com/ecdevv" target = "_blank" aria-label = "GitHub" rel = "noreferrer" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">
                             <svg 
                               xmlns="http://www.w3.org/2000/svg" 
                               viewBox = "0 0 98 96"
