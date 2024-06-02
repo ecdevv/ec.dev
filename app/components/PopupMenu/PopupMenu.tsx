@@ -97,11 +97,10 @@ const PopupMenu = () => {
                         />
   
                         <span className = "absolute inset-0 flex items-end bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-all duration-200 lg:rounded-[2rem]">
-                          <span className = "absolute top-[5%] right-[4%] flex justify-center items-center w-[2rem] h-[2rem] rounded-[100%] shadow-[0_0px_10px_1px_rgba(0,0,0,.1)] bg-black bg-opacity-20">
+                          <span className = "absolute top-[5%] right-[3%] flex justify-center items-center w-[2rem] h-[2rem] rounded-[100%] shadow-[0_0px_10px_1px_rgba(0,0,0,.1)] bg-black bg-opacity-20">
                             <svg
-                              fill = "var(--base-text-color)"
                               viewBox = "0 0 16 16"
-                              className = " w-[1rem]"
+                              className = " w-[1rem] fill-baseTextColor"
                             >
                               <path
                                 fillRule = "evenodd"

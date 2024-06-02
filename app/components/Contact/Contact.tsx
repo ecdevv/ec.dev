@@ -9,7 +9,7 @@ const Contact = () => {
           <h2>CONTACT</h2>
 
           <div className = "flex flex-col items-center gap-y-10">
-            <div className = "group flex flex-col items-center justify-center gap-y-2">
+            <div className = "flex flex-col items-center justify-center gap-y-2">
               <div className = "flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor">
                 <svg
                   viewBox = "0 0 24 24"
@@ -41,6 +41,25 @@ const Contact = () => {
                 <h3>Email</h3>
                 <Link href = "mailto:ech2447@gmail.com" aria-label = "Email" target = "_blank">
                   <span className = "hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-200">ech2447@gmail.com</span>
+                </Link>
+              </div>
+            </div>
+
+            <div className = "flex flex-col items-center justify-center gap-y-2">
+              <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white">
+                <svg
+                  viewBox = "0 0 16 16"
+                  fill = "currentColor"
+                  className = "w-[1.75rem] group-hover:fill-[hsl(212,100%,53%)] transition-all ease-in-out duration-200"
+                >
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 01.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                </svg>
+              </Link>
+
+              <div className = "flex flex-col items-center">
+                <h3>LinkedIn</h3>
+                <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank">
+                  <span className = "hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-200">My Profile</span>
                 </Link>
               </div>
             </div>
