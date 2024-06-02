@@ -27,7 +27,7 @@ const Contact = () => {
             </div>
   
             <div className = "flex flex-col items-center justify-center gap-y-2">
-              <Link href = "mailto:ech2447@gmail.com" aria-label = "Email" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white">
+              <Link href = "mailto:ech2447@gmail.com" aria-label = "Email" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white transition-all ease-in-out duration-200">
                 <svg
                   viewBox = "0 0 1024 1024"
                   fill = "currentColor"
@@ -46,7 +46,7 @@ const Contact = () => {
             </div>
 
             <div className = "flex flex-col items-center justify-center gap-y-2">
-              <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white">
+              <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white transition-all ease-in-out duration-200">
                 <svg
                   viewBox = "0 0 16 16"
                   fill = "currentColor"
