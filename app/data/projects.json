@@ -10,7 +10,7 @@
     "end_date": "01-03-2024",
     "techs": "HTML, CSS, TS, NEXTJS",
     "link": "/",
-    "link2": "https://github.com/ech2k20/"
+    "link2": "https://github.com/ecdevv/"
   },
   {
     "id": 2,
@@ -23,7 +23,7 @@
     "end_date": "01-04-2024",
     "techs": "Angular, Firebase, TypeScript",
     "link": "/",
-    "link2": "https://github.com/ech2k20/"
+    "link2": "https://github.com/ecdevv/"
   },
   {
     "id": 3,
@@ -36,6 +36,6 @@
     "end_date": "01-05-2024",
     "techs": "Vue.js, Laravel, MySQL",
     "link": "/",
-    "link2": "https://github.com/ech2k20/"
+    "link2": "https://github.com/ecdevv/"
   }
 ]
