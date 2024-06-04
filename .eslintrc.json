@@ -2,6 +2,6 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "@next/next/no-img-element": "off",
-    "@next/next/no-sync-scripts": "off" //  Allows the app to wait for the theme script before rendering the rest of the HTML page
+    // "@next/next/no-sync-scripts": "off" //  Allows the app to wait for the theme script before rendering the rest of the HTML page
   }
 }

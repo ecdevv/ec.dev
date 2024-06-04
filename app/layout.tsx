@@ -37,6 +37,8 @@ export default function RootLayout({
   
   return (
     <html lang="en">
+      <script src = "/theme.tsx" async/>
+
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
@@ -48,7 +50,6 @@ export default function RootLayout({
       <meta name="theme-color" content="#ffffff"/>
 
       <body className={`${raleway.variable} ${openSans.variable} ${poppins.variable}`}>
-        <script src = "/theme.tsx"/>
         <ContextProvider>
           <Navbar/>
           {children}
