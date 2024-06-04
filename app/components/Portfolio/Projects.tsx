@@ -111,13 +111,13 @@ const Projects = () => {
                       </span>
                       <p className = "sm:text-sm text-xs text-gray-200">{project.s_description}</p>
                     </span>
-                    <div className = "flex gap-2">
+                    <div className = "flex items-center gap-2">
                       {project.techs.split(/[ ,.]+/).map((tech:string, index) => (
                         <img
                           key = {index}
                           src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
                           alt = {tech}
-                          className = "sm:w-[28px] w-[20px] h-auto"
+                          className = "sm:w-[28px] sm:h-[28px] w-[20px] h-[20px]"
                           fetchPriority = "low"
                           loading = "lazy"
                           decoding = "async"
@@ -162,13 +162,13 @@ const Projects = () => {
                 : <></>
                 }
                 {project.techs 
-                ? <span className = "flex gap-2">
+                ? <span className = "flex items-center gap-2">
                     {project.techs.split(/[ ,.]+/).map((tech:string, index) => (
                       <img
                         key = {index}
                         src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
                         alt = {tech}
-                        className = "sm:w-[36px] w-[32px] h-auto"
+                        className = "sm:w-[36px] sm:h-[36px] w-[32px] h-[32px]"
                         fetchPriority = "low"
                         loading = "lazy"
                         decoding = "async"

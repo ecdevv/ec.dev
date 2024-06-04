@@ -140,13 +140,13 @@ const PopupMenu = () => {
                         }
     
                         {menuContent.techs 
-                        ? <span className = "flex gap-2">
+                        ? <span className = "flex items-center gap-2">
                             {menuContent.techs.split(/[ ,.]+/).map((tech:string, index) => (
                               <img
                                 key = {index}
                                 src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
                                 alt = {tech}
-                                className = "sm:w-[40px] landscape:mh-sm:w-[36px] landscape:mw-md:w-[32px] w-[36px] h-auto"
+                                className = "sm:w-[40px] sm:h-[40px] landscape:mh-sm:w-[36px] landscape:mh-sm:h-[36px] landscape:mw-md:w-[32px] landscape:mw-md:h-[32px] w-[36px] h-[36px]"
                                 fetchPriority = "low"
                                 loading = "lazy"
                                 decoding = "async"
