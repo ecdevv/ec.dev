@@ -48,21 +48,7 @@ export default function RootLayout({
       <meta name="theme-color" content="#ffffff"/>
 
       <body className={`${raleway.variable} ${openSans.variable} ${poppins.variable}`}>
-        <script dangerouslySetInnerHTML = {{ 
-          __html: 
-            `
-              (function() {
-                const theme = localStorage.getItem('theme');
-                if (theme) {
-                  document.documentElement.classList.add(theme);
-                } else {
-                  document.documentElement.classList.add('light');
-                }
-              })();
-            `, 
-          }} 
-        />
-        
+        <script src = "/theme.tsx"/>
         <ContextProvider>
           <Navbar/>
           {children}

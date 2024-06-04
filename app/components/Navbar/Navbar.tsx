@@ -12,15 +12,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const selectedTheme = localStorage.getItem("theme");
-
     if (selectedTheme) {
       setTheme(selectedTheme);
-      // document.body.classList.remove('light', 'dark');
-      // document.body.classList.add(selectedTheme);
     } else {
       setTheme('light');
-      // document.body.classList.remove('light', 'dark');
-      // document.body.classList.add("light");
     }
 
     const updateTimeout = () => {
