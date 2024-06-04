@@ -5,11 +5,11 @@ const Contact = () => {
   return (
     <section id = "contact" className = "bg-secondaryColor lg:py-[8rem] sm:py-[5rem] py-[5rem]">
       <div className = "xl:max-w-[75rem] mx-auto">
-        <div className = "flex flex-col items-center lg:gap-y-10 gap-y-6 xl:px-6 lg:px-10 px-6">
+        <div className = "flex flex-col items-center lg:gap-y-16 gap-y-12 xl:px-6 lg:px-10 px-6">
           <h2>CONTACT</h2>
 
-          <div className = "flex flex-col items-center gap-y-10">
-            <div className = "flex flex-col items-center justify-center gap-y-2">
+          <div className = "flex w-full justify-around items-center gap-y-10">
+            <div className = "flex flex-col w-[200px] items-center justify-center gap-y-2">
               <div className = "flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor">
                 <svg
                   viewBox = "0 0 24 24"
@@ -26,7 +26,7 @@ const Contact = () => {
               </div>
             </div>
   
-            <div className = "flex flex-col items-center justify-center gap-y-2">
+            <div className = "flex flex-col w-[200px] items-center justify-center gap-y-2">
               <Link href = "mailto:ech2447@gmail.com" aria-label = "Email" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white transition-all ease-in-out duration-200">
                 <svg
                   viewBox = "0 0 1024 1024"
@@ -45,7 +45,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className = "flex flex-col items-center justify-center gap-y-2">
+            <div className = "flex flex-col w-[200px] items-center justify-center gap-y-2">
               <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white transition-all ease-in-out duration-200">
                 <svg
                   viewBox = "0 0 16 16"

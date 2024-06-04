@@ -55,8 +55,6 @@ export default function RootLayout({
                 const theme = localStorage.getItem('theme');
                 if (theme) {
                   document.documentElement.classList.add(theme);
-                } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                  document.documentElement.classList.add('dark');
                 } else {
                   document.documentElement.classList.add('light');
                 }
