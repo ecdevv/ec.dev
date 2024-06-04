@@ -8,7 +8,7 @@ const Contact = () => {
         <div className = "flex flex-col items-center lg:gap-y-16 gap-y-12 xl:px-6 lg:px-10 px-6">
           <h2>CONTACT</h2>
 
-          <div className = "flex w-full justify-around items-center gap-y-10">
+          <div className = "flex sm:flex-row flex-col w-full justify-around items-center gap-y-10">
             <div className = "flex flex-col w-[200px] items-center justify-center gap-y-2">
               <div className = "flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor">
                 <svg
