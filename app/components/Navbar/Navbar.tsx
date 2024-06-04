@@ -57,7 +57,7 @@ const Navbar = () => {
               src = "/favicon/android-chrome-256x256.png"
               width = "0"
               alt = "ec"
-              className = "w-[3rem] h-auto"
+              className = "w-[3rem] h-full"
             />
             <h1 className = "text-3xl font-extrabold">.dev</h1>
           </Link>

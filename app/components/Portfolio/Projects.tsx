@@ -145,13 +145,13 @@ const Projects = () => {
               <img
                 src = {project.image}
                 alt = {project.title}
-                className = "w-full self-start object-contain rounded-[2rem] p-4 py-8"
+                className = "w-full h-[50%] self-start object-contain rounded-[2rem] p-4 py-6"
                 fetchPriority = "low"
                 loading = "lazy"
                 decoding = "async"
               />
 
-              <div className = "flex flex-col w-full self-end justify-center items-center text-center gap-y-3 p-4 py-8">
+              <div className = "flex flex-col w-full h-[50%] self-end justify-center items-center text-center gap-y-3 p-4 py-6">
                 {(project.title || project.description)
                 ? <>
                     <span className = "flex flex-col gap-1">

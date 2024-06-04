@@ -38,7 +38,7 @@ const About = () => {
                 </div> */}
 
                 <div className = "flex flex-col justify-center items-center text-center w-full h-[8rem] p-4 rounded-[2rem] bg-aboutHistoryColor border border-secondaryBorderColor shadow">
-                  <FaGraduationCap className = "w-[35px] h-auto shrink-0"/>
+                  <FaGraduationCap className = "w-[35px] h-[35px] shrink-0"/>
                   <h3 className = "text-lg flex-1">
                     B.Sc. in Computer Science <br/>
                     Minor in Mathematics
@@ -68,10 +68,10 @@ const About = () => {
                   MySQL.
               </p>
 
-              <div className = "flex lg:flex-nowrap flex-wrap lg:max-w-full sm:max-w-[60%] max-w-[80%] lg:mt-[-1.25rem] mt-[-1rem] ml-[-0.2rem] lg:justify-start justify-center gap-x-2 gap-y-[2vw]">
-                <PiBrowsersDuotone className = "w-[40px] h-auto "/>
-                <FaExchangeAlt className = "w-[35px] h-auto"/>
-                <HiServerStack className = "w-[35px] h-auto"/>
+              <div className = "flex lg:flex-nowrap flex-wrap lg:max-w-full sm:max-w-[60%] max-w-[80%] lg:mt-[-1.25rem] mt-[-1rem] ml-[-0.2rem] lg:justify-start justify-center items-center gap-x-2 gap-y-[2vw]">
+                <PiBrowsersDuotone className = "w-[40px] h-[40px] "/>
+                <FaExchangeAlt className = "w-[35px] h-[35px]"/>
+                <HiServerStack className = "w-[35px] h-[35px]"/>
               </div>
 
               <p>
@@ -83,19 +83,19 @@ const About = () => {
                 which help me stay creative and balanced!
               </p>
 
-              <div className = "flex lg:flex-nowrap flex-wrap lg:max-w-full sm:max-w-[60%] max-w-[80%] lg:mt-[-1rem] mt-[-0.75rem] lg:justify-start justify-center gap-x-2 gap-y-[2vw]">
+              <div className = "flex lg:flex-nowrap flex-wrap lg:max-w-full sm:max-w-[60%] max-w-[80%] lg:mt-[-1rem] mt-[-0.75rem] lg:justify-start justify-center items-center gap-x-2 gap-y-[2vw]">
                 <img
                     src = "https://skillicons.dev/icons?i=unreal"
                     width = "0"
                     alt = "Unreal Engine Logo"
-                    className = "w-[35px] h-auto"
+                    className = "w-[35px] h-[35px]"
                     fetchPriority = "low"
                     loading = "lazy"
                     decoding = "async"
                 />
-                <GiGamepad className = "w-[45px] h-auto"/>
-                <PiMusicNotesFill className = "w-[35px] h-auto"/>
-                <FaBasketball className = "w-[30px] h-auto"/>
+                <GiGamepad className = "w-[45px] h-[45px]"/>
+                <PiMusicNotesFill className = "w-[35px] h-[35px]"/>
+                <FaBasketball className = "w-[30px] h-[30px]"/>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ const About = () => {
                       src = "https://skillicons.dev/icons?i=html,css"
                       width = "full"
                       alt = "HTML and CSS Logos"
-                      className = "cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
+                      className = "w-full h-full cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
                       fetchPriority = "low"
                       loading = "lazy"
                       decoding = "async"
@@ -143,7 +143,7 @@ const About = () => {
                       src = "https://skillicons.dev/icons?i=js,ts"
                       width = "full"
                       alt = "JS and TS Logos"
-                      className = "cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
+                      className = "w-full h-full cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
                       fetchPriority = "low"
                       loading = "lazy"
                       decoding = "async"
@@ -157,7 +157,7 @@ const About = () => {
                       src = "https://skillicons.dev/icons?i=react,next"
                       width = "full"
                       alt = "React.js and Next.js Logos"
-                      className = "cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
+                      className = "w-full h-full cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
                       fetchPriority = "low"
                       loading = "lazy"
                       decoding = "async"
@@ -171,7 +171,7 @@ const About = () => {
                       src = "https://skillicons.dev/icons?i=tailwind,scss"
                       width = "full"
                       alt = "Tailwind CSS and SCSS Logos"
-                      className = "cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
+                      className = "w-full h-full cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
                       fetchPriority = "low"
                       loading = "lazy"
                       decoding = "async"
@@ -185,7 +185,7 @@ const About = () => {
                       src = "https://skillicons.dev/icons?i=express,mysql"
                       width = "full"
                       alt = "Express and MySQL Logos"
-                      className = "cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
+                      className = "w-full h-full cursor-pointer hover:translate-y-[-1vh] transition-all ease-in-out duration-[350ms]"
                       fetchPriority = "low"
                       loading = "lazy"
                       decoding = "async"
