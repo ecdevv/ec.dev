@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "image": "/images/test.webp",
-    "title": "Project One",
-    "description": "Brief description of Project One.",
-    "l_description": "A long description of Project One, explaining the details, challenges, and outcomes. Test TEST TESTEST TEST TESTSTSETS E TESTES A long description of Project One, explaining the details, challenges, and outcomes. A long description of Project One, explaining the details, challenges, and outcomes.A long description of Project One, explaining the details, challenges, and outcomes.A long description of Project One, explaining the details, challenges, and outcomes.A long description of Project One, explaining the details, challenges, and outcomes.",
-    "s_description": "Short summary of Project One.",
-    "start_date": "01-01-2024",
-    "end_date": "01-03-2024",
-    "techs": "HTML, CSS, TS, NEXTJS",
-    "link": "/",
-    "link2": "https://github.com/ecdevv/"
+    "image": "/images/EC.dev.webp",
+    "title": "EC.dev",
+    "description": "This portfolio website is a single-page application that showcases my resume, work, and background.",
+    "l_description": "This single-page portfolio website serves as a digital resume, showcasing my work and background. Built with Next.js and Tailwind CSS, it allowed me to enhance my web development skills, experiment with modern technologies, and improve my design aesthetics.",
+    "s_description": "My personal portfolio website!",
+    "start_date": "05-19-2024",
+    "end_date": "05-29-2024",
+    "techs": "HTML, CSS, TS, Tailwind, React, Next.js",
+    "link": "",
+    "link2": ""
   },
   {
     "id": 2,

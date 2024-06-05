@@ -96,7 +96,7 @@ const Projects = () => {
               <img
                 src = {project.image}
                 alt = {project.title}
-                className = "relative w-full h-full object-contain rounded-[2rem] px-2"
+                className = "relative w-full h-full object-cover object-top rounded-[2rem]"
                 fetchPriority = "low"
                 loading = "lazy"
                 decoding = "async"
@@ -112,7 +112,7 @@ const Projects = () => {
                       <p className = "sm:text-sm text-xs text-gray-200">{project.s_description}</p>
                     </span>
                     <div className = "flex items-center gap-2">
-                      {project.techs.split(/[ ,.]+/).map((tech:string, index) => (
+                      {project.techs.replace(/\./g, '').split(/[ ,]+/).map((tech:string, index) => (
                         <img
                           key = {index}
                           src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
@@ -141,29 +141,29 @@ const Projects = () => {
       >
         <div className = "w-full flex flex-wrap gap-4 justify-center items-center">
           {projectsData.map((project:Project) => (
-            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "cursor-pointer flex flex-wrap w-[20rem] h-[30rem] border-[1px] border-secondaryBorderColor bg-projectBG hover:bg-primaryColor rounded-[2rem] transition-all duration-200">
+            <div key = {project.id} onClick = {() => {handleMenu(project)}} className = "cursor-pointer flex flex-col w-[20rem] h-[30rem] border-[1px] border-secondaryBorderColor bg-projectBG hover:bg-primaryColor rounded-[2rem] transition-all duration-200">
               <img
                 src = {project.image}
                 alt = {project.title}
-                className = "w-full h-[50%] self-start object-contain rounded-[2rem] p-4 py-6"
+                className = "w-full h-[40%] self-start object-cover object-top rounded-t-[2rem]"
                 fetchPriority = "low"
                 loading = "lazy"
                 decoding = "async"
               />
 
-              <div className = "flex flex-col w-full h-[50%] self-end justify-center items-center text-center gap-y-3 p-4 py-6">
+              <div className = "flex flex-col w-full self-start justify-center items-center text-center gap-y-5 p-4 py-6">
                 {(project.title || project.description)
                 ? <>
-                    <span className = "flex flex-col gap-1">
-                      <h2 className = "relative sm:text-lg text-base">{project.title}</h2>
-                      <p className = "relative sm:text-base text-sm">{project.description}</p>
+                    <span className = "flex flex-col gap-3">
+                      <h2 className = "relative sm:text-xl text-lg">{project.title}</h2>
+                      <p className = "relative sm:text-base text-base">{project.description}</p>
                     </span>
                   </>
                 : <></>
                 }
                 {project.techs 
                 ? <span className = "flex items-center gap-2">
-                    {project.techs.split(/[ ,.]+/).map((tech:string, index) => (
+                    {project.techs.replace(/\./g, '').split(/[ ,]+/).map((tech:string, index) => (
                       <img
                         key = {index}
                         src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
