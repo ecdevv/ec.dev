@@ -14,28 +14,15 @@
   },
   {
     "id": 2,
-    "image": "/next.svg",
-    "title": "Project Two",
-    "description": "Brief description of Project Two.",
-    "l_description": "A long description of Project Two, detailing the project's scope, technologies used, and key takeaways.",
-    "s_description": "Short summary of Project Two.",
-    "start_date": "01-02-2024",
-    "end_date": "01-04-2024",
-    "techs": "Angular, Firebase, TypeScript",
-    "link": "/",
-    "link2": "https://github.com/ecdevv/"
-  },
-  {
-    "id": 3,
-    "image": "/vercel.svg",
-    "title": "Project Three",
-    "description": "Brief description of Project Three.",
-    "l_description": "A long description of Project Three, including an overview of the project's goals, methodology, and results.",
-    "s_description": "Short summary of Project Three.",
-    "start_date": "01-03-2024",
-    "end_date": "01-05-2024",
-    "techs": "Vue.js, Laravel, MySQL",
-    "link": "/",
-    "link2": "https://github.com/ecdevv/"
+    "image": "/images/urbanluxe.webp",
+    "title": "Urban Luxe",
+    "description": "This is a FICTIONAL mock e-commerce apparel web project designed to enhance and refine my front-end development skills.",
+    "l_description": "This is a FICTIONAL mock e-commerce apparel web project designed to enhance and refine my front-end development skills. The project's goal was to create a fully functional and aesthetically pleasing online store from scratch, leveraging frameworks like Next.js and React with as minimal libraries as possible. For more information, check out the Github repo or live demo below.",
+    "s_description": "Mock E-Commerce Apparel Web Project",
+    "start_date": "06-05-2024",
+    "end_date": "07-28-2024",
+    "techs": "HTML, CSS, TS, React, Next.js",
+    "link": "https://urbanluxe.vercel.app/",
+    "link2": "https://github.com/ecdevv/urban-luxe"
   }
 ]
