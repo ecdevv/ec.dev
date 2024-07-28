@@ -69,7 +69,7 @@ html {
 
 body {
   color: rgba(var(--base-text-color));
-  font-family: var(--font-poppins);
+  font-family: var(--font-poppins), sans-serif;
   font-size: 1.0rem;
   line-height: 1.5rem;
 }

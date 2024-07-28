@@ -1,4 +1,4 @@
-import { Raleway, Open_Sans, Poppins } from "next/font/google";
+import { Raleway, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -10,12 +10,6 @@ const raleway = Raleway({
   variable: '--font-raleway',
 })
 
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-opensans',
-})
-
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -25,8 +19,20 @@ const poppins = Poppins({
 
 
 export const metadata = {
-  title: "Eric Chour | Software Developer",
+  metadataBase: new URL("https://ericchour.vercel.app/"),
+  title: {
+    default: "Eric Chour | Software Developer",
+    template: "%s | Eric Chour | Software Developer"
+  },
   description: "Eric Chour's Personal Website",
+  openGraph: {
+    title: "Eric Chour | Software Developer",
+    description: "Eric Chour's Personal Website",
+    url: "https://ericchour.vercel.app/",
+    siteName: "Eric Chour",
+    locale: "en-US",
+    type: "website",
+  }
 };
 
 export default function RootLayout({
@@ -47,7 +53,7 @@ export default function RootLayout({
       <meta name="msapplication-config" content="/favicon/browserconfig.xml"/>
       <meta name="theme-color" content="#ffffff"/>
 
-      <body className={`${raleway.variable} ${openSans.variable} ${poppins.variable}`}>
+      <body className={`${raleway.variable} ${poppins.variable}`}>
         <script dangerouslySetInnerHTML = {{ 
           __html: 
             `
