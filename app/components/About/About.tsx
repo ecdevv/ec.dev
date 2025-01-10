@@ -19,7 +19,7 @@ const About = () => {
 
           <div className = "flex lg:flex-row flex-col items-center lg:gap-x-12 gap-y-6 lg:px-0 sm:px-12">
             <img
-                src = '/images/lelouch.webp'
+                src = '/images/about_me.webp'
                 width = "0"
                 alt = "Picture"
                 className = "lg:w-[500px] lg:h-[500px] w-[20rem] h-[20rem] object-cover rounded-[2rem]"

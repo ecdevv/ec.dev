@@ -115,7 +115,7 @@ const PopupMenu = () => {
                         </span>
                       </Link>
   
-                      <div className = "flex flex-col justify-center lg:items-start landscape:mh-sm:items-start items-center lg:text-start landscape:mh-sm:text-start text-center gap-y-3 lg:max-w-full sm:max-w-[85%] max-w-[88%] landscape:h-600:max-w-full landscape:mh-xs:max-w-[66%] landscape:max-w-[50%]">
+                      <div className = "flex flex-col justify-center lg:items-start landscape:mh-sm:items-start items-center lg:text-start landscape:mh-sm:text-start text-center lg:max-w-full sm:max-w-[85%] max-w-[88%] landscape:h-600:max-w-full landscape:mh-xs:max-w-[66%] landscape:max-w-[50%]">
                         {(menuContent.title || menuContent.description)
                         ? <>
                             <div className = "flex flex-col gap-1">
@@ -140,7 +140,7 @@ const PopupMenu = () => {
                         }
     
                         {menuContent.techs 
-                        ? <span className = "flex items-center gap-2">
+                        ? <span className = "flex items-center mt-2 gap-2">
                             {menuContent.techs.replace(/\./g, '').split(/[ ,]+/).map((tech:string, index) => (
                               <img
                                 key = {index}
