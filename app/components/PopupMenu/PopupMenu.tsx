@@ -156,7 +156,7 @@ const PopupMenu = () => {
                         : <></>
                         }
 
-                        <div className = "flex gap-x-2">
+                        <div className = "flex gap-x-2 mt-3">
                           {menuContent.link2 
                           ? <Link href = {menuContent.link2} target = "_blank" aria-label = "GitHub" rel = "noreferrer" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">
                               <svg 
