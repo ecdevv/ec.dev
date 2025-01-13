@@ -133,7 +133,7 @@ const PopupMenu = () => {
                                 : null
                                 }  
                               </div>
-                              <p className = "sm:text-base landscape:mh-sm:text-sm portrait:h-825:text-base text-sm">{menuContent.l_description}</p>
+                              <p className = "sm:text-base text-left lg:indent-0 indent-5 landscape:mh-sm:text-sm portrait:h-825:text-base text-sm">{menuContent.l_description}</p>
                             </div>
                           </>
                         : <></>
