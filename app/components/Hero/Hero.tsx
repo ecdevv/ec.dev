@@ -15,7 +15,7 @@ const Hero = () => {
               I&apos;m a CS graduate with a keen interest in web development based in Houston, Texas! 📍
             </p>
 
-            <Link href = "/resume" target = "_blank" aria-label = "Résumé" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">
+            <Link href = "/Eric_Chour_Resume.pdf" download target = "_blank" aria-label = "Résumé" rel = "noreferrer noopener" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">
               <span className = "group-hover:text-[hsl(212,100%,53%)] group-active:translate-y-[0.1rem] transition-all ease-in-out duration-[200ms]">
                 Download CV
               </span>
