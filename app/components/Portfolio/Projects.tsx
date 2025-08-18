@@ -115,7 +115,7 @@ const Projects = () => {
                       {project.techs.replace(/\./g, '').split(/[ ,]+/).map((tech:string, index) => (
                         <img
                           key = {index}
-                          src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
+                          src = {`/icons/${tech.toLowerCase()}.svg`}
                           alt = {tech}
                           className = "sm:w-[28px] sm:h-[28px] w-[20px] h-[20px]"
                           fetchPriority = "low"
@@ -166,7 +166,7 @@ const Projects = () => {
                     {project.techs.replace(/\./g, '').split(/[ ,]+/).map((tech:string, index) => (
                       <img
                         key = {index}
-                        src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
+                        src = {`/icons/${tech.toLowerCase()}.svg`}
                         alt = {tech}
                         className = "sm:w-[36px] sm:h-[36px] w-[32px] h-[32px]"
                         fetchPriority = "low"

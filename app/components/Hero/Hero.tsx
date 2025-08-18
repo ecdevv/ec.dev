@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section id = "home" className = "overflow-hidden bg-primaryColor w-full lg:h-screen h-auto lg:max-h-[120rem] lg:min-h-[60rem] lg:py-[14rem] lg:pt-[19rem] sm:py-[12rem] py-[10rem]">
-      <div className = "relative flex lg:flex-row flex-col-reverse xl:max-w-[65rem] mx-auto lg:justify-between justify-center items-center gap-y-8 xl:px-6 lg:px-10 px-6"> 
+    <section id = "home" className = "overflow-hidden bg-primaryColor w-full h-screen lg:max-h-[120rem] min-h-[55rem] py-[15rem] flex items-center justify-center">
+      <div className = "relative flex lg:flex-row flex-col-reverse xl:max-w-[65rem] mx-auto lg:justify-between justify-center items-center gap-y-8 xl:px-6 lg:px-16 px-6"> 
         <div className = "flex flex-col lg:max-w-[60%] lg:mr-[6rem] gap-y-6 lg:items-start items-center">
           <div className = "flex flex-col lg:text-left text-center gap-y-[1rem] lg:items-start items-center">
             <h1 className = "font-raleway font-extrabold lg:text-6xl text-4xl">
@@ -12,7 +12,7 @@ const Hero = () => {
             </h1>
   
             <p className = "lg:max-w-[95%] sm:max-w-[80%] text-lg">
-              I&apos;m a CS graduate with a keen interest in web development based in Houston, Texas! 📍
+              I&apos;m a CS graduate with a keen interest in software development based in Houston, Texas! 📍
             </p>
 
             <Link href = "/Eric_Chour_Resume.pdf" download target = "_blank" aria-label = "Résumé" rel = "noreferrer noopener" className = "group flex justify-center items-center py-2 px-4 gap-x-2 border border-secondaryBorderColor shadow bg-buttonColor hover:bg-buttonHoverColor active:bg-buttonActiveColor transition-all ease-in-out duration-[200ms]">

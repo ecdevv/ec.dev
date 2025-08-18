@@ -22,13 +22,13 @@ const About = () => {
                 src = '/images/about_me.webp'
                 width = "0"
                 alt = "Picture"
-                className = "lg:w-[500px] lg:h-[500px] w-[20rem] h-[20rem] object-cover rounded-[2rem]"
+                className = "lg:w-[525px] lg:h-[525px] w-[22rem] h-[22rem] object-cover rounded-[2rem]"
                 fetchPriority = "low"
                 loading = "lazy"
                 decoding = "async"
             />
             
-            <div className = "flex flex-col lg:gap-y-6 gap-y-6 lg:items-start items-center lg:text-start text-center">
+            <div className = "flex flex-col lg:gap-y-6 gap-y-6 lg:items-start items-center text-start">
               <div className = "flex lg:flex-nowrap flex-wrap w-full gap-2">
                 {/* <div className = "flex flex-col justify-center items-center text-center w-full h-[8rem] p-4 rounded-[2rem] bg-gray-50 border border-gray-300 shadow">
                   <FaGraduationCap className = "w-[40px] h-auto shrink-0"/>
@@ -46,26 +46,19 @@ const About = () => {
                 </div>
               </div>
 
-              <p>
+              <p className="indent-8">
                 Hi, I&apos;m 
-                  Eric, an aspiring web developer with a
+                  Eric, an aspiring software developer with a
                   Bachelor&apos;s degree in Computer Science and a
                   minor in Mathematics from the
                   University of Houston, class of
                   2023.
               </p>
 
-              <p>
-                I have a solid foundation in web development, proficiency in
-                  HTML,
-                  CSS,
-                  JavaScript, and
-                  TypeScript.
-                I also have hands-on experience with frameworks and technologies such as
-                  React,
-                  Next.js,
-                  Express, and
-                  MySQL.
+              <p className="indent-8">
+                I have a solid foundation in software development with experience in both web and general-purpose programming. 
+                My skills include proficiency in HTML, CSS, JavaScript, and TypeScript, as well as hands-on experience with frameworks and technologies such as React, Next.js, Express, and MySQL. 
+                In addition, I have strong knowledge of object-oriented programming (OOP) principles and experience developing in C++ and Python. 
               </p>
 
               <div className = "flex lg:flex-nowrap flex-wrap lg:max-w-full sm:max-w-[60%] max-w-[80%] lg:mt-[-1.25rem] mt-[-1rem] ml-[-0.2rem] lg:justify-start justify-center items-center gap-x-2 gap-y-[2vw]">
@@ -74,18 +67,18 @@ const About = () => {
                 <HiServerStack className = "w-[35px] h-[35px]"/>
               </div>
 
-              <p>
-                Beyond web development, I have a passion for
+              <p className="indent-8">
+                Beyond software development, I have a passion for
                   game development,
                   video games,
                   music, and
-                  basketball,
+                  sports,
                 which help me stay creative and balanced!
               </p>
 
               <div className = "flex lg:flex-nowrap flex-wrap lg:max-w-full sm:max-w-[60%] max-w-[80%] lg:mt-[-1rem] mt-[-0.75rem] lg:justify-start justify-center items-center gap-x-2 gap-y-[2vw]">
                 <img
-                    src = "https://skillicons.dev/icons?i=unreal"
+                    src = "/icons/UnrealEngine.svg"
                     width = "0"
                     alt = "Unreal Engine Logo"
                     className = "w-[35px] h-[35px]"
@@ -114,7 +107,7 @@ const About = () => {
               />
             </svg>
           </Link>
-
+{/* 
           <div className = "lg:hidden flex flex-col items-center lg:gap-y-4 gap-y-6">
             <h3 className = "flex flex-col font-raleway items-center">
               Experience
@@ -195,7 +188,7 @@ const About = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
 
         </div>      
 

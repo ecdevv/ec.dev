@@ -133,7 +133,7 @@ const PopupMenu = () => {
                                 : null
                                 }  
                               </div>
-                              <p className = "sm:text-base text-left lg:indent-0 indent-5 landscape:mh-sm:text-sm portrait:h-825:text-base text-sm">{menuContent.l_description}</p>
+                              <p className = "sm:text-base text-left lg:indent-0 indent-8 landscape:mh-sm:text-sm portrait:h-825:text-base text-sm">{menuContent.l_description}</p>
                             </div>
                           </>
                         : <></>
@@ -144,7 +144,7 @@ const PopupMenu = () => {
                             {menuContent.techs.replace(/\./g, '').split(/[ ,]+/).map((tech:string, index) => (
                               <img
                                 key = {index}
-                                src = {`https://skillicons.dev/icons?i=${tech.toLowerCase()}`}
+                                src = {`/icons/${tech.toLowerCase()}.svg`}
                                 alt = {tech}
                                 className = "sm:w-[40px] sm:h-[40px] landscape:mh-sm:w-[36px] landscape:mh-sm:h-[36px] landscape:mw-md:w-[32px] landscape:mw-md:h-[32px] w-[36px] h-[36px]"
                                 fetchPriority = "low"
