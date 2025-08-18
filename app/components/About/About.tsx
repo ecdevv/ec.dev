@@ -78,7 +78,7 @@ const About = () => {
 
               <div className = "flex lg:flex-nowrap flex-wrap lg:max-w-full sm:max-w-[60%] max-w-[80%] lg:mt-[-1rem] mt-[-0.75rem] lg:justify-start justify-center items-center gap-x-2 gap-y-[2vw]">
                 <img
-                    src = "/icons/UnrealEngine.svg"
+                    src = "/icons/unrealengine.svg"
                     width = "0"
                     alt = "Unreal Engine Logo"
                     className = "w-[35px] h-[35px]"
