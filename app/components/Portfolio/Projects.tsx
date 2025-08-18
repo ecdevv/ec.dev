@@ -111,7 +111,7 @@ const Projects = () => {
                       </span>
                       <p className = "sm:text-sm text-xs text-gray-200">{project.s_description}</p>
                     </span>
-                    <div className = "flex items-center gap-2">
+                    <div className = "flex items-center gap-2 overflow-scroll">
                       {project.techs.replace(/\./g, '').split(/[ ,]+/).map((tech:string, index) => (
                         <img
                           key = {index}
