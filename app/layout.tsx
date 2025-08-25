@@ -24,10 +24,10 @@ export const metadata = {
     default: "Eric Chour | Software Developer",
     template: "%s | Eric Chour | Software Developer"
   },
-  description: "Eric Chour's Personal Website",
+  description: "Eric Chour's Official Website",
   openGraph: {
     title: "Eric Chour | Software Developer",
-    description: "Eric Chour's Personal Website",
+    description: "Eric Chour's Official Website",
     url: "https://ericchour.vercel.app/",
     siteName: "Eric Chour",
     locale: "en-US",
