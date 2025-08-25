@@ -46,7 +46,7 @@ const Contact = () => {
             </div>
 
             <div className = "flex flex-col w-[200px] items-center justify-center gap-y-2">
-              <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank" rel = "noreferrer" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white transition-all ease-in-out duration-200">
+              <Link href = "https://www.linkedin.com/in/ericchour/" aria-label = "LinkedIn" target = "_blank" rel = "noreferrer" className = "group cursor-pointer flex justify-center items-center w-[3rem] h-[3rem] rounded-[100%] shadow-[0_0px_10px_0px_rgba(0,0,0,.1)] bg-contactIconBGColor hover:bg-white transition-all ease-in-out duration-200">
                 <svg
                   viewBox = "0 0 16 16"
                   fill = "currentColor"
@@ -58,7 +58,7 @@ const Contact = () => {
 
               <div className = "flex flex-col items-center">
                 <h3>LinkedIn</h3>
-                <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank" rel = "noreferrer">
+                <Link href = "https://www.linkedin.com/in/ericchour/" aria-label = "LinkedIn" target = "_blank" rel = "noreferrer">
                   <span className = "hover:text-[hsl(212,100%,53%)] transition-all ease-in-out duration-200">My Profile</span>
                 </Link>
               </div>

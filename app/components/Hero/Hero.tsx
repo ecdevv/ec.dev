@@ -52,7 +52,7 @@ const Hero = () => {
           </div>
 
           <div className = "lg:absolute bottom-0 flex lg:justify-start justify-center gap-x-4">
-            <Link href = "https://www.linkedin.com/" aria-label = "LinkedIn" target = "_blank" rel = "noreferrer">
+            <Link href = "https://www.linkedin.com/in/ericchour/" aria-label = "LinkedIn" target = "_blank" rel = "noreferrer">
               <svg 
                 xmlns = "http://www.w3.org/2000/svg" 
                 viewBox = "0 0 16 16"
