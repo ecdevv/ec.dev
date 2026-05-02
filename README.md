@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="/public/images/ec.dev.webp" alt="Site Preview" width="1280px" height="720px"/>
+  <img src="/public/images/ec.dev_preview.webp" alt="Site Preview" width="1280px" height="720px"/>
 </p>
 
 ## Overview
