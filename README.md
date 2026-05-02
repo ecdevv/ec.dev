@@ -5,7 +5,7 @@
       <img src="/app/favicon.ico" alt="OpenCode logo"">
     </a>
   </p>
-  <p align="center">A high-performance, responsive portfolio and blog built with Next.js, designed to showcase my projects and articles.</strong></p>
+  <p align="center">A high-performance, responsive portfolio and blog built with Next.js, designed to showcase my projects and articles.</p>
 </p>
 
 <p align="center">
