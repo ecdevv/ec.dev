@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">ecdevv</h1>
+  <h1 align="center">ec.dev</h1>
   <p align="center">
     <a href="https://ericchour.vercel.app" target="_blank" align="center">
       <img src="/app/favicon.ico" alt="OpenCode logo"">
@@ -13,7 +13,7 @@
 </p>
 
 ## Overview
-ecdevv is a personal portfolio and blog built with Next.js, designed to showcase my projects and articles. It features a responsive design, optimized performance, and a user-friendly interface.
+ecdevv is a personal portfolio site built with Next.js, designed to showcase my projects and articles. It features a responsive design, optimized performance, and a user-friendly interface.
 
 ## Tools & Frameworks
 *  **Core:** HTML, Tailwind CSS, TypeScript
