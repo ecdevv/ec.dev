@@ -102,7 +102,7 @@ export default function Home() {
         <div className="flex gap-3 mt-5 flex-wrap">
           <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.15, delay: 0.25, ease: easeOut }}>
             <Link to="/projects"
-              className="font-mono text-[13px] md:text-[14px] px-4 py-2 rounded-md bg-accent-blue text-surface-base font-bold transition-all hover:brightness-120">
+              className="font-mono text-[13px] md:text-[14px] px-4 py-2 rounded-md bg-accent-blue text-surface-base font-bold transition-colors hover:bg-accent-blue/80">
               View Projects
             </Link>
           </motion.div>

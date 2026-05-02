@@ -7,6 +7,7 @@ import {SiGithub as Github } from '@icons-pack/react-simple-icons'
 import type { Project } from '@/data/projects'
 import { getTech, sortTech } from '@/data/techStack'
 import { ICON_BG, STATUS_COLOR } from '@/data/colors'
+import { sortAlpha } from '@/utils/sort'
 import Lightbox from './Lightbox'
 
 const STATUS_LABEL = {
@@ -33,9 +34,17 @@ const itemVariants = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.15, ease: easeOut } },
 }
 
-
 interface Props {
   project: Project
+}
+
+// Returns an array of { type: 'primary' | 'runtime' | 'domain', value: string } with default priority being primary > runtime > domain + sort alpha within each grouping
+function getAllTagsWithType(tags: Project['tags']) {
+  return [
+    { type: 'primary', value: tags.primary },
+    ...sortAlpha(tags.runtime || []).map(v => ({ type: 'runtime', value: v })),
+    ...sortAlpha(tags.domain || []).map(v => ({ type: 'domain', value: v })),
+  ]
 }
 
 export default function ProjectDetail({ project }: Props) {
@@ -176,9 +185,9 @@ export default function ProjectDetail({ project }: Props) {
         <motion.div variants={sectionVariants}>
           <p className="panel-label">tags</p>
           <motion.div className="flex flex-wrap gap-1.5" variants={listVariants}>
-            {tags.map(t => (
-              <motion.span key={t} variants={itemVariants} className="font-mono text-[12px] md:text-[13px] px-2 py-1 rounded border bg-white/5 border-white/10 text-white/50">
-                {t}
+            {getAllTagsWithType(tags).map(t => (
+              <motion.span key={t.value} variants={itemVariants} className="font-mono text-[12px] md:text-[13px] px-2 py-1 rounded border bg-white/5 border-white/10 text-white/50">
+                {t.value}
               </motion.span>
             ))}
           </motion.div>
@@ -192,7 +201,7 @@ export default function ProjectDetail({ project }: Props) {
               {url && (
                 <motion.a href={url} target="_blank" rel="noopener noreferrer"
                   variants={itemVariants}
-                  className="font-mono text-[13px] md:text-[14px] px-3 py-2 rounded-md bg-accent-blue text-surface-base font-bold transition-all hover:brightness-120 flex items-center gap-2">
+                  className="font-mono text-[13px] md:text-[14px] px-3 py-2 rounded-md bg-accent-blue text-surface-base font-bold transition-colors hover:bg-accent-blue/80 flex items-center gap-2">
                   <ExternalLink size={14} /> View Live
                 </motion.a>
               )}

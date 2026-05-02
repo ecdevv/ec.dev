@@ -3,11 +3,12 @@ import { useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence, easeOut } from 'framer-motion'
 import { X } from 'lucide-react'
 import { projects, STATUS_LEGEND } from '@/data/projects'
+import { sortAlpha } from '@/utils/sort'
 import ProjectCard from '@/components/ui/ProjectCard'
 import ProjectDetail from '@/components/ui/ProjectDetail'
 import { Panel } from '@/components/ui/Panel'
 
-const ALL_TAGS = ['all', ...Array.from(new Set(projects.flatMap(p => p.tags)))]
+const ALL_TAGS = ['all', ...sortAlpha(Array.from(new Set(projects.map(p => p.tags.primary))))]
 const SORTED   = projects.slice().sort((a, b) => b.date.getTime() - a.date.getTime())
 
 export default function Projects() {
@@ -27,7 +28,7 @@ export default function Projects() {
   // Modal is open when a project is selected AND we're below xl
   const modalOpen = !!activeId && !isXl
 
-  const filtered = activeTag === 'all' ? SORTED : SORTED.filter(p => p.tags.includes(activeTag))
+  const filtered = activeTag === 'all' ? SORTED : SORTED.filter(p => p.tags.primary.includes(activeTag))
   const activeProject = projects.find(p => p.id === activeId) ?? null
 
   const setParam = (key: string, value: string | null) => {
