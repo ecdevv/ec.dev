@@ -7,7 +7,7 @@ const Footer = () => {
       <div className = "xl:max-w-[75rem] mx-auto">
         <div className = "flex justify-between items-center gap-x-12 xl:px-6 lg:px-10 px-6">
           <p className = "text-footerSecondaryColor">
-            Copyright © 2024. Created by Eric Chour.
+            © 2024 Eric Chour. Personal content, branding, and photography reserved. Site code licensed under MIT.
           </p>
 
           <div className = "flex lg:justify-start justify-center gap-x-4">

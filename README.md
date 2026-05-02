@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <h1 align="center">ecdevv</h1>
+  <p align="center">
+    <a href="https://ericchour.vercel.app" target="_blank" align="center">
+      <img src="/app/favicon.ico" alt="OpenCode logo"">
+    </a>
+  </p>
+  <p align="center">A high-performance, responsive portfolio and blog built with Next.js, designed to showcase my projects and articles.</strong></p>
+</p>
 
-## Getting Started
+<p align="center">
+  <img src="/public/images/ec.dev.webp" alt="Site Preview" width="1280px" height="720px"/>
+</p>
 
-First, run the development server:
+## Overview
+ecdevv is a personal portfolio and blog built with Next.js, designed to showcase my projects and articles. It features a responsive design, optimized performance, and a user-friendly interface.
 
+## Tools & Frameworks
+*  **Core:** HTML, Tailwind CSS, TypeScript
+*  **Framework:** Next.js, React
+*  **Key Libraries:** `react-icons`, `react-transition-group`, `react-swipeable`
+
+## Features
+*  **SEO Optimized:** Dynamic sitemaps and OpenGraph tags.
+*  **Performance:** 100 Lighthouse scores and optimized image delivery.
+*  **Dark Mode:** Seamless toggle with persistent user preference.
+*  **Responsive:** Fully responsive layout for optimal user experience.
+
+## Installation
+
+### Manual Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository:
+git clone https://github.com/ecdevv/ec.dev.git
+
+# Navigate into the repository:
+cd ec.dev
+
+# Install dependencies:
+npm install
+
+# Run the app:
+npm start or npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## License
+The underlying code for this portfolio is MIT-licensed.  
+All personal content, photos, and branding remain the exclusive property of Eric Chour and are not for commercial use or redistribution.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
