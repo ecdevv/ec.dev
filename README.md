@@ -44,7 +44,8 @@ npm start or npm run dev
 ```
 
 ## License
-The underlying code for this portfolio is MIT-licensed.  
+The underlying code for this portfolio is MIT-licensed.
+
 All personal content, photos, and branding remain the exclusive property of Eric Chour and are not for commercial use or redistribution.
 
 
