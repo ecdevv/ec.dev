@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">ec.dev</h1>
   <p align="center">
-    <a href="https://ericchour.vercel.app" target="_blank" align="center">
+    <a href="https://ericchour.vercel.app" target="_blank" rel="noopener noreferrer" align="center">
       <img src="/app/favicon.ico" alt="OpenCode logo"">
     </a>
   </p>
@@ -9,7 +9,9 @@
 </p>
 
 <p align="center">
-  <img src="/public/images/ec.dev_preview.webp" alt="Site Preview" width="1280px" height="720px"/>
+  <a href="https://ericchour.vercel.app" target="_blank" rel="noopener noreferrer" align="center">
+    <img src="/public/images/ec.dev_preview.webp" alt="Site Preview" width="1280px" height="720px"/>
+  </a>
 </p>
 
 ## Overview
