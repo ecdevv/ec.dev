@@ -1,10 +1,5 @@
 <p align="center">
   <h1 align="center">ec.dev</h1>
-  <p align="center">
-    <a href="https://ericchour.vercel.app" target="_blank" rel="noopener noreferrer" align="center">
-      <img src="/app/favicon.ico" alt="OpenCode logo"">
-    </a>
-  </p>
   <p align="center">A high-performance, responsive portfolio and blog built with Next.js, designed to showcase my projects and articles.</p>
 </p>
 
