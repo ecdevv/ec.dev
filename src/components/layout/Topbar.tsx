@@ -8,7 +8,8 @@ import { NAV_ITEMS } from '@/data/portfolio'
 const SCROLL_THRESHOLD = 80   // px from top before autohide activates
 const PEEK_HIDE_DELAY  = 1500 // ms before topbar auto-hides after leaving peek zone
 const HIDE_DELAY       = 80   // px of continuous downward scroll before hiding
-const PEEK_ZONE        = 80   // px from top to trigger show on hover/tap
+const SHOW_VELOCITY    = 0.5  // px/ms minimum upward velocity to reveal
+const PEEK_ZONE        = 80   // px from top to trigger show on hover
 
 function Clock() {
   const [time, setTime] = useState(() => new Date())
@@ -30,6 +31,7 @@ export default function Topbar() {
   const [visible, setVisible] = useState(true)
   const lastScrollY = useRef(0)
   const scrollDownStart = useRef(0)
+  const lastScrollTime = useRef(0)
   const peekTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const modalIsOpen = useRef(false)
   const location = useLocation()
@@ -41,59 +43,59 @@ export default function Topbar() {
   const startPeekTimer = useCallback(() => {
     peekTimer.current = setTimeout(() => { peekTimer.current = null; setVisible(false) }, PEEK_HIDE_DELAY)
   }, [])
-  const handleModalClose = useCallback(() => {
+  const resetModalState = useCallback(() => {
     modalIsOpen.current = false
     lastScrollY.current = window.scrollY
     scrollDownStart.current = 0
     clearPeekTimer()
-    setVisible(true)
-    if (window.scrollY >= SCROLL_THRESHOLD) startPeekTimer()
-  }, [clearPeekTimer, startPeekTimer])
+  }, [clearPeekTimer])
+  const handleModalClose = useCallback(() => {
+    resetModalState()
+    setVisible(window.scrollY < SCROLL_THRESHOLD)
+  }, [resetModalState])
 
   useEffect(() => {
     // Handle scrolling to auto-hide
     const onScroll = () => {
       if (modalIsOpen.current) return
       const y = window.scrollY
+      const now = Date.now()
+      const elapsed = now - lastScrollTime.current
       if (y < SCROLL_THRESHOLD) {
         clearPeekTimer()
         setVisible(true)
         scrollDownStart.current = 0
       } else if (y > lastScrollY.current) {
+        // Scrolling down
         if (scrollDownStart.current === 0) scrollDownStart.current = lastScrollY.current
         if (y - scrollDownStart.current > HIDE_DELAY) {
           clearPeekTimer()
           setVisible(false)
           setOpen(false)
         }
-      } else {
-        // Scrolling up — show topbar and start timer so it auto-hides after scroll activity stops
-        clearPeekTimer()
+      } else if (y < lastScrollY.current) {
+        // Scrolling up — only reveal if velocity exceeds threshold (filters accidental touches)
         scrollDownStart.current = 0
-        setVisible(true)
-        startPeekTimer()
+        const velocity = (lastScrollY.current - y) / elapsed
+        if (velocity > SHOW_VELOCITY) {
+          clearPeekTimer()
+          setVisible(true)
+          startPeekTimer()
+        }
       }
       lastScrollY.current = y
+      lastScrollTime.current = now
     }
 
-    // Handle peek hovering near the top of the viewport
-    const onMouseMove = (e: MouseEvent) => {
+    // Handle peek hovering near the top of the viewport — mouse only, ignore touch/stylus
+    const onPointerMove = (e: PointerEvent) => {
+      if (e.pointerType !== 'mouse') return
       if (modalIsOpen.current) return
       if (e.clientY < PEEK_ZONE) {
         clearPeekTimer()
         setVisible(true)
       } else if (window.scrollY >= SCROLL_THRESHOLD && !peekTimer.current) {
         startPeekTimer()
-      }
-    }
-
-    // Handle mobile peek with touching/pressing near the top of the viewport
-    const onTouchStart = (e: TouchEvent) => {
-      if (modalIsOpen.current) return
-      if (e.touches[0].clientY < PEEK_ZONE) {
-        clearPeekTimer()
-        setVisible(true)
-        if (window.scrollY >= SCROLL_THRESHOLD) startPeekTimer()
       }
     }
 
@@ -106,21 +108,28 @@ export default function Topbar() {
         setOpen(false)
       } else if (modalIsOpen.current) {
         // Guard: only run if modal is still marked open.
-        // onXlChange may have already called handleModalClose() synchronously
-        // (setting modalIsOpen to false); skipping here prevents cancelling its timer.
+        // onXlChange may have already called resetModalState() synchronously
+        // (setting modalIsOpen to false); skipping here prevents a double-reset.
         handleModalClose()
       }
     }
 
+    // Start peek timer when mouse cursor exits the viewport entirely (e.g. moves out the top/sides)
+    const onPointerLeave = (e: PointerEvent) => {
+      if (e.pointerType !== 'mouse') return
+      if (modalIsOpen.current) return
+      if (window.scrollY >= SCROLL_THRESHOLD && !peekTimer.current) startPeekTimer()
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('mousemove', onMouseMove)
-    window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('pointermove', onPointerMove, { passive: true })
     window.addEventListener('modal-change', onModalChange)
+    document.documentElement.addEventListener('pointerleave', onPointerLeave, { passive: true })
     return () => {
       window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('mousemove', onMouseMove)
-      window.removeEventListener('touchstart', onTouchStart)
+      window.removeEventListener('pointermove', onPointerMove)
       window.removeEventListener('modal-change', onModalChange)
+      document.documentElement.removeEventListener('pointerleave', onPointerLeave)
       clearPeekTimer()
     }
   }, [handleModalClose, clearPeekTimer, startPeekTimer])
@@ -132,22 +141,17 @@ export default function Topbar() {
 
     // xl crossing: recalc topbar visibility + close drawer
     const onXlChange = () => {
-      if (mqXl.matches) {
-        if (modalIsOpen.current) {
-          // Modal was open — handle close synchronously right here so the topbar
-          // responds instantly without waiting for the async reactive effect in Projects
-          handleModalClose()
-        } else {
+      if (modalIsOpen.current) {
+        if (mqXl.matches) {
+          // At xl the modal becomes an inline panel — reset state and set visibility
+          // by scroll position without peeking (no peek timer)
+          resetModalState()
           setVisible(window.scrollY < SCROLL_THRESHOLD)
+        } else {
+          setVisible(false)
         }
       } else {
-        if (modalIsOpen.current) {
-          setVisible(false)
-        } else if (window.scrollY >= SCROLL_THRESHOLD) {
-          // Topbar may be visible while scrolled — start timer so it auto-hides
-          clearPeekTimer()
-          startPeekTimer()
-        }
+        setVisible(window.scrollY < SCROLL_THRESHOLD)
       }
       setOpen(false)
     }
@@ -164,7 +168,7 @@ export default function Topbar() {
       mqXl.removeEventListener('change', onXlChange)
       mqMd.removeEventListener('change', onMdChange)
     }
-  }, [handleModalClose, clearPeekTimer, startPeekTimer])
+  }, [resetModalState])
 
   // '-translate-y-[calc(100%+16px)]' +16px because of px-4 padding in the panel so if the panel is not touching the ceiling, it will account for the padding and make the panel disappear
   return (

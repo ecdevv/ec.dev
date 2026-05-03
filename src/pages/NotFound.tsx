@@ -71,15 +71,15 @@ export default function NotFound() {
           </span>
           <span className="bl-blk" />
 
-          {output.map((line, i) =>
+          {output.map(line =>
             line.type === 'blank'
-              ? <span key={i} className="bl-blk" />
+              ? <span key={line.id} className="bl-blk" />
               : line.type === 'cmd'
-                ? <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
+                ? <div key={line.id} style={{ display: 'flex', alignItems: 'center' }}>
                     <ShellPrompt />
                     <span style={{ color: 'rgba(255,255,255,0.85)' }}>{line.text}</span>
                   </div>
-                : <div key={i} className={LINE_CLS[line.type] ?? 'bl-txt'} style={{ whiteSpace: 'pre' }}>{line.text}</div>
+                : <div key={line.id} className={LINE_CLS[line.type] ?? 'bl-txt'} style={{ whiteSpace: 'pre' }}>{line.text}</div>
           )}
 
           <div style={{ display: 'flex', alignItems: 'center' }}>

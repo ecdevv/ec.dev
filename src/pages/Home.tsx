@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, easeOut, useInView } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { GitHubCalendar } from 'react-github-calendar'
 import { profile, hero, stack, skills } from '@/data/portfolio'
 import { pinnedProjects } from '@/data/projects'
@@ -20,6 +20,7 @@ const HEATMAP_THEME = {
 }
 
 export default function Home() {
+  const navigate = useNavigate()
   const skillsRef = useRef<HTMLDivElement>(null)
   const skillsInView = useInView(skillsRef, { once: true, margin: '-50px' })
 
@@ -120,9 +121,7 @@ export default function Home() {
         <p className="panel-label">pinned projects</p>
         <div className="flex flex-col gap-2 mt-1">
           {pinnedProjects.map((p, i) => (
-            <Link key={p.id} to={`/projects?project=${p.id}`} className="block">
-              <ProjectCard project={p} delay={0.2 + i * 0.05} />
-            </Link>
+            <ProjectCard key={p.id} project={p} delay={0.2 + i * 0.05} onSelect={() => navigate(`/projects?project=${p.id}`)} />
           ))}
         </div>
       </Panel>

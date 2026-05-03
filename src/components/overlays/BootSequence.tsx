@@ -1,11 +1,5 @@
 import { useEffect } from 'react'
 
-declare global {
-  interface Window {
-    bReplay: (onDone: () => void) => void
-  }
-}
-
 interface Props {
   onDone: () => void
 }

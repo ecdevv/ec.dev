@@ -1,12 +1,24 @@
 import type { AccentKey } from '@/data/techStack'
+import { sortAlpha } from '@/utils/sort'
 
 export type PrimaryTag = 'app' | 'web' | 'game' | 'widget' | 'plugin' | 'library' | 'mod'
-export type RuntimeTag = 'linux' | 'windows' | 'mac' | 'browser' | 'node' | 'cross-platform'
 export type DomainTag  = 'system' | 'productivity' | 'devtool' | 'graphics' | 'gameplay' | 'utility' | 'education'
+export type RuntimeTag = 'linux' | 'windows' | 'mac' | 'browser' | 'node' | 'cross-platform'
+
 export type Tag = {
   primary: PrimaryTag,
-  runtime?: RuntimeTag[],
   domain?: DomainTag[]
+  runtime?: RuntimeTag[],
+}
+
+export type TagEntry = { type: 'primary' | 'domain' | 'runtime'; value: string }
+
+export function getTagEntries(tags: Tag): TagEntry[] {
+  return [
+    { type: 'primary', value: tags.primary },
+    ...sortAlpha(tags.domain  ?? []).map(v => ({ type: 'domain'  as const, value: v })),
+    ...sortAlpha(tags.runtime ?? []).map(v => ({ type: 'runtime' as const, value: v })),
+  ]
 }
 
 export type ProjectStatus = 'active' | 'complete' | 'wip' | 'archived'

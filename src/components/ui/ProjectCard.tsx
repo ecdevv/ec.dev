@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion, easeOut } from 'framer-motion'
 import clsx from 'clsx'
 import type { Project } from '@/data/projects'
@@ -14,13 +15,14 @@ interface Props {
 export default function ProjectCard({ project, delay = 0, isActive = false, onSelect }: Props) {
   const { name, description, tech, icon, accentColor, statusColor } = project
   const firstTech = getTech(tech[0])
+  const [frozenDelay] = useState(delay)
 
   return (
     <motion.div
       onClick={onSelect}
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25, delay, ease: easeOut }}
+      transition={{ duration: 0.25, delay: frozenDelay, ease: easeOut }}
       className={clsx(
         'flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors group cursor-pointer border border-l-2',
         isActive

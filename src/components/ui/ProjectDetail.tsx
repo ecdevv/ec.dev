@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { motion, easeOut } from 'framer-motion'
 import clsx from 'clsx'
 import { Panel } from '@/components/ui/Panel'
 import { ExternalLink} from 'lucide-react'
 import {SiGithub as Github } from '@icons-pack/react-simple-icons'
-import type { Project } from '@/data/projects'
+import type { Project, TagEntry } from '@/data/projects'
+import { getTagEntries } from '@/data/projects'
 import { getTech, sortTech } from '@/data/techStack'
 import { ICON_BG, STATUS_COLOR } from '@/data/colors'
-import { sortAlpha } from '@/utils/sort'
 import Lightbox from './Lightbox'
 
 const STATUS_LABEL = {
@@ -38,19 +38,17 @@ interface Props {
   project: Project
 }
 
-// Returns an array of { type: 'primary' | 'runtime' | 'domain', value: string } with default priority being primary > runtime > domain + sort alpha within each grouping
-function getAllTagsWithType(tags: Project['tags']) {
-  return [
-    { type: 'primary', value: tags.primary },
-    ...sortAlpha(tags.runtime || []).map(v => ({ type: 'runtime', value: v })),
-    ...sortAlpha(tags.domain || []).map(v => ({ type: 'domain', value: v })),
-  ]
+const TAG_STYLE: Record<TagEntry['type'], string> = {
+  primary: 'text-accent-blue   bg-accent-blue/10   border-accent-blue/15',
+  domain:  'text-accent-cyan   bg-accent-cyan/10   border-accent-cyan/15',
+  runtime: 'text-accent-purple bg-accent-purple/10 border-accent-purple/15',
 }
 
 export default function ProjectDetail({ project }: Props) {
   const { id, name, description, longDescription, tags, tech, status, statusColor, accentColor, icon, date, url, repo, screenshots } = project
   const dateLabel = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const onClose = useCallback(() => setLightboxIndex(null), [])
 
   const [maxVisible, setMaxVisible] = useState<number>(() => {
     if (window.matchMedia('(min-width: 1280px)').matches) return 3
@@ -145,7 +143,7 @@ export default function ProjectDetail({ project }: Props) {
             <Lightbox
               images={screenshots}
               index={lightboxIndex}
-              onClose={() => setLightboxIndex(null)}
+              onClose={onClose}
               onChange={setLightboxIndex}
               alt={`${name} screenshot`}
             />
@@ -185,8 +183,8 @@ export default function ProjectDetail({ project }: Props) {
         <motion.div variants={sectionVariants}>
           <p className="panel-label">tags</p>
           <motion.div className="flex flex-wrap gap-1.5" variants={listVariants}>
-            {getAllTagsWithType(tags).map(t => (
-              <motion.span key={t.value} variants={itemVariants} className="font-mono text-[12px] md:text-[13px] px-2 py-1 rounded border bg-white/5 border-white/10 text-white/50">
+            {getTagEntries(tags).map(t => (
+              <motion.span key={t.value} variants={itemVariants} className={clsx('font-mono text-[12px] md:text-[13px] px-2 py-1 rounded border', TAG_STYLE[t.type])}>
                 {t.value}
               </motion.span>
             ))}

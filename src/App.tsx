@@ -9,14 +9,6 @@ import NotFound from '@/pages/NotFound'
 // import Mods from '@/pages/Mods'
 // import Blog from '@/pages/Blog'
 
-declare global {
-  interface Window {
-    __bootDone: boolean;
-    __bootPromise: Promise<void>;
-    __bootResolve: () => void;
-  }
-}
-
 export default function App() {
   // Boot screen is handled by index.html — wait for it to signal done
   // before mounting routes so page animations play fresh.
@@ -24,8 +16,9 @@ export default function App() {
 
   useEffect(() => {
     if (ready) return;
-
-    window.__bootPromise.then(() => setReady(true));
+    let cancelled = false;
+    window.__bootPromise.then(() => { if (!cancelled) setReady(true) });
+    return () => { cancelled = true };
   }, [ready]);
 
   if (!ready) return null

@@ -28,7 +28,7 @@ export default function Projects() {
   // Modal is open when a project is selected AND we're below xl
   const modalOpen = !!activeId && !isXl
 
-  const filtered = activeTag === 'all' ? SORTED : SORTED.filter(p => p.tags.primary.includes(activeTag))
+  const filtered = activeTag === 'all' ? SORTED : SORTED.filter(p => p.tags.primary === activeTag)
   const activeProject = projects.find(p => p.id === activeId) ?? null
 
   const setParam = (key: string, value: string | null) => {
@@ -55,7 +55,11 @@ export default function Projects() {
     if (activeId) return
     if (!window.matchMedia('(min-width: 1280px)').matches) return
     if (SORTED.length === 0) return
-    setParam('project', SORTED[0].id)
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev)
+      next.set('project', SORTED[0].id)
+      return next
+    }, { replace: true })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
