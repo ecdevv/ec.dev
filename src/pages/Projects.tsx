@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { motion, AnimatePresence, easeOut } from 'framer-motion'
 import { X } from 'lucide-react'
+import { useFocusTrap } from '@/hooks/useFocusTrap'
 import { projects, STATUS_LEGEND } from '@/data/projects'
 import { sortAlpha } from '@/utils/sort'
 import ProjectCard from '@/components/ui/ProjectCard'
@@ -14,6 +15,7 @@ const SORTED   = projects.slice().sort((a, b) => b.date.getTime() - a.date.getTi
 export default function Projects() {
   const [searchParams, setSearchParams] = useSearchParams()
   const activeId  = searchParams.get('project')
+  const modalRef = useRef<HTMLDivElement>(null)
   const activeTag = searchParams.get('tag') ?? 'all'
 
   // Track xl breakpoint reactively — modal is derived from this + activeId
@@ -27,6 +29,7 @@ export default function Projects() {
 
   // Modal is open when a project is selected AND we're below xl
   const modalOpen = !!activeId && !isXl
+  useFocusTrap(modalRef, modalOpen)
 
   const filtered = activeTag === 'all' ? SORTED : SORTED.filter(p => p.tags.primary === activeTag)
   const activeProject = projects.find(p => p.id === activeId) ?? null
@@ -108,6 +111,7 @@ export default function Projects() {
             <button
               key={tag}
               onClick={() => setParam('tag', tag === 'all' ? null : tag)}
+              aria-pressed={activeTag === tag}
               className={`font-mono text-[12px] md:text-[13px] px-3 py-1.5 rounded-md border transition-colors cursor-pointer ${
                 activeTag === tag
                   ? 'text-accent-blue bg-accent-blue/10 border-accent-blue/20'
@@ -175,6 +179,10 @@ export default function Projects() {
           >
             <div className="flex min-h-full items-start md:items-center justify-center p-4 md:pb-8">
               <motion.div
+                ref={modalRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label={activeProject?.name ?? 'Project detail'}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
@@ -187,7 +195,7 @@ export default function Projects() {
                   className="absolute right-4 top-4 z-10 text-white/40 hover:text-white/70 transition-colors"
                   aria-label="Close"
                 >
-                  <X size={18} />
+                  <X size={18} aria-hidden="true" />
                 </button>
                 <ProjectDetail key={activeProject.id} project={activeProject} />
               </motion.div>

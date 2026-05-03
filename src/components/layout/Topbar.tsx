@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import clsx from 'clsx'
 import { NAV_ITEMS } from '@/data/portfolio'
+import { useFocusTrap } from '@/hooks/useFocusTrap'
 
 const SCROLL_THRESHOLD = 80   // px from top before autohide activates
 const PEEK_HIDE_DELAY  = 1500 // ms before topbar auto-hides after leaving peek zone
@@ -29,6 +30,7 @@ function Clock() {
 export default function Topbar() {
   const [open, setOpen] = useState(false)
   const [visible, setVisible] = useState(true)
+  const drawerRef = useRef<HTMLElement>(null)
   const lastScrollY = useRef(0)
   const scrollDownStart = useRef(0)
   const lastScrollTime = useRef(0)
@@ -53,6 +55,16 @@ export default function Topbar() {
     resetModalState()
     setVisible(window.scrollY < SCROLL_THRESHOLD)
   }, [resetModalState])
+
+  useFocusTrap(drawerRef, open)
+
+  // Close drawer on ESC
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open])
 
   useEffect(() => {
     // Handle scrolling to auto-hide
@@ -191,7 +203,7 @@ export default function Topbar() {
                         'font-mono text-[13px] md:text-[14px] px-3 py-1.5 rounded transition-colors duration-150',
                         isActive
                           ? 'text-accent-blue bg-accent-blue/10'
-                          : 'text-white/35 hover:text-white/60 hover:bg-white/5'
+                          : 'text-white/45 hover:text-white/70 hover:bg-white/5'
                       )
                     }
                   >
@@ -204,14 +216,16 @@ export default function Topbar() {
             {/* Right: clock + status + mobile menu */}
             <div className="flex items-center gap-3">
               <Clock />
-              <div className="status-dot" title="Open to work" />
+              <div className="status-dot" role="img" aria-label="Open to work" />
               {/* Mobile hamburger */}
               <button
                 className="md:hidden text-white/40 hover:text-white/70 transition-colors"
                 onClick={() => setOpen(o => !o)}
                 aria-label="Toggle menu"
+                aria-expanded={open}
+                aria-controls="mobile-nav"
               >
-                {open ? <X size={18} /> : <Menu size={18} />}
+                {open ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
               </button>
             </div>
           </div>
@@ -222,7 +236,10 @@ export default function Topbar() {
       <AnimatePresence>
         {open && (
           <div className="fixed inset-0 z-30 md:hidden" onClick={() => setOpen(false)}>
-            <motion.div
+            <motion.nav
+              ref={drawerRef}
+              id="mobile-nav"
+              aria-label="Mobile navigation"
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
@@ -241,14 +258,14 @@ export default function Topbar() {
                       'font-mono text-[14px] px-3 py-2.5 rounded transition-colors duration-150',
                       isActive
                         ? 'text-accent-blue bg-accent-blue/10'
-                        : 'text-white/40 hover:text-white/70 hover:bg-white/5'
+                        : 'text-white/45 hover:text-white/70 hover:bg-white/5'
                     )
                   }
                 >
                   {label}
                 </NavLink>
               ))}
-            </motion.div>
+            </motion.nav>
           </div>
         )}
       </AnimatePresence>

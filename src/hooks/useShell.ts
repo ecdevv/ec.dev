@@ -8,7 +8,7 @@ export function useShell() {
   const navigate = useNavigate()
   const [output,  setOutput] = useState<TrackedLine[]>([])
   const [input,   setInput]  = useState('')
-  const [histIdx, setHistIdx] = useState(-1)
+  const [, setHistIdx] = useState(-1)
   const inputRef   = useRef<HTMLInputElement>(null)
   const historyRef = useRef<string[]>([])
   const idCounter  = useRef(0)

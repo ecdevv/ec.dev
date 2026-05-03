@@ -47,7 +47,7 @@ export default function Contact() {
                 className="cursor-copy text-white/30 hover:text-white/70 transition-colors"
                 aria-label="Copy email address"
               >
-                {copied ? <Check size={13} /> : <Copy size={13} />}
+                {copied ? <Check size={13} aria-hidden="true" /> : <Copy size={13} aria-hidden="true" />}
               </button>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function Contact() {
                   className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-white/3
                     border border-white/6 hover:bg-white/7 hover:border-accent-blue/25 transition-colors group"
                 >
-                  <span className="text-white/30 group-hover:text-accent-blue transition-colors">
+                  <span aria-hidden="true" className="text-white/30 group-hover:text-accent-blue transition-colors">
                     {ICON_MAP[s.icon] ?? s.icon}
                   </span>
                   <span className="font-mono text-[13px] md:text-[14px] flex-1 relative">
@@ -78,7 +78,8 @@ export default function Contact() {
                       {s.url.replace('https://', '')}
                     </span>
                   </span>
-                  <ArrowUpRight size={13} className="text-white/0 group-hover:text-white/40 transition-colors" />
+                  <ArrowUpRight size={13} aria-hidden="true" className="text-white/0 group-hover:text-white/40 transition-colors" />
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               ))}
             </div>

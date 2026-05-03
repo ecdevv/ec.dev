@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { useFocusTrap } from '@/hooks/useFocusTrap'
 
 interface Props {
   images: string[]
@@ -13,6 +14,8 @@ interface Props {
 
 export default function Lightbox({ images, index, onClose, onChange, alt = 'screenshot' }: Props) {
   const isOpen = index !== null
+  const dialogRef = useRef<HTMLDivElement>(null)
+  useFocusTrap(dialogRef, isOpen)
 
   // ESC + arrow keys
   useEffect(() => {
@@ -38,6 +41,10 @@ export default function Lightbox({ images, index, onClose, onChange, alt = 'scre
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image preview"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -56,7 +63,7 @@ export default function Lightbox({ images, index, onClose, onChange, alt = 'scre
             className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors p-1"
             aria-label="Close"
           >
-            <X size={20} />
+            <X size={20} aria-hidden="true" />
           </button>
 
           {/* Prev button */}
@@ -66,7 +73,7 @@ export default function Lightbox({ images, index, onClose, onChange, alt = 'scre
               className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-white/45 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5"
               aria-label="Previous image"
             >
-              <ChevronLeft size={28} />
+              <ChevronLeft size={28} aria-hidden="true" />
             </button>
           )}
 
@@ -77,7 +84,7 @@ export default function Lightbox({ images, index, onClose, onChange, alt = 'scre
               className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-white/45 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5"
               aria-label="Next image"
             >
-              <ChevronRight size={28} />
+              <ChevronRight size={28} aria-hidden="true" />
             </button>
           )}
 

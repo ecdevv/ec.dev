@@ -200,14 +200,14 @@ export default function ProjectDetail({ project }: Props) {
                 <motion.a href={url} target="_blank" rel="noopener noreferrer"
                   variants={itemVariants}
                   className="font-mono text-[13px] md:text-[14px] px-3 py-2 rounded-md bg-accent-blue text-surface-base font-bold transition-colors hover:bg-accent-blue/80 flex items-center gap-2">
-                  <ExternalLink size={14} /> View Live
+                  <ExternalLink size={14} aria-hidden="true" /> View Live<span className="sr-only"> (opens in new tab)</span>
                 </motion.a>
               )}
               {repo && (
                 <motion.a href={repo} target="_blank" rel="noopener noreferrer"
                   variants={itemVariants}
                   className="font-mono text-[13px] md:text-[14px] px-3 py-2 rounded-md border bg-white/3 border-white/10 text-white/50 transition-colors hover:text-white/75 hover:bg-white/8 flex items-center gap-2">
-                  <Github size={14} /> View Source
+                  <Github size={14} aria-hidden="true" /> View Source<span className="sr-only"> (opens in new tab)</span>
                 </motion.a>
               )}
             </motion.div>
