@@ -27,16 +27,16 @@ ecdevv is a personal portfolio site built with Next.js, designed to showcase my 
 
 ### Manual Installation
 ```bash
-# Clone the repository:
+# 1. Clone the repository:
 git clone https://github.com/ecdevv/ec.dev.git
 
-# Navigate into the repository:
+# 2. Navigate into the repository:
 cd ec.dev
 
-# Install dependencies:
+# 3. Install dependencies:
 npm install
 
-# Run the app:
+# 4. Run the app:
 npm start or npm run dev
 ```
 
