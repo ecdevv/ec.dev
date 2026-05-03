@@ -27,7 +27,7 @@ export default function ProjectCard({ project, delay = 0, isActive = false, onSe
         'flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors group cursor-pointer border border-l-2',
         isActive
           ? 'bg-accent-blue/6 border-accent-blue/40'
-          : 'bg-white/3 border-white/6 hover:border-accent-blue/25'
+          : 'bg-white/3 border-white/6 hover:bg-white/7 hover:border-accent-blue/25'
       )}
       style={{ borderLeftColor: STATUS_HEX[statusColor] }}
     >
@@ -38,8 +38,8 @@ export default function ProjectCard({ project, delay = 0, isActive = false, onSe
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        <p className="font-display font-bold text-[14px] md:text-[15px] text-white/85 truncate">{name}</p>
-        <p className="font-mono text-[12px] md:text-[13px] text-white/30 truncate mt-0.5">{description}</p>
+        <p className={clsx('font-display font-bold text-[14px] md:text-[15px] transition-colors truncate', isActive ? 'text-white' : 'text-white/85')}>{name}</p>
+        <p className={clsx('font-mono text-[12px] md:text-[13px] transition-colors truncate mt-0.5', isActive ? 'text-white/50' : 'text-white/30 group-hover:text-white/50')}>{description}</p>
       </div>
 
       {/* Right side: tech badge + link */}

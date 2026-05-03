@@ -188,7 +188,7 @@ export default function Topbar() {
                     end={to === '/'}
                     className={({ isActive }) =>
                       clsx(
-                        'font-mono text-[13px] md:text-[14px] px-3 py-1.5 rounded transition-all duration-150',
+                        'font-mono text-[13px] md:text-[14px] px-3 py-1.5 rounded transition-colors duration-150',
                         isActive
                           ? 'text-accent-blue bg-accent-blue/10'
                           : 'text-white/35 hover:text-white/60 hover:bg-white/5'
@@ -238,7 +238,7 @@ export default function Topbar() {
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     clsx(
-                      'font-mono text-[14px] px-3 py-2.5 rounded transition-all duration-150',
+                      'font-mono text-[14px] px-3 py-2.5 rounded transition-colors duration-150',
                       isActive
                         ? 'text-accent-blue bg-accent-blue/10'
                         : 'text-white/40 hover:text-white/70 hover:bg-white/5'

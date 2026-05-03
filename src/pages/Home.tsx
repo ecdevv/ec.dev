@@ -43,7 +43,7 @@ export default function Home() {
         <p className="font-display font-bold text-[15px] md:text-[17px] text-white/90 leading-tight">{profile.name}</p>
         <p className="font-mono text-[13px] md:text-[14px] text-accent-blue mt-0.5 mb-3">{profile.handle}</p>
 
-        <div className="h-px bg-white/[0.07] my-1" />
+        <div className="h-px bg-white/7 my-1" />
 
         {/* Stats */}
         <div className="flex justify-between my-3">
@@ -55,7 +55,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="h-px bg-white/[0.07] my-1" />
+        <div className="h-px bg-white/7 my-1" />
 
         {/* Interests */}
         <p className="panel-label mt-3">interests</p>
@@ -69,7 +69,7 @@ export default function Home() {
               className={`font-mono text-[12px] md:text-[13px] px-2 py-1 rounded border ${
                 highlight
                   ? 'bg-accent-blue/10 border-accent-blue/20 text-accent-blue'
-                  : 'bg-white/4 border-white/[0.07] text-white/40'
+                  : 'bg-white/4 border-white/7 text-white/40'
               }`}
             >
               {label}
@@ -141,12 +141,8 @@ export default function Home() {
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.15, delay: 0.25 + i * 0.025, ease: easeOut }}
-              className="w-11 h-11 rounded-md bg-white/5 border border-white/7
+              className="w-11 h-11 rounded-md bg-white/6 border border-white/7
                 flex items-center justify-center font-mono text-[12px] md:text-[13px] text-white/50"
-              style={{
-                background: 'rgba(255,255,255,0.05)',
-                border: '0.5px solid rgba(255,255,255,0.08)',
-              }}
             >
               {TECH[title]?.icon?.(18) ?? title}
             </motion.div>

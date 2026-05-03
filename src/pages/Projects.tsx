@@ -108,10 +108,10 @@ export default function Projects() {
             <button
               key={tag}
               onClick={() => setParam('tag', tag === 'all' ? null : tag)}
-              className={`font-mono text-[12px] md:text-[13px] px-3 py-1.5 rounded-md border transition-all cursor-pointer ${
+              className={`font-mono text-[12px] md:text-[13px] px-3 py-1.5 rounded-md border transition-colors cursor-pointer ${
                 activeTag === tag
                   ? 'text-accent-blue bg-accent-blue/10 border-accent-blue/20'
-                  : 'text-white/35 border-white/[0.07] bg-white/3 hover:text-white/60 hover:bg-white/6'
+                  : 'text-white/35 border-white/6 bg-white/3 hover:text-white/60 hover:bg-white/7 hover:border-white/10'
               }`}
             >
               {tag}
