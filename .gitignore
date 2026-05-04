@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+# AI tools
 .serena
 docs
 AGENTS.md
