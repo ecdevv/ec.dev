@@ -11,7 +11,7 @@ interface Props {
 export default function BootSequence({ onDone }: Props) {
   useEffect(() => {
     window.bReplay(onDone)
-  // onDone is stable from the call site — intentionally omitted from deps
+  // onDone is stable from the call site - intentionally omitted from deps
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

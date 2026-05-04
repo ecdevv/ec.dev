@@ -70,7 +70,7 @@
         #bs .bb { font-size: 14px; padding: 4rem 4rem 2rem; min-height: 360px; }
       }
 
-      /* ── Boot overlay ────────────────────────────────────────────────────────── */
+      /* -- Boot overlay ---------------------------------------------------------- */
       #bs {
         position: fixed; inset: 0; z-index: 9999;
         display: flex; align-items: flex-start; justify-content: center; padding: 1rem;
@@ -101,11 +101,11 @@
         { k:'ok',  t:'Starting user session' },
         { k:'ok',  t:'Reached target: multi-user.target' },
         { k:'blk' },
-        { k:'wel', t:'ecdevv-os — logged in as visitor' },
+        { k:'wel', t:'ecdevv-os - logged in as visitor' },
       ];
 
       var MS        = 110;  // ms between lines
-      var THRESHOLD = 500;  // ms — skip boot if page loads within this
+      var THRESHOLD = 500;  // ms - skip boot if page loads within this
       var BAR_TOTAL = window.innerWidth < 480 ? 16 : 24;  // narrower bar on mobile
       var BAR_MIN   = 60;   // ms/cell min (cosmetic)
       var BAR_MAX   = 160;  // ms/cell max (cosmetic)
@@ -149,7 +149,7 @@
           if (tickMs !== undefined) {
             delay = tickMs;
           } else if (entry.filled >= entry.softCap) {
-            delay = rnd(800, 2000); // very slow crawl — simulates stalled loading
+            delay = rnd(800, 2000); // very slow crawl - simulates stalled loading
           } else {
             delay = nextDelay();
           }
@@ -275,7 +275,7 @@
         next();
       }
 
-      // ── Initial page load ──────────────────────────────────────
+      // -- Initial page load --------------------------------------
       (function () {
         var thresholdPassed = false;
 

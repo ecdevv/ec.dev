@@ -18,7 +18,7 @@ export default function Projects() {
   const modalRef = useRef<HTMLDivElement>(null)
   const activeTag = searchParams.get('tag') ?? 'all'
 
-  // Track xl breakpoint reactively — modal is derived from this + activeId
+  // Track xl breakpoint reactively - modal is derived from this + activeId
   const [isXl, setIsXl] = useState(() => window.matchMedia('(min-width: 1280px)').matches)
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 1280px)')
@@ -41,7 +41,7 @@ export default function Projects() {
     setSearchParams(next, { replace: true })
   }
 
-  // Selecting a project just sets the URL — modal derives from it.
+  // Selecting a project just sets the URL - modal derives from it.
   // Dispatch modal-change immediately (synchronous) for snappy topbar response;
   // the reactive effect below also fires after render as a correctness fallback.
   const select = (id: string) => {
@@ -71,7 +71,7 @@ export default function Projects() {
     window.dispatchEvent(new CustomEvent('modal-change', { detail: { open: modalOpen } }))
   }, [modalOpen])
 
-  // On unmount, always restore topbar — guards against navigating away while modal is open
+  // On unmount, always restore topbar - guards against navigating away while modal is open
   useEffect(() => {
     return () => {
       window.dispatchEvent(new CustomEvent('modal-change', { detail: { open: false } }))
@@ -150,7 +150,7 @@ export default function Projects() {
             }
           </Panel>
 
-          {/* Detail panel — xl+ only, sticky */}
+          {/* Detail panel - xl+ only, sticky */}
           {isXl && (
             <div className="sticky top-24 self-start">
               {activeProject
@@ -166,7 +166,7 @@ export default function Projects() {
         </div>
       </motion.div>
 
-      {/* Modal — below xl */}
+      {/* Modal - below xl */}
       <AnimatePresence>
         {modalOpen && activeProject && (
           <motion.div

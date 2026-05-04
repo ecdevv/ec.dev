@@ -91,7 +91,7 @@ const TECH_ORDER: Record<string, number> = {
   'Docker': 60, 'Git': 60, 'Linux': 60,
   // Desktop / UI Platforms
   'KDE': 70,
-  // Misc / APIs — unknown keys default to 80
+  // Misc / APIs - unknown keys default to 80
 }
 
 export function sortTech(tech: string[]): string[] {

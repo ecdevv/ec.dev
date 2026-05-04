@@ -70,7 +70,7 @@ export const projects: Project[] = [
   //   id: 'project-nemesis',
   //   name: 'Project Nemesis',
   //   description: 'Dark fantasy top-down 2D action-adventure. Zelda-style combat, Lufia 2 puzzle mechanics, Souls-inspired tone.',
-  //   longDescription: 'A 2D action-adventure built in Godot 4. Combat takes cues from classic top-down Zelda — tight, deliberate, weapon-driven — while puzzle design draws from Lufia II\'s tile-based environmental logic. The world tone leans into Souls-style ambiguity: minimal exposition, consequential choices, and a setting that rewards paying attention.',
+  //   longDescription: 'A 2D action-adventure built in Godot 4. Combat takes cues from classic top-down Zelda — tight, deliberate, weapon-driven - while puzzle design draws from Lufia II\'s tile-based environmental logic. The world tone leans into Souls-style ambiguity: minimal exposition, consequential choices, and a setting that rewards paying attention.',
   //   tags: ['game'],
   //   tech: ['Godot 4', 'GDScript'],
   //   status: 'wip',
@@ -127,7 +127,7 @@ export const projects: Project[] = [
     id: 'urban-luxe',
     name: 'Urban Luxe',
     description: 'An e-commerce apparel store of a luxury clothing brand.',
-    longDescription: 'Urban Luxe is a full e-commerce front-end for a fictional luxury apparel brand — product catalog, cart flow, and responsive layouts. Built with Next.js to combine static generation for performance with dynamic routing for individual product pages.',
+    longDescription: 'Urban Luxe is a full e-commerce front-end for a fictional luxury apparel brand with a product catalog, cart flow, and responsive layouts. Built with Next.js to combine static generation for performance with dynamic routing for individual product pages.',
     tags: {
       primary: 'web',
     },

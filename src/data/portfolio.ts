@@ -4,7 +4,6 @@ export const NAV_ITEMS = [
   { label: 'home',     to: '/' },
   { label: 'projects', to: '/projects' },
   { label: 'contact',  to: '/contact' },
-  // { label: 'mods',  to: '/mods' },   // uncomment when ready
   // { label: 'blog',  to: '/blog' },
 ] as const
 
@@ -14,8 +13,8 @@ export const profile = {
   handle: '@ecdevv',
   stats: [
     { num: projects.length.toString(), label: 'projects' },
-    { num: '4k+', label: 'commits' },
-    { num: '3', label: 'mods' },
+    { num: '1k+', label: 'commits' },
+    { num: '1', label: 'widgets' },
   ],
   interests: [
     { label: 'linux', highlight: true },
@@ -34,7 +33,7 @@ export const hero = {
   heading: ['Building things', 'that matter.'],
   subtitle: 'software engineer · problem solver · linux enthusiast',
   description:
-    'I build clean, fast software with obsessive attention to detail — from web apps to game mods. Currently open to new opportunities.',
+    'I build clean, fast software with obsessive attention to detail — from web apps to agentic systems and developer tooling. Currently open to new opportunities.',
 }
 
 export const stack = [

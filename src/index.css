@@ -109,7 +109,7 @@
 ::-webkit-scrollbar-thumb:hover { background: rgba(99,179,237,0.4); }
 
 
-/* ── Boot terminal card — shared by boot overlay + 404 page ─────────────── */
+/* -- Boot terminal card - shared by boot overlay + 404 page --------------- */
 .bw {
   width: 100%; max-width: 672px; border-radius: 12px; overflow: hidden;
   border: 1px solid rgba(99,179,237,0.15);
@@ -178,6 +178,11 @@
   body::after        { animation: none; }
   .bcur              { animation: none; }
 }
+
+body.tab-hidden,
+body.tab-hidden::before,
+body.tab-hidden::after,
+body.tab-hidden .bcur { animation-play-state: paused; }
 
 @media (max-width: 480px) {
   .bb     { font-size: 12px; padding: 20px 16px 12px; min-height: 260px; }

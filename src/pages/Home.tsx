@@ -30,7 +30,7 @@ export default function Home() {
       md:grid-cols-[275px_minmax(0,1fr)]
       xl:grid-cols-[280px_minmax(0,1fr)_280px]">
 
-      {/* ── SIDEBAR PROFILE PANEL ── */}
+      {/* -- SIDEBAR PROFILE PANEL -- */}
       <Panel delay={0.05} className="p-4 md:row-span-2 xl:col-start-1 xl:row-span-2 flex flex-col gap-0">
         <p className="panel-label">whoami</p>
 
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
       </Panel>
 
-      {/* ── HERO PANEL ── */}
+      {/* -- HERO PANEL -- */}
       <Panel delay={0.1} className="p-6 xl:col-start-2">
         <p className="font-mono text-[13px] md:text-[14px] text-accent-blue tracking-[1.5px] uppercase mb-2 opacity-80">
           {hero.tag}
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </Panel>
 
-      {/* ── PINNED PROJECTS PANEL ── */}
+      {/* -- PINNED PROJECTS PANEL -- */}
       <Panel delay={0.1} className="p-4 xl:col-start-2">
         <p className="panel-label">pinned projects</p>
         <div className="flex flex-col gap-2 mt-1">
@@ -126,7 +126,7 @@ export default function Home() {
         </div>
       </Panel>
 
-      {/* ── WIDGET COLUMN (right) — hidden below xl ── */}
+      {/* -- WIDGET COLUMN (right) - hidden below xl -- */}
       <div className="flex flex-col gap-3
         md:grid md:grid-cols-[1fr_2fr] md:col-span-2
         xl:flex xl:flex-col xl:col-span-1 xl:row-span-2 xl:col-start-3 xl:row-start-1">
@@ -183,7 +183,7 @@ export default function Home() {
         </Panel>
       </div>
 
-      {/* ── BOTTOM ROW: contributions + now ── */}
+      {/* -- BOTTOM ROW: contributions + now -- */}
       <div className="md:col-span-2 xl:col-span-3 grid gap-3
         grid-cols-1
         md:grid-cols-[260px_minmax(0,1fr)]

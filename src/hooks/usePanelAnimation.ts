@@ -14,7 +14,7 @@ export function usePanelAnimation(
     const el = (externalRef ?? internalRef).current
     if (el && el.getBoundingClientRect().top >= window.innerHeight)
       setInViewOnMount(false)
-  // refs are stable — externalRef identity never changes after mount
+  // refs are stable - externalRef identity never changes after mount
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

@@ -86,7 +86,7 @@ export default function Topbar() {
           setOpen(false)
         }
       } else if (y < lastScrollY.current) {
-        // Scrolling up — only reveal if velocity exceeds threshold (filters accidental touches)
+        // Scrolling up - only reveal if velocity exceeds threshold (filters accidental touches)
         scrollDownStart.current = 0
         const velocity = (lastScrollY.current - y) / elapsed
         if (velocity > SHOW_VELOCITY) {
@@ -99,7 +99,7 @@ export default function Topbar() {
       lastScrollTime.current = now
     }
 
-    // Handle peek hovering near the top of the viewport — mouse only, ignore touch/stylus
+    // Handle peek hovering near the top of the viewport - mouse only, ignore touch/stylus
     const onPointerMove = (e: PointerEvent) => {
       if (e.pointerType !== 'mouse') return
       if (modalIsOpen.current) return
@@ -155,7 +155,7 @@ export default function Topbar() {
     const onXlChange = () => {
       if (modalIsOpen.current) {
         if (mqXl.matches) {
-          // At xl the modal becomes an inline panel — reset state and set visibility
+          // At xl the modal becomes an inline panel - reset state and set visibility
           // by scroll position without peeking (no peek timer)
           resetModalState()
           setVisible(window.scrollY < SCROLL_THRESHOLD)

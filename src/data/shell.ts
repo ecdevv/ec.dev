@@ -40,7 +40,7 @@ export const COMMANDS: Record<string, CommandHandler> = {
     { type: 'out', text: NAV_ITEMS.map(item => item.label).join('  ') },
   ],
   whoami: () => [
-    { type: 'out', text: `${SHELL_USER} — software engineer, linux enthusiast, problem solver` },
+    { type: 'out', text: `${SHELL_USER} - software engineer, linux enthusiast, problem solver` },
   ],
   boot: () => {
     window.bReplay?.(() => {})

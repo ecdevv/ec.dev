@@ -43,7 +43,7 @@ export default function NotFound() {
 
         <div className="btb">
           <div className="btb-spc" />
-          <span className="btb-title">{SHELL_USER}@{SHELL_HOST} — {SHELL_NAME}</span>
+          <span className="btb-title">{SHELL_USER}@{SHELL_HOST} - {SHELL_NAME}</span>
           <div className="btb-dots">
             <div className="btb-dot" style={{ background: 'rgba(104,211,145,.7)' }} />
             <div className="btb-dot" style={{ background: 'rgba(99,179,237,.7)' }} />
