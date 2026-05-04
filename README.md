@@ -47,6 +47,6 @@ npm run dev
 ```
 
 ## License
-Code is MIT-licensed.
+Code is **MIT-licensed**.
 
-All personal content, photos, and branding remain the exclusive property of ecdevv and are not for commercial use or redistribution.
+All personal content, photos, and branding remain the exclusive property of **ecdevv** and are not for commercial use or redistribution.
