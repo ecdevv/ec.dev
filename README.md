@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+<p align="center">
+  <h1 align="center">ec.dev</h1>
+  <p align="center">Personal site showcasing projects and work, built with Vite + React + TypeScript + Tailwind CSS v4.</p>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="https://ericchour.com" target="_blank" rel="noopener noreferrer">
+    <img src="public/screenshots/ec.dev_preview.webp" alt="ec.dev preview" width="1280" height="720"/>
+  </a>
+</p>
 
-Currently, two official plugins are available:
+## Overview
+Showcasing projects and a brief intro. Riced Linux desktop aesthetic with glassmorphism UI, boot sequence animation, and an interactive shell on the 404 page. No backend; all content is local TypeScript files in `src/data/`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
+- **Build:** Vite 8
+- **UI:** React 19, TypeScript 6
+- **Styling:** Tailwind CSS v4 (CSS-based config via `@theme` in `index.css`)
+- **Routing:** React Router v7
+- **Animation:** `framer-motion`, `embla-carousel-react`
+- **Icons:** `lucide-react`, `@icons-pack/react-simple-icons`
+- **Other:** `clsx`, `react-github-calendar`
 
-## React Compiler
+## Features
+- ⚡ **Boot Sequence:** Animated terminal boot on load — skips on fast connections, replayable via shell
+- 📌 **Smart Topbar:** Autohides on scroll with velocity detection, peek zone, and mobile drawer
+- 🗂️ **Project Showcase:** Master-detail view with URL-synced state (`?project=:id`) and tag filtering
+- 🖼️ **Lightbox:** Image viewer with drag/swipe, keyboard nav, and focus trap
+- 💻 **Shell Terminal:** Interactive 404 page with live commands and in-app navigation
+- 🔍 **SEO:** `<meta>`, OpenGraph, `robots.txt`, `sitemap.xml`
+- ♿ **Accessibility:** Skip link, `aria-*`, `:focus-visible` ring, `prefers-reduced-motion`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation
 
-## Expanding the ESLint configuration
+```bash
+# 1. Clone
+git clone https://github.com/ecdevv/ec.dev.git
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 2. Navigate into the repository
+cd ec.dev
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# 3. Dev server
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 4. Build
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## License
+Code is MIT-licensed.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+All personal content, photos, and branding remain the exclusive property of Eric Chour and are not for commercial use or redistribution.

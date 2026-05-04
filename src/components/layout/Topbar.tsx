@@ -10,7 +10,7 @@ const SCROLL_THRESHOLD = 80   // px from top before autohide activates
 const PEEK_HIDE_DELAY  = 1500 // ms before topbar auto-hides after leaving peek zone
 const HIDE_DELAY       = 80   // px of continuous downward scroll before hiding
 const SHOW_VELOCITY    = 0.5  // px/ms minimum upward velocity to reveal
-const PEEK_ZONE        = 80   // px from top to trigger show on hover
+const PEEK_ZONE        = 40   // px from top to trigger show on hover
 
 function Clock() {
   const [time, setTime] = useState(() => new Date())

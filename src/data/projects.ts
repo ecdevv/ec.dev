@@ -67,7 +67,7 @@ export const projects: Project[] = [
   //   screenshots: [],
   // },
   {
-    id: 'aestheticclock-port',
+    id: 'plasma-applet-aestheticclock',
     name: 'Aesthetic Clock - KDE Plasma 6 Port',
     description: 'A modern port of the classic Aesthetic Clock widget to KDE Plasma 6, rewritten with modern QML and Plasma 6 APIs.',
     longDescription: 'A modern port of the classic Aesthetic Clock widget to KDE Plasma 6. Features dynamic fill-style text animations, real-time system monitoring via KSysguard, and smart media player integration — rewritten with modern QML and Plasma 6 APIs.',
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     date: new Date('2026-05-01'),
     url: '',
     repo: 'https://github.com/ecdevv/plasma-applet-aestheticclock',
-    screenshots: ['/screenshots/aestheticclock_preview.webp', '/screenshots/aestheticclock_preview2.webp', '/screenshots/aestheticclock_preview3.webp'],
+    screenshots: ['/screenshots/projects/aestheticclock/aestheticclock_preview.webp', '/screenshots/projects/aestheticclock/aestheticclock_preview2.webp', '/screenshots/projects/aestheticclock/aestheticclock_preview3.webp'],
   },
   {
     id: 'criticore',
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     date: new Date('2025-01-10'),
     url: 'https://criticore.vercel.app/',
     repo: 'https://github.com/ecdevv/CritiCore',
-    screenshots: ['/screenshots/criticore_preview.webp', '/screenshots/criticore_preview2.webp', '/screenshots/criticore_preview3.webp', '/screenshots/criticore_preview4.webp', '/screenshots/criticore_preview5.webp'],
+    screenshots: ['/screenshots/projects/criticore/criticore_preview.webp', '/screenshots/projects/criticore/criticore_preview2.webp', '/screenshots/projects/criticore/criticore_preview3.webp', '/screenshots/projects/criticore/criticore_preview4.webp', '/screenshots/projects/criticore/criticore_preview5.webp'],
   },
   {
     id: 'urban-luxe',
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     date: new Date('2024-07-31'),
     url: 'https://urbanluxe.vercel.app/',
     repo: 'https://github.com/ecdevv/urban-luxe',
-    screenshots: ['/screenshots/urbanluxe_preview.webp', '/screenshots/urbanluxe_preview2.webp', '/screenshots/urbanluxe_preview3.webp', '/screenshots/urbanluxe_preview4.webp'],
+    screenshots: ['/screenshots/projects/urbanluxe/urbanluxe_preview.webp', '/screenshots/projects/urbanluxe/urbanluxe_preview2.webp', '/screenshots/projects/urbanluxe/urbanluxe_preview3.webp', '/screenshots/projects/urbanluxe/urbanluxe_preview4.webp'],
   },
 ]
 
