@@ -10,7 +10,7 @@
 </p>
 
 ## Overview
-Showcasing projects and a brief intro. Riced Linux desktop aesthetic with glassmorphism UI, boot sequence animation, and an interactive shell on the 404 page. No backend; all content is local TypeScript files in `src/data/`.
+Personal developer portfolio with a riced Linux desktop aesthetic: dark base, dark glassmorphism panels, and aurora orbs. Features a boot sequence animation on first load, project showcase with a master-detail layout, and an interactive shell terminal on the 404 page. No backend; all content lives in local TypeScript files under `src/data/`.
 
 ## Stack
 - **Build:** Vite 8
@@ -22,7 +22,7 @@ Showcasing projects and a brief intro. Riced Linux desktop aesthetic with glassm
 - **Other:** `clsx`, `react-github-calendar`
 
 ## Features
-- ⚡ **Boot Sequence:** Animated terminal boot on load — skips on fast connections, replayable via shell
+- ⚡ **Boot Sequence:** Animated terminal boot on load - skips on fast connections, replayable via shell
 - 📌 **Smart Topbar:** Autohides on scroll with velocity detection, peek zone, and mobile drawer
 - 🗂️ **Project Showcase:** Master-detail view with URL-synced state (`?project=:id`) and tag filtering
 - 🖼️ **Lightbox:** Image viewer with drag/swipe, keyboard nav, and focus trap
@@ -33,16 +33,16 @@ Showcasing projects and a brief intro. Riced Linux desktop aesthetic with glassm
 ## Installation
 
 ```bash
-# 1. Clone
+# 1. Clone the repository:
 git clone https://github.com/ecdevv/ec.dev.git
 
-# 2. Navigate into the repository
+# 2. Navigate into the repository:
 cd ec.dev
 
-# 3. Dev server
+# 3. Install dependencies:
 npm install
 
-# 4. Build
+# 4. Run the development server:
 npm run dev
 ```
 
