@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from '@/components/layout/Layout'
 import Home from '@/pages/Home'
@@ -33,6 +33,14 @@ export default function App() {
       window.removeEventListener('focus', update);
     };
   }, []);
+
+  // On fast loads the cover element remains until here so there's no frame
+  // where the body is exposed between window.load and React's first paint.
+  // On slow loads (boot played) the cover was already removed at threshold time.
+  useLayoutEffect(() => {
+    if (!ready) return;
+    document.getElementById('bs-cover')?.remove();
+  }, [ready]);
 
   if (!ready) return null
 

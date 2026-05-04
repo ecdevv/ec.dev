@@ -296,19 +296,34 @@
 
       // -- Initial page load --------------------------------------
       (function () {
-        var thresholdPassed = false;
+        // Cover inserted synchronously so the body is never visible during the
+        // threshold window or before React mounts on fast loads.
+        // Fast-load path: cover stays until React's useLayoutEffect removes it
+        // after the first render, eliminating any frame where body is exposed.
+        // Slow-load path: cover is removed here and replaced by the boot overlay.
+        var cover = document.createElement('div');
+        cover.id = 'bs-cover';
+        cover.style.cssText = 'position:fixed;inset:0;z-index:9999;background:#0d1117;';
+        document.body.appendChild(cover);
+
+        var fired = false;
 
         function onFastLoad() {
-          if (thresholdPassed) return;
+          if (fired) return;
+          fired = true;
           clearTimeout(thresholdTimer);
           window.__bootDone = true;
           window.__bootResolve();
+          // Cover is intentionally left for React to remove via useLayoutEffect,
+          // so there's no frame where body is visible before React has painted.
         }
         window.addEventListener('load', onFastLoad);
 
         var thresholdTimer = setTimeout(function () {
-          thresholdPassed = true;
+          if (fired) return;
+          fired = true;
           window.removeEventListener('load', onFastLoad);
+          cover.remove();
           showBoot(false, function () {
             window.__bootDone = true;
             window.__bootResolve();
