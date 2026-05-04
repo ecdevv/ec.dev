@@ -61,8 +61,38 @@
       background: rgba(255,255,255,0.035);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 20px;
-      padding: 52px 64px 48px;
-      width: 780px;
+      width: 1024px;
+      height: 480px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .titlebar {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      padding: 13px 20px;
+      flex-shrink: 0;
+    }
+
+    .tb-spacer { width: 60px; flex-shrink: 0; }
+
+    .tb-title {
+      flex: 1;
+      text-align: center;
+      font-size: 14px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+    }
+
+    .tb-dots { display: flex; gap: 8px; width: 60px; justify-content: flex-end; flex-shrink: 0; }
+    .tb-dot  { width: 13px; height: 13px; border-radius: 50%; }
+
+    .term-content {
+      padding: 44px 64px 40px;
+      flex: 1;
     }
 
     .line {
@@ -70,7 +100,7 @@
       align-items: baseline;
       gap: 0;
       margin-bottom: 10px;
-      font-size: 20px;
+      font-size: 24px;
       line-height: 1.5;
       white-space: nowrap;
     }
@@ -88,7 +118,7 @@
     }
 
     .output-name {
-      font-size: 36px;
+      font-size: 50px;
       font-weight: 700;
       color: #ffffff;
       letter-spacing: -0.5px;
@@ -96,7 +126,7 @@
     }
 
     .output-sub {
-      font-size: 17px;
+      font-size: 20px;
       color: rgba(255,255,255,0.45);
     }
 
@@ -116,8 +146,8 @@
       position: absolute;
       bottom: 36px;
       right: 56px;
-      font-size: 15px;
-      color: rgba(255,255,255,0.18);
+      font-size: 20px;
+      color: rgba(255,255,255,0.35);
       z-index: 2;
       letter-spacing: 0.02em;
     }
@@ -130,26 +160,37 @@
     <div class="orb2"></div>
 
     <div class="terminal">
-      <div class="line">
-        <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
-        <span class="cmd">whoami</span>
+      <div class="titlebar">
+        <div class="tb-spacer"></div>
+        <span class="tb-title">ecdevv@ecdevv-os - bash</span>
+        <div class="tb-dots">
+          <div class="tb-dot" style="background: rgba(104,211,145,0.7)"></div>
+          <div class="tb-dot" style="background: rgba(99,179,237,0.7)"></div>
+          <div class="tb-dot" style="background: rgba(252,129,129,0.7)"></div>
+        </div>
       </div>
-      <div class="output">
-        <div class="output-name">Eric Chour</div>
-        <div class="output-sub">software engineer</div>
-      </div>
+      <div class="term-content">
+        <div class="line">
+          <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
+          <span class="cmd">whoami</span>
+        </div>
+        <div class="output">
+          <div class="output-name">Eric Chour</div>
+          <div class="output-sub">software engineer</div>
+        </div>
 
-      <div class="line">
-        <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
-        <span class="cmd">cat focus.txt</span>
-      </div>
-      <div class="output">
-        <div class="output-sub">building tools &nbsp;·&nbsp; AI agents &nbsp;·&nbsp; open source</div>
-      </div>
+        <div class="line">
+          <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
+          <span class="cmd">cat focus.txt</span>
+        </div>
+        <div class="output">
+          <div class="output-sub">building tools &nbsp;·&nbsp; AI agents &nbsp;·&nbsp; open source</div>
+        </div>
 
-      <div class="line">
-        <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
-        <span class="cursor"></span>
+        <div class="line">
+          <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
+          <span class="cursor"></span>
+        </div>
       </div>
     </div>
 
