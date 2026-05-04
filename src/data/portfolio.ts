@@ -9,7 +9,7 @@ export const NAV_ITEMS = [
 
 export const profile = {
   initials: 'ec',
-  name: 'Your Name',
+  name: 'Eric Chour',
   handle: '@ecdevv',
   stats: [
     { num: projects.length.toString(), label: 'projects' },
@@ -22,6 +22,7 @@ export const profile = {
     { label: 'ricing', highlight: true },
     { label: 'video games', highlight: false },
     { label: 'board games', highlight: false },
+    { label: '5-stacking', highlight: false },
     { label: 'gym', highlight: false },
     { label: 'basketball', highlight: false },
     { label: 'music', highlight: false },
@@ -47,13 +48,13 @@ export const stack = [
 ]
 
 export const skills = [
-  { name: 'TypeScript/Javascript', pct: 90 },
-  { name: 'HTML/CSS/Tailwind',   pct: 90 },
-  { name: 'React',      pct: 85 },
-  { name: 'Next.js',    pct: 80 },
-  { name: 'Vite',       pct: 80 },
-  { name: 'Python',     pct: 70 },
-  { name: 'Systems',    pct: 70 },
-  { name: 'Game Dev',   pct: 65 },
-  { name: 'C++/C',      pct: 60 },
+  { name: 'TypeScript/Javascript',  pct: 90 },
+  { name: 'HTML/CSS/Tailwind',      pct: 90 },
+  { name: 'React',                  pct: 85 },
+  { name: 'Next.js',                pct: 80 },
+  { name: 'Node.js',                pct: 70 },
+  { name: 'Python',                 pct: 70 },
+  { name: 'Agent Development',      pct: 70 },
+  { name: 'Game Dev',               pct: 65 },
+  { name: 'C++/C',                  pct: 60 },
 ]

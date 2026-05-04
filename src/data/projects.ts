@@ -50,31 +50,14 @@ export interface Project {
 
 export const projects: Project[] = [
   // {
-  //   id: 'tax-assist',
-  //   name: 'TaxAssist',
-  //   description: 'Client-side tax assistant with in-browser OCR and PDF export. No backend, no data leaves your device.',
-  //   longDescription: 'TaxAssist runs entirely in the browser — documents are processed locally via Tesseract.js OCR and rendered into a filled PDF without ever leaving the device. Designed as a privacy-first alternative for simple returns, where the convenience of automation usually comes at the cost of uploading sensitive financial data to a third party.',
-  //   tags: ['web', 'tool'],
-  //   tech: ['React', 'TypeScript', 'Tesseract.js'],
-  //   status: 'active',
-  //   pinned: false,
-  //   icon: '⚡',
-  //   accentColor: 'blue',
-  //   statusColor: 'green',
-  //   date: new Date('2026-01-01'),
-  //   url: '',
-  //   repo: '',
-  //   screenshots: [],
-  // },
-  // {
   //   id: 'project-nemesis',
   //   name: 'Project Nemesis',
   //   description: 'Dark fantasy top-down 2D action-adventure. Zelda-style combat, Lufia 2 puzzle mechanics, Souls-inspired tone.',
-  //   longDescription: 'A 2D action-adventure built in Godot 4. Combat takes cues from classic top-down Zelda — tight, deliberate, weapon-driven - while puzzle design draws from Lufia II\'s tile-based environmental logic. The world tone leans into Souls-style ambiguity: minimal exposition, consequential choices, and a setting that rewards paying attention.',
+  //   longDescription: 'A 2D action-adventure built in Godot 4. Combat takes cues from classic top-down Zelda — tight, deliberate, weapon-driven — while puzzle design draws from Lufia II\'s tile-based environmental logic. The world tone leans into Souls-style ambiguity: minimal exposition, consequential choices, and a setting that rewards paying attention.',
   //   tags: ['game'],
   //   tech: ['Godot 4', 'GDScript'],
   //   status: 'wip',
-  //   pinned: true,
+  //   pinned: false,
   //   icon: '🗡️',
   //   accentColor: 'purple',
   //   statusColor: 'amber',
@@ -86,8 +69,8 @@ export const projects: Project[] = [
   {
     id: 'aestheticclock-port',
     name: 'Aesthetic Clock - KDE Plasma 6 Port',
-    description: 'A modern port of the classic Aesthetic Clock for KDE Plasma 6.',
-    longDescription: 'A modern port of the classic Aesthetic Clock for KDE Plasma 6. Features dynamic fill-style text animations, real-time system monitoring via KSysguard, and smart media player integration. Now ported to KDE Plasma 6 with modern QML and Plasma 6 APIs.',
+    description: 'A modern port of the classic Aesthetic Clock widget to KDE Plasma 6, rewritten with modern QML and Plasma 6 APIs.',
+    longDescription: 'A modern port of the classic Aesthetic Clock widget to KDE Plasma 6. Features dynamic fill-style text animations, real-time system monitoring via KSysguard, and smart media player integration — rewritten with modern QML and Plasma 6 APIs.',
     tags: {
       primary: 'widget',
       runtime: ['linux'],
@@ -107,8 +90,8 @@ export const projects: Project[] = [
   {
     id: 'criticore',
     name: 'CritiCore',
-    description: 'Video game critic aggregator for PC games using Steam and OpenCritic APIs.',
-    longDescription: 'CritiCore pulls critic and player scores from Steam and OpenCritic into a single dashboard, making it easy to compare consensus across both audiences without hopping between sites. Built with Next.js for fast page loads and dynamic per-game routes.',
+    description: 'A critic and player score aggregator pulling from Steam and OpenCritic into one dashboard.',
+    longDescription: 'CritiCore aggregates critic and player scores from Steam and OpenCritic into a single dashboard, surfacing both perspectives without hopping between sites. Built with Next.js for fast page loads and dynamic per-game routes.',
     tags: {
       primary: 'web',
     },
@@ -126,8 +109,8 @@ export const projects: Project[] = [
   {
     id: 'urban-luxe',
     name: 'Urban Luxe',
-    description: 'An e-commerce apparel store of a luxury clothing brand.',
-    longDescription: 'Urban Luxe is a full e-commerce front-end for a fictional luxury apparel brand with a product catalog, cart flow, and responsive layouts. Built with Next.js to combine static generation for performance with dynamic routing for individual product pages.',
+    description: 'A fictional luxury apparel storefront with full catalog, cart, and responsive layouts — built with Next.js.',
+    longDescription: 'Urban Luxe is a fictional luxury apparel storefront built to showcase a complete e-commerce frontend — product catalog, cart flow, and responsive design — powered by Next.js for static generation and dynamic product routing.',
     tags: {
       primary: 'web',
     },

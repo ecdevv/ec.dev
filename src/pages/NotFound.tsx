@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { motion, easeOut } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
 import { useShell } from '@/hooks/useShell'
 import { NAV_ITEMS } from '@/data/portfolio'
@@ -36,10 +37,14 @@ export default function NotFound() {
   }, [inputRef])
 
   const hint = NAV_ITEMS.map(item => item.label).join('  ')
-
   return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '1rem' }}>
-      <div className="bw">
+      <motion.div
+        className="bw"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: easeOut }}
+      >
 
         <div className="btb">
           <div className="btb-spc" />
@@ -114,7 +119,7 @@ export default function NotFound() {
           </Link>
         </div>
 
-      </div>
+      </motion.div>
     </div>
   )
 }

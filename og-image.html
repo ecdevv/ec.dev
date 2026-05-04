@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0d1117;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    .card {
+      width: 1200px;
+      height: 630px;
+      background: #0d1117;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Dot grid */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Aurora orbs */
+    .orb1 {
+      position: absolute;
+      width: 560px; height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,179,237,0.13) 0%, transparent 70%);
+      top: -140px; left: -100px;
+      filter: blur(48px);
+    }
+    .orb2 {
+      position: absolute;
+      width: 440px; height: 440px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(159,122,234,0.11) 0%, transparent 70%);
+      bottom: -80px; right: -60px;
+      filter: blur(48px);
+    }
+
+    /* Glassmorphism panel */
+    .terminal {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 52px 64px 48px;
+      width: 780px;
+    }
+
+    .line {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+      line-height: 1.5;
+      white-space: nowrap;
+    }
+
+    .p-user   { color: #68d391; font-weight: 600; }
+    .p-at     { color: rgba(255,255,255,0.25); }
+    .p-host   { color: #63b3ed; }
+    .p-path   { color: rgba(255,255,255,0.35); }
+    .p-dollar { color: rgba(255,255,255,0.4); margin-right: 10px; }
+    .cmd      { color: rgba(255,255,255,0.8); }
+
+    .output {
+      padding-left: 2px;
+      margin-bottom: 28px;
+    }
+
+    .output-name {
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .output-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 12px;
+      height: 20px;
+      background: #68d391;
+      vertical-align: middle;
+      margin-left: 2px;
+      border-radius: 2px;
+      opacity: 0.9;
+    }
+
+    /* Domain tag bottom-right */
+    .domain {
+      position: absolute;
+      bottom: 36px;
+      right: 56px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.18);
+      z-index: 2;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid"></div>
+    <div class="orb1"></div>
+    <div class="orb2"></div>
+
+    <div class="terminal">
+      <div class="line">
+        <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
+        <span class="cmd">whoami</span>
+      </div>
+      <div class="output">
+        <div class="output-name">Eric Chour</div>
+        <div class="output-sub">software engineer</div>
+      </div>
+
+      <div class="line">
+        <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
+        <span class="cmd">cat focus.txt</span>
+      </div>
+      <div class="output">
+        <div class="output-sub">building tools &nbsp;·&nbsp; AI agents &nbsp;·&nbsp; open source</div>
+      </div>
+
+      <div class="line">
+        <span class="p-user">ecdevv</span><span class="p-at">@</span><span class="p-host">ecdevv-os</span><span class="p-path"> ~</span><span class="p-dollar"> $</span>
+        <span class="cursor"></span>
+      </div>
+    </div>
+
+    <div class="domain">ecdevv.dev</div>
+  </div>
+</body>
+</html>

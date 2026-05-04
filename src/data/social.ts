@@ -7,7 +7,7 @@ export interface SocialLink {
 
 export const socials: SocialLink[] = [
   { label: 'GitHub',   url: 'https://github.com/ecdevv',    icon: 'Github',  username: 'ecdevv' },
-  { label: 'LinkedIn', url: 'https://linkedin.com/in/TODO', icon: 'Linkedin' },
+  { label: 'LinkedIn', url: 'https://linkedin.com/in/ericchour', icon: 'Linkedin' },
 ]
 
-export const email = 'TODO@example.com'
+export const email = 'ech2447@gmail.com'
