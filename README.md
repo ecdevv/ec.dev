@@ -10,7 +10,9 @@
 </p>
 
 ## Overview
-Personal developer portfolio with a riced Linux desktop aesthetic: dark base, dark glassmorphism panels, and aurora orbs. Features a boot sequence animation on first load, project showcase with a master-detail layout, and an interactive shell terminal on the 404 page. No backend; all content lives in local TypeScript files under `src/data/`.
+Personal developer portfolio with a **riced Linux desktop aesthetic** — dark base, glassmorphism panels, and aurora orbs.
+
+Features a boot sequence animation on first load, project showcase with a master-detail layout, and an interactive shell terminal on the 404 page. No backend; all content lives in local TypeScript files under `src/data/`.
 
 ## Stack
 - **Build:** Vite 8
