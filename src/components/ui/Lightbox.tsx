@@ -78,6 +78,7 @@ function LightboxContent({ images, startIndex, onClose, onChange, alt }: Content
       role="dialog"
       aria-modal="true"
       aria-label="Image preview"
+      tabIndex={-1}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

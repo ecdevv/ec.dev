@@ -177,12 +177,13 @@ export default function Projects() {
             className="fixed inset-0 z-50 xl:hidden bg-black/60 backdrop-blur-sm overflow-y-auto"
             onClick={closeModal}
           >
-            <div className="flex min-h-full items-start md:items-center justify-center p-4 md:pb-8">
+            <div className="flex min-h-full items-center justify-center p-4">
               <motion.div
                 ref={modalRef}
                 role="dialog"
                 aria-modal="true"
                 aria-label={activeProject?.name ?? 'Project detail'}
+                tabIndex={-1}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
@@ -192,10 +193,10 @@ export default function Projects() {
               >
                 <button
                   onClick={closeModal}
-                  className="absolute right-4 top-4 z-10 text-white/40 hover:text-white/70 transition-colors"
+                  className="absolute -top-2 -right-2 z-10 w-7 h-7 md:w-9 md:h-9 rounded-full bg-surface-panel border border-border-subtle backdrop-blur-panel flex items-center justify-center text-white/50 hover:text-white hover:border-white/25 transition-colors"
                   aria-label="Close"
                 >
-                  <X size={18} aria-hidden="true" />
+                  <X size={16} aria-hidden="true" />
                 </button>
                 <ProjectDetail key={activeProject.id} project={activeProject} />
               </motion.div>

@@ -10,8 +10,10 @@ export function useFocusTrap(ref: RefObject<HTMLElement | null>, active: boolean
   useEffect(() => {
     if (!active) return
     previousFocus.current = document.activeElement
-    const first = ref.current?.querySelector<HTMLElement>(FOCUSABLE)
-    first?.focus()
+    // Focus the container itself (tabIndex={-1}) rather than the first child link.
+    // Browsers don't apply :focus-visible to tabIndex={-1} elements (programmatic-only
+    // targets), so no visible ring appears on any nav item - fixes Safari iOS highlight bug.
+    ref.current?.focus({ preventScroll: true })
     return () => {
       if (previousFocus.current instanceof HTMLElement) {
         previousFocus.current.focus()

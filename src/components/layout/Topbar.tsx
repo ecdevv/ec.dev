@@ -266,44 +266,48 @@ export default function Topbar() {
             </div>
           </div>
 
-          {/* Mobile drawer - lives inside the sticky header so it:
-              - translates/hides with the topbar (no position drift on scroll)
-              - inherits the same max-w + px-4/sm:px-6 container (no width mismatch)
-              The backdrop below (z-30) sits behind this header (z-40) */}
-          <AnimatePresence>
-            {open && (
-              <motion.nav
-                ref={drawerRef}
-                id="mobile-nav"
-                aria-label="Mobile navigation"
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.15, ease: 'easeOut' }}
-                className="panel mt-2 mb-4 px-4 py-3 flex flex-col gap-1 md:hidden"
-              >
-                {NAV_ITEMS.map(({ label, to }) => (
-                  <NavLink
-                    key={to}
-                    to={navTo(to)}
-                    end={to === '/'}
-                    onClick={() => setOpen(false)}
-                    className={({ isActive }) =>
-                      clsx(
-                        'font-mono text-[14px] px-3 py-2.5 rounded transition-colors duration-150',
-                        isActive
-                          ? 'text-accent-blue bg-accent-blue/10'
-                          : 'text-white/45 hover:text-white/70 hover:bg-white/5'
-                      )
-                    }
-                  >
-                    {label}
-                  </NavLink>
-                ))}
-              </motion.nav>
-            )}
-          </AnimatePresence>
         </div>
+
+        {/* Mobile drawer - absolute so it overlays content rather than expanding the header height.
+            top-full anchors to the bottom of the header's in-flow height (panel only). */}
+        <AnimatePresence>
+          {open && (
+            <div className="absolute left-0 right-0 top-full">
+              <div className="max-w-[1800px] mx-auto px-4 sm:px-6">
+                <motion.nav
+                  ref={drawerRef}
+                  id="mobile-nav"
+                  aria-label="Mobile navigation"
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.15, ease: 'easeOut' }}
+                  tabIndex={-1}
+                  className="panel mt-2 px-4 py-3 flex flex-col gap-1 md:hidden"
+                >
+                  {NAV_ITEMS.map(({ label, to }) => (
+                    <NavLink
+                      key={to}
+                      to={navTo(to)}
+                      end={to === '/'}
+                      onClick={() => setOpen(false)}
+                      className={({ isActive }) =>
+                        clsx(
+                          'font-mono text-[14px] px-3 py-2.5 rounded transition-colors duration-150',
+                          isActive
+                            ? 'text-accent-blue bg-accent-blue/10'
+                            : 'text-white/45 hover:text-white/70 hover:bg-white/5'
+                        )
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                  ))}
+                </motion.nav>
+              </div>
+            </div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Backdrop - click-to-close; z-30 sits behind the sticky header (z-40) */}
