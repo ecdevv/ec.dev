@@ -23,6 +23,8 @@ export default function Home() {
   const navigate = useNavigate()
   const skillsRef = useRef<HTMLDivElement>(null)
   const skillsInView = useInView(skillsRef, { once: true, margin: '-50px' })
+  const calendarRef = useRef<HTMLDivElement>(null)
+  const calendarInView = useInView(calendarRef, { once: true, margin: '200px' })
 
   return (
     <div className="pt-6 grid gap-3
@@ -197,8 +199,8 @@ export default function Home() {
             <span className="font-mono text-[12px] md:text-[13px] text-white/35">github · @ecdevv</span>
           </div>
 
-          <div className="mt-4 flex-1 flex items-center justify-center text-white/40 font-mono text-[12px] md:text-[13px] overflow-x-auto">
-            <GitHubCalendar
+          <div ref={calendarRef} className="mt-4 flex-1 flex items-center justify-center text-white/40 font-mono text-[12px] md:text-[13px] overflow-x-auto">
+            {calendarInView && <GitHubCalendar
               username="ecdevv"
               theme={HEATMAP_THEME}
               colorScheme="dark"
@@ -209,7 +211,7 @@ export default function Home() {
               labels={{
                 totalCount: '{{count}} contributions in the last year',
               }}
-            />
+            />}
           </div>
         </Panel>
 
