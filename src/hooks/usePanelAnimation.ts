@@ -12,8 +12,16 @@ export function usePanelAnimation(
 
   useEffect(() => {
     const el = (externalRef ?? internalRef).current
-    if (el && el.getBoundingClientRect().top >= window.innerHeight)
-      setInViewOnMount(false)
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) setInViewOnMount(false)
+        observer.disconnect()
+      },
+      { threshold: 0 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
   // refs are stable - externalRef identity never changes after mount
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
