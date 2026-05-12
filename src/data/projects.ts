@@ -1,7 +1,7 @@
 import type { AccentKey } from '@/data/techStack'
 import { sortAlpha } from '@/utils/sort'
 
-export type PrimaryTag = 'app' | 'web' | 'game' | 'widget' | 'plugin' | 'library' | 'mod'
+export type PrimaryTag = 'app' | 'cli' | 'web' | 'game' | 'widget' | 'plugin' | 'library' | 'mod'
 export type DomainTag  = 'system' | 'productivity' | 'devtool' | 'graphics' | 'gameplay' | 'utility' | 'education'
 export type RuntimeTag = 'linux' | 'windows' | 'mac' | 'browser' | 'node' | 'cross-platform'
 
@@ -67,6 +67,27 @@ export const projects: Project[] = [
   //   screenshots: [],
   // },
   {
+    id: 'lumen',
+    name: 'Lumen',
+    description: 'A token-efficient, local-LLM-first coding agent CLI. Claude Code "light" with Pi-style modularity.',
+    longDescription: 'A token-efficient coding agent CLI built around local LLMs first via llama.cpp, with an OpenAI-compatible HTTP Provider trait so remote backends (Anthropic, OpenAI, Gemini) slot in later without refactoring. Rust workspace with a strict core (lib) and cli (bin) boundary — Pi-style modularity that keeps the agent core reusable beyond the terminal.',
+    tags: {
+      primary: 'cli',
+      runtime: ['cross-platform'],
+      domain: ['devtool', 'productivity']
+    },
+    tech: ['Rust', 'llama.cpp'],
+    status: 'wip',
+    pinned: true,
+    icon: '🖥️',
+    accentColor: 'purple',
+    statusColor: 'amber',
+    date: new Date('2026-05-12'),
+    url: '',
+    repo: 'https://github.com/ecdevv/lumen',
+    screenshots: ['/screenshots/projects/lumen/lumen_preview.webp'],
+  },
+  {
     id: 'plasma-applet-aestheticclock',
     name: 'Aesthetic Clock - KDE Plasma 6 Port',
     description: 'A modern port of the classic Aesthetic Clock widget to KDE Plasma 6, rewritten with modern QML and Plasma 6 APIs.',
@@ -97,7 +118,7 @@ export const projects: Project[] = [
     },
     tech: ['Next.js', 'React', 'TypeScript', 'HTML', 'CSS', 'Tailwind'],
     status: 'complete',
-    pinned: true,
+    pinned: false,
     icon: '⭐',
     accentColor: 'gray',
     statusColor: 'blue',

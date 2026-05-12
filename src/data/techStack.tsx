@@ -63,6 +63,7 @@ export const TECH: Record<string, TechDef> = {
   // Misc
   'Chrome APIs':      {                                                                hex: '#4285F4' },
   'Tesseract.js':     {                                                                hex: '#F5A623' },
+  'llama.cpp':        {                                                                hex: '#D4A853' },
 }
 
 export function getTech(name: string): TechDef {
