@@ -5,7 +5,7 @@ export interface NowEntry {
 }
 
 export const nowEntries: NowEntry[] = [
-  { category: 'working',   primary: 'orion-cli',          secondary: 'godot 4 · enemy ai' },
+  { category: 'working',   primary: 'lumen',          secondary: 'godot 4 · enemy ai' },
   // { category: 'reading',   primary: 'dune messiah' },
   { category: 'playing',   primary: 'kingdom come deliverance ii' },
   { category: 'ricing',    primary: 'kde + rounded & darkly' },
@@ -13,4 +13,4 @@ export const nowEntries: NowEntry[] = [
   { category: 'listening', primary: 'corridors of time - yasunori mitsuda' },
 ]
 
-export const nowUpdated = '2026-05-03'
+export const nowUpdated = '2026-05-12'
