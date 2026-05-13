@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, easeOut } from 'framer-motion'
-import { Mail, Copy, Check, ArrowUpRight } from 'lucide-react'
+import { Mail, Copy, Check, ArrowUpRight, FileText } from 'lucide-react'
 import { SiGithub } from '@icons-pack/react-simple-icons'
 import { socials, email } from '@/data/social'
 import { Linkedin } from '@/components/icons/Icons'
@@ -54,6 +54,34 @@ export default function Contact() {
 
           <div className="h-px bg-white/7" />
 
+          {/* Resume */}
+          <div>
+            <p className="panel-label">resume</p>
+            <a
+              href="/Eric_Chour_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-white/3
+                border border-white/6 hover:bg-white/7 hover:border-accent-blue/25 transition-colors group"
+            >
+              <span aria-hidden="true" className="text-white/30 group-hover:text-accent-blue transition-colors">
+                <FileText size={16} />
+              </span>
+              <span className="font-mono text-[13px] md:text-[14px] flex-1 relative">
+                <span className="block text-white/50 group-hover:opacity-0 transition-opacity duration-150">
+                  Resume / latest
+                </span>
+                <span aria-hidden="true" className="absolute inset-0 text-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-150 truncate">
+                  Eric_Chour_Resume.pdf
+                </span>
+              </span>
+              <ArrowUpRight size={13} aria-hidden="true" className="text-white/0 group-hover:text-white/40 transition-colors" />
+              <span className="sr-only"> (opens in new tab)</span>
+            </a>
+          </div>
+
+          <div className="h-px bg-white/7" />
+
           {/* Socials */}
           <div>
             <p className="panel-label">elsewhere</p>
@@ -74,7 +102,7 @@ export default function Contact() {
                     <span className="block text-white/50 group-hover:opacity-0 transition-opacity duration-150">
                       {s.username ? `${s.label} / ${s.username}` : s.label}
                     </span>
-                    <span className="absolute inset-0 text-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-150 truncate">
+                    <span aria-hidden="true" className="absolute inset-0 text-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-150 truncate">
                       {s.url.replace('https://', '')}
                     </span>
                   </span>

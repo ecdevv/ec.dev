@@ -28,6 +28,7 @@ export const COMMANDS: Record<string, CommandHandler> = {
     { type: 'blank' },
     { type: 'hdr',  text: 'info' },
     { type: 'out',  text: '  whoami        -> about the site owner' },
+    { type: 'out',  text: '  resume        -> open resume (pdf) in a new tab' },
     { type: 'out',  text: '  help          -> show this message' },
     { type: 'blank' },
     { type: 'hdr',  text: 'utility' },
@@ -42,6 +43,10 @@ export const COMMANDS: Record<string, CommandHandler> = {
   whoami: () => [
     { type: 'out', text: `${SHELL_USER} - software engineer, linux enthusiast, problem solver` },
   ],
+  resume: () => {
+    window.open('/Eric_Chour_Resume.pdf', '_blank', 'noopener,noreferrer')
+    return [{ type: 'out', text: 'opening resume (pdf) in a new tab...' }]
+  },
   boot: () => {
     window.bReplay?.(() => {})
     return []
