@@ -1,7 +1,11 @@
 import { Outlet } from 'react-router-dom'
 import Topbar from './Topbar'
+import CommandPalette from '@/components/overlays/CommandPalette'
+import { useCommandPalette } from '@/hooks/useCommandPalette'
 
 export default function Layout() {
+  const { open, setOpen } = useCommandPalette()
+
   return (
     <div className="relative">
       <a
@@ -15,6 +19,7 @@ export default function Layout() {
       <main id="main-content" className="relative z-1 max-w-[1800px] mx-auto px-4 sm:px-6 pb-12">
         <Outlet />
       </main>
+      <CommandPalette open={open} setOpen={setOpen} />
     </div>
   )
 }

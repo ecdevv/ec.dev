@@ -1,4 +1,5 @@
 import { NAV_ITEMS } from "@/data/portfolio"
+import { email, githubUrl, linkedinUrl } from "@/data/social"
 
 export const SHELL_USER = 'ecdevv'
 export const SHELL_HOST = 'ecdevv-os'
@@ -31,6 +32,11 @@ export const COMMANDS: Record<string, CommandHandler> = {
     { type: 'out',  text: '  resume        -> open resume (pdf) in a new tab' },
     { type: 'out',  text: '  help          -> show this message' },
     { type: 'blank' },
+    { type: 'hdr',  text: 'elsewhere' },
+    { type: 'out',  text: '  github        -> open github profile in a new tab' },
+    { type: 'out',  text: '  linkedin      -> open linkedin profile in a new tab' },
+    { type: 'out',  text: '  email         -> open mail client with my address' },
+    { type: 'blank' },
     { type: 'hdr',  text: 'utility' },
     { type: 'out',  text: '  boot          -> replay the boot sequence' },
     { type: 'out',  text: '  echo <text>   -> print text to terminal (e.g. echo hello world -> hello world)' },
@@ -46,6 +52,18 @@ export const COMMANDS: Record<string, CommandHandler> = {
   resume: () => {
     window.open('/Eric_Chour_Resume.pdf', '_blank', 'noopener,noreferrer')
     return [{ type: 'out', text: 'opening resume (pdf) in a new tab...' }]
+  },
+  github: () => {
+    window.open(githubUrl, '_blank', 'noopener,noreferrer')
+    return [{ type: 'out', text: 'opening github in a new tab...' }]
+  },
+  linkedin: () => {
+    window.open(linkedinUrl, '_blank', 'noopener,noreferrer')
+    return [{ type: 'out', text: 'opening linkedin in a new tab...' }]
+  },
+  email: () => {
+    window.location.href = `mailto:${email}`
+    return [{ type: 'out', text: `opening mail client (${email})...` }]
   },
   boot: () => {
     window.bReplay?.(() => {})

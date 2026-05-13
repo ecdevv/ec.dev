@@ -248,8 +248,18 @@ export default function Topbar() {
               </nav>
             </div>
 
-            {/* Right: clock + status + mobile menu */}
+            {/* Right: command palette trigger + clock + status + mobile menu */}
             <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('cmdk-toggle'))}
+                className="hidden md:inline-flex items-center px-1.5 h-5 rounded border border-border-subtle bg-surface-panel/40 font-mono text-[11px] text-white/35 hover:text-white/70 hover:border-accent-blue/30 transition-colors duration-150"
+                aria-label="Open command palette"
+                title="Open command palette"
+              >
+                ⌘K
+              </button>
+              <div className="w-px h-3.5 bg-white/10 hidden md:block" />
               <Clock />
               <div className="status-dot" role="img" aria-label="Open to work" />
               {/* Mobile hamburger - openRef set synchronously so the scroll guard in onScroll

@@ -55,6 +55,6 @@ export const skills = [
   { name: 'Node.js',                pct: 70 },
   { name: 'Python',                 pct: 70 },
   { name: 'Agent Development',      pct: 70 },
-  { name: 'Game Dev',               pct: 65 },
+  { name: 'Rust',                   pct: 60 },
   { name: 'C++/C',                  pct: 60 },
 ]
