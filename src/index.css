@@ -100,24 +100,21 @@
   body::before, body::after {
     content: '';
     position: fixed;
-    border-radius: 50%;
-    filter: blur(80px);
     pointer-events: none;
     z-index: 0;
-    mix-blend-mode: screen;
   }
   body::before {
-    width: 650px; height: 650px;
-    background: var(--color-accent-blue);
-    top: -200px; left: -150px;
-    opacity: 0.10;
+    width: 1100px; height: 1100px;
+    background: radial-gradient(circle, var(--color-accent-blue) 0%, transparent 60%);
+    top: -425px; left: -375px;
+    opacity: 0.20;
     animation: orb-drift-1 10s ease-in-out infinite;
   }
   body::after {
-    width: 550px; height: 550px;
-    background: var(--color-accent-purple);
-    bottom: -150px; right: -120px;
-    opacity: 0.09;
+    width: 950px; height: 950px;
+    background: radial-gradient(circle, var(--color-accent-purple) 0%, transparent 60%);
+    bottom: -425px; right: -395px;
+    opacity: 0.18;
     animation: orb-drift-2 13s ease-in-out infinite;
   }
 }
@@ -217,18 +214,6 @@
 .bkey-esc      { color: rgba(255,255,255,0.4); }
 .bkey-enter    { color: rgba(99,179,237,1); }
 
-@media (prefers-reduced-motion: reduce) {
-  body               { animation: none; }
-  body::before,
-  body::after        { animation: none; }
-  .bcur              { animation: none; }
-}
-
-body.tab-hidden,
-body.tab-hidden::before,
-body.tab-hidden::after,
-body.tab-hidden .bcur { animation-play-state: paused; }
-
 @media (max-width: 480px) {
   .bb     { font-size: 12px; padding: 20px 16px 12px; min-height: 260px; }
   .bctrl  { padding: 8px 16px 16px; }
@@ -242,4 +227,72 @@ body.tab-hidden .bcur { animation-play-state: paused; }
 @media (min-width: 769px) and (min-height: 600px) {
   .bw { max-width: 880px; }
   .bb { font-size: 14px; padding: 28px 32px 20px; min-height: 480px; }
+}
+
+
+/* -- Lightbox: theming + open animation (yet-another-react-lightbox) ---- */
+@property --lb-blur {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+@keyframes lb-open {
+  from { --lb-blur: 0px;  background-color: transparent; }
+  to   { --lb-blur: 12px; background-color: var(--yarl__color_backdrop); }
+}
+
+@keyframes lb-content-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.custom-lightbox {
+  --yarl__color_backdrop: rgba(0, 0, 0, 0.70);
+  --yarl__color_button: rgba(255, 255, 255, 0.5);
+  --yarl__color_button_active: rgba(255, 255, 255, 1);
+  --yarl__color_button_disabled: rgba(255, 255, 255, 0.15);
+  --yarl__counter_color: rgba(255, 255, 255, 0.4);
+  --yarl__icon_size: 22px;
+}
+
+.custom-lightbox .yarl__container {
+  backdrop-filter: blur(var(--lb-blur));
+  -webkit-backdrop-filter: blur(var(--lb-blur));
+  animation: lb-open 200ms ease forwards;
+}
+
+.custom-lightbox .yarl__carousel,
+.custom-lightbox .yarl__toolbar,
+.custom-lightbox .yarl__counter,
+.custom-lightbox .yarl__navigation_prev,
+.custom-lightbox .yarl__navigation_next {
+  animation: lb-content-in 200ms ease forwards;
+}
+
+.custom-lightbox .yarl__counter {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+@media (min-width: 768px) {
+  .custom-lightbox {
+    --yarl__color_backdrop: rgba(0, 0, 0, 0.65);
+    --yarl__icon_size: 26px;
+  }
+  .custom-lightbox .yarl__counter { font-size: 14px; }
+}
+
+
+/* -- Global motion controls (pause/disable based on user state) ---------- */
+body.tab-hidden,
+body.tab-hidden::before,
+body.tab-hidden::after,
+body.tab-hidden .bcur { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  body               { animation: none; }
+  body::before,
+  body::after        { animation: none; }
+  .bcur              { animation: none; }
 }

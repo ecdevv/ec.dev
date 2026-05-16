@@ -112,7 +112,7 @@ export default function Projects() {
               key={tag}
               onClick={() => setParam('tag', tag === 'all' ? null : tag)}
               aria-pressed={activeTag === tag}
-              className={`font-mono text-[12px] md:text-[13px] px-3 py-1.5 rounded-md border transition-colors cursor-pointer ${
+              className={`panel font-mono text-[12px] md:text-[13px] px-3 py-1.5 rounded-md border transition-colors cursor-pointer ${
                 activeTag === tag
                   ? 'text-accent-blue bg-accent-blue/10 border-accent-blue/20'
                   : 'text-white/35 border-white/6 bg-white/3 hover:text-white/60 hover:bg-white/7 hover:border-white/10'
@@ -174,7 +174,7 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 xl:hidden bg-black/60 backdrop-blur-sm overflow-y-auto"
+            className="fixed inset-0 z-50 xl:hidden bg-black/60 backdrop-blur-sm overflow-y-auto touch-pan-y"
             onClick={closeModal}
           >
             <div className="flex min-h-full items-center justify-center p-4">
